@@ -7,7 +7,7 @@ const teamMembers = [
     id: 1,
     name: 'Dhiraj Kumar Gupta',
     position: 'Chairman',
-    bio: 'U-Link IT US is an awesome place to work with a focus on innovation and employee growth.',
+    bio: 'U-Link Gulf is an awesome place to work with a focus on innovation and employee growth.',
     image: '/Images/2.webp',
     blobColor: 'bg-green-100',
     social: {
@@ -76,7 +76,7 @@ const TeamShowcase = () => {
           transition={{ duration: 0.5 }}
         >
           <p className="text-gray-600 uppercase text-sm mb-2 tracking-widest font-medium">We Are There For You</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#009000] mb-2">U-Link IT US</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#009000] mb-2">U-Link Gulf</h2>
           <h3 className="text-2xl font-semibold text-gray-800 mb-12">Meet Our Professionals</h3>
         </motion.div>
 
