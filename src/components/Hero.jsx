@@ -69,7 +69,13 @@ function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Transforming <br className="hidden sm:block" /> Business Through <br className="hidden sm:block" />
+Transforming
+<br className="hidden sm:block" />
+Business Through
+<br className="hidden sm:block" />
+
+
+
             <motion.span 
               className="text-[#b73235] inline-block"
               animate={{ 
@@ -81,7 +87,7 @@ function Hero() {
                 duration: 2 
               }}
             >
-              Technology
+            Smart Innovation
             </motion.span>
           </motion.h1>
 
@@ -91,7 +97,7 @@ function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            U-Link It Us offers comprehensive e-commerce and procurement solutions tailored to modern business needs.
+U-Link It Us delivers end-to-end e-commerce, IT, and logistics solutions, expertly tailored to meet the demands of modern businesses.
           </motion.p>
 
           <motion.nav 

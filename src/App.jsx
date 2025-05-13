@@ -12,6 +12,7 @@ import Portfolio from './pages/Portfolio';
 import Blog from './pages/Blog';
 import Schedule from './pages/Schedule';
 import NotFound from './pages/NotFound';
+import WhatsAppButton from './components/WhatsappButton';
 
 function App() {
   return (
@@ -27,9 +28,11 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/schedule" element={<Schedule />} />
-          <Route path="*" element={<NotFound/>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>
+      {/* Place WhatsAppButton outside of Routes */}
+      <WhatsAppButton />
     </Router>
   );
 }

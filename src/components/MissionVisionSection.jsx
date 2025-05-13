@@ -8,30 +8,35 @@ const MissionVisionSection = () => {
   const content = {
     mission: {
       title: "Our Mission",
-      text: "Our mission is to provide our clients with best-in-class services, all under one roof. We are committed to delivering excellence through innovation, professionalism, and integrity in everything we do.",
+      text: "At U-link IT US, our mission is to provide our clients across the Gulf region with best-in-class services under one roof. We are committed to delivering excellence through innovation, professionalism, and integrity in everything we do. Our goal is to help businesses thrive in Gulf marketplaces and expand globally, ensuring seamless account management, logistics, and cutting-edge IT services tailored to the unique needs of this region.",
       icon: <Target size={48} className="text-white" />,
       bgColor: "linear-gradient(135deg, #0066cc 0%, #00aaff 100%)",
       accentColor: "#0066cc",
       points: [
         "Deliver excellence through innovation",
-        "Provide comprehensive solutions",
-        "Become a trusted growth partner",
-        "Exceed client expectations"
-      ]
-    },
-    vision: {
-      title: "Our Vision",
-      text: "Our vision is to excel as the world's leading procurement and trading connectivity group. We aspire to set new benchmarks in global trade by creating a seamless, efficient, and trusted network.",
-      icon: <Eye size={48} className="text-white" />,
-      bgColor: "linear-gradient(135deg, #b73235 0%, #e74c3c 100%)",
-      accentColor: "#b73235",
-      points: [
-        "Set global trade benchmarks",
-        "Create seamless business networks",
-        "Empower with unmatched opportunities",
-        "Redefine industry standards"
+        "Offer comprehensive seller account setup and management for Gulf and international markets",
+        "Enhance operational efficiency with cutting-edge IT services tailored for the Gulf region",
+        "Ensure seamless logistics and fulfillment for global reach, with a focus on the Gulf",
+        "Provide end-to-end solutions for marketplace performance in the UAE, Saudi Arabia, Qatar, and beyond",
+        "Help businesses grow and expand across Gulf countries and beyond",
+        "Exceed client expectations with tailored growth strategies in the Gulf region"
       ]
     }
+,    
+vision: {
+  title: "Our Vision",
+  text: "Our vision is to excel as the leading procurement and trading connectivity group in the Gulf region and beyond. We aim to set new benchmarks in global trade by creating a seamless, efficient, and trusted network that connects businesses in the UAE, Saudi Arabia, Qatar, and other Gulf countries to the global marketplace.",
+  icon: <Eye size={48} className="text-white" />,
+  bgColor: "linear-gradient(135deg, #b73235 0%, #e74c3c 100%)",
+  accentColor: "#b73235",
+  points: [
+    "Set new benchmarks in global trade with a focus on the Gulf",
+    "Create seamless business networks across Gulf countries and globally",
+    "Empower businesses with unmatched opportunities in the Gulf region",
+    "Redefine industry standards for Gulf and international trade"
+  ]
+}
+
   };
 
   return (

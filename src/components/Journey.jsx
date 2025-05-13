@@ -92,7 +92,7 @@ const CompanyJourney = () => {
               <div className="hidden md:block w-1 h-8 bg-gray-800 mt-1 mb-2 z-10" />
 
               {/* 3D Rotating Milestone Card */}
-              <div className="mt-4 md:mt-0 w-40 h-40 md:w-44 md:h-44 lg:w-48 lg:h-48 xl:w-52 xl:h-52 perspective-1000">
+              <div className="mt-4 md:mt-0 w-46 h-46 md:w-44 md:h-44 lg:w-48 lg:h-48 xl:w-52 xl:h-52 perspective-1000">
                 <motion.div
                   className="relative w-full h-full rounded-full overflow-hidden border-4 border-gray-200 shadow-lg cursor-pointer"
                   whileHover={{
