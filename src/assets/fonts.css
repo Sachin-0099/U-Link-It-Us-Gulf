@@ -1,0 +1,39 @@
+/* src/assets/fonts.css */
+
+/* Font Awesome 6 – self‑hosted variants */
+@font-face {
+    font-family: "FA-Thin";
+    src: url("/fonts/fa-thin-100.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: "FA-Light";
+    src: url("/fonts/fa-light-300.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: "FA-Regular";
+    src: url("/fonts/fa-regular-400.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: "FA-Solid";
+    src: url("/fonts/fa-solid-900.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: "FA-Brands";
+    src: url("/fonts/fa-brands-400.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+  }
+  
