@@ -79,7 +79,7 @@ const About = () => {
   const services = [
     {
       title: "Quality Services",
-      description: "At U-link IT US, we pride ourselves on our clear vision and strong execution capabilities. Our team is committed to delivering projects with precision, efficiency, and timeliness — ensuring top-notch quality and exceeding client expectations at every step.",
+      description: "At U-Link Gulf, we pride ourselves on our clear vision and strong execution capabilities. Our team is committed to delivering projects with precision, efficiency, and timeliness — ensuring top-notch quality and exceeding client expectations at every step.",
       icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
     },
     {
@@ -132,17 +132,17 @@ const About = () => {
       <motion.div 
         animate={{ x: [0, 10, 0], y: [0, -10, 0] }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="hidden lg:block absolute top-1/4 left-10 w-16 h-16 rounded-full bg-[#b73235] bg-opacity-10"
+        className="hidden lg:block absolute top-1/4 left-10 w-16 h-16 rounded-full bg-[#009000] bg-opacity-10"
       />
        <motion.div 
         animate={{ x: [0, 10, 0], y: [0, -10, 0] }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="hidden lg:block absolute top-1/4 left-10 w-16 h-16 rounded-full bg-[#b73235] bg-opacity-10"
+        className="hidden lg:block absolute top-1/4 left-10 w-16 h-16 rounded-full bg-[#009000] bg-opacity-10"
       />
       <motion.div 
         animate={{ x: [0, -15, 0], y: [0, 15, 0] }}
         transition={{ duration: 10, repeat: Infinity, delay: 1 }}
-        className="hidden lg:block absolute bottom-1/3 right-20 w-24 h-24 rounded-full bg-[#b73235] bg-opacity-5"
+        className="hidden lg:block absolute bottom-1/3 right-20 w-24 h-24 rounded-full bg-[#009000] bg-opacity-5"
       />
 
       {/* Main content container */}
@@ -150,11 +150,11 @@ const About = () => {
 
         {/* GSAP Scroll Animated Heading Section */}
         <div ref={sectionRef} className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className='text-4xl md:text-5xl font-bold mb-6 text-[#b73235]'>
-            U-Link IT US Empowers <span className="text-[#2c3e50]">Modern Businesses</span>
+          <h1 className='text-4xl md:text-5xl font-bold mb-6 text-[#009000]'>
+            U-Link Gulf Empowers <span className="text-[#2c3e50]">Modern Businesses</span>
           </h1>
           <p className="text-xl text-gray-600">
-            U-Link It Us provides end-to-end e-commerce, IT, and logistics solutions tailored to help businesses thrive in the digital marketplace through seamless setup, expert strategy, and reliable operations.
+            U-Link Gulf provides end-to-end e-commerce, IT, and logistics solutions tailored to help businesses thrive in the digital marketplace through seamless setup, expert strategy, and reliable operations.
           </p>
         </div>
 
@@ -167,11 +167,11 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(0,0,0,0.1)" }}
-              className="bg-white rounded-xl p-6 shadow-md cursor-pointer border-l-4 border-[#b73235]"
+              className="bg-white rounded-xl p-6 shadow-md cursor-pointer border-l-4 border-[#009000]"
             >
               <div className="flex items-center mb-4">
-                <div className="bg-[#b73235] bg-opacity-10 p-3 rounded-full mr-4">
-                  <svg className="w-6 h-6 text-[#b73235]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-[#009000] bg-opacity-10 p-3 rounded-full mr-4">
+                  <svg className="w-6 h-6 text-[#009000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                   </svg>
                 </div>

@@ -96,7 +96,7 @@ const InteractivePortfolio = () => {
     animate={{ opacity: 1 }}
     className="text-xl font-bold"
   >
-    <span className="text-[#b73235] ">U-link</span> IT US
+    <span className="text-[#009000] ">U-Link</span> Gulf
   </motion.div>
           
           <div className="flex items-center space-x-4">
@@ -129,9 +129,9 @@ const InteractivePortfolio = () => {
             <div className="space-y-8 order-2 lg:order-1">
               <motion.div variants={fadeIn}>
                 <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold ${theme === "dark" ? "text-white" : "text-gray-900"} leading-tight`}>
-                  Hi, I'm <span className="text-[#b73235]">Dheeraj</span>
+                  Hi, I'm <span className="text-[#009000]">Dheeraj</span>
                 </h1>
-                <div className="w-20 h-1 bg-[#b73235] my-4"></div>
+                <div className="w-20 h-1 bg-[#009000] my-4"></div>
               </motion.div>
 
               <motion.h2 
@@ -140,9 +140,9 @@ const InteractivePortfolio = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
-                <span className="text-[#b73235]">Founder & CEO</span> 
+                <span className="text-[#009000]">Founder & CEO</span> 
                 <span 
-                  className={`absolute bottom-0 left-0 h-1 bg-[#b73235] transition-all duration-500 ${isHovered ? "w-full" : "w-0"}`}
+                  className={`absolute bottom-0 left-0 h-1 bg-[#009000] transition-all duration-500 ${isHovered ? "w-full" : "w-0"}`}
                 ></span>
               </motion.h2>
 
@@ -171,7 +171,7 @@ const InteractivePortfolio = () => {
               <motion.div variants={fadeIn} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
                 <button
                   onClick={() => setShowModal(true)}
-                  className="px-8 py-3 bg-[#b73235] text-white font-semibold rounded-lg transition-all duration-300
+                  className="px-8 py-3 bg-[#009000] text-white font-semibold rounded-lg transition-all duration-300
                             hover:bg-yellow-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400
                             focus:ring-offset-2 active:scale-95 flex items-center justify-center group shadow-lg"
                 >
@@ -201,7 +201,7 @@ const InteractivePortfolio = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="relative">
-                <div className={`absolute -inset-4 rounded-2xl bg-gradient-to-r from-[#b73235] to-yellow-600 opacity-20 blur-lg`}></div>
+                <div className={`absolute -inset-4 rounded-2xl bg-gradient-to-r from-[#009000] to-yellow-600 opacity-20 blur-lg`}></div>
                 <img
                   src={portfolioData.dheeraj.imagePath}
                   alt="Dheeraj Kumar Gupta Profile"
@@ -224,9 +224,9 @@ const InteractivePortfolio = () => {
             <div className="space-y-8 order-2 lg:order-1">
               <motion.div variants={fadeIn}>
                 <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold ${theme === "dark" ? "text-white" : "text-gray-900"} leading-tight`}>
-                  Hi, I'm <span className="text-[#b73235]">Vineet</span>
+                  Hi, I'm <span className="text-[#009000]">Vineet</span>
                 </h1>
-                <div className="w-20 h-1 bg-[#b73235] my-4"></div>
+                <div className="w-20 h-1 bg-[#009000] my-4"></div>
               </motion.div>
 
               <motion.h2 
@@ -235,9 +235,9 @@ const InteractivePortfolio = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
-                <span className="text-[#b73235]">IT HEAD DIRECTOR</span> 
+                <span className="text-[#009000]">IT HEAD DIRECTOR</span> 
                 <span 
-                  className={`absolute bottom-0 left-0 h-1 bg-[#b73235] transition-all duration-500 ${isHovered ? "w-full" : "w-0"}`}
+                  className={`absolute bottom-0 left-0 h-1 bg-[#009000] transition-all duration-500 ${isHovered ? "w-full" : "w-0"}`}
                 ></span>
               </motion.h2>
 
@@ -266,7 +266,7 @@ const InteractivePortfolio = () => {
               <motion.div variants={fadeIn} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
                 <button
                   onClick={() => setShowModal(true)}
-                  className="px-8 py-3 bg-[#b73235] text-white font-semibold rounded-lg transition-all duration-300
+                  className="px-8 py-3 bg-[#009000] text-white font-semibold rounded-lg transition-all duration-300
                             hover:bg-yellow-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400
                             focus:ring-offset-2 active:scale-95 flex items-center justify-center group shadow-lg"
                 >
@@ -296,7 +296,7 @@ const InteractivePortfolio = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="relative">
-                <div className={`absolute -inset-4 rounded-2xl bg-gradient-to-r from-[#b73235] to-yellow-600 opacity-20 blur-lg`}></div>
+                <div className={`absolute -inset-4 rounded-2xl bg-gradient-to-r from-[#009000] to-yellow-600 opacity-20 blur-lg`}></div>
                 <img
                   src={portfolioData.vineet.imagePath}
                   alt="Vineet Sharma Profile"
@@ -385,7 +385,8 @@ const InteractivePortfolio = () => {
                 <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>Your Email</label>
                 <input 
                   type="email" 
-                  className={`w-full p-3 rounded-lg border ${theme === "dark" ? "bg-gray-700 border-gray-600 text-white focus:border-[#b73235] focus:ring-[#b73235]" : "bg-white border-gray-300 focus:border-[#b73235] focus:ring-[#b73235]"}`} 
+                  className={`w-full p-3 rounded-lg border ${theme === "dark" ? "bg-gray-700 border-gray-600 text-white focus:border-[#009000] focus:ring-[#009000]" : "bg-white border-gray-300 text-black focus:border-[#009000] focus:ring-[#009000]"}`}
+
                   placeholder="john@example.com"
                   required
                 />
@@ -394,7 +395,8 @@ const InteractivePortfolio = () => {
               <div>
                 <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>Message</label>
                 <textarea 
-                  className={`w-full p-3 rounded-lg border ${theme === "dark" ? "bg-gray-700 border-gray-600 text-white focus:border-[#b73235] focus:ring-[#b73235]" : "bg-white border-gray-300 focus:border-[#b73235] focus:ring-[#b73235]"}`} 
+className={`w-full p-3 rounded-lg border ${theme === "dark" ? "bg-gray-700 border-gray-600 text-white focus:border-[#009000] focus:ring-[#009000]" : "bg-white border-gray-300 text-black focus:border-[#009000] focus:ring-[#009000]"}`}
+
                   rows="4"
                   placeholder="I'd like to discuss a potential project..."
                   required
@@ -403,7 +405,7 @@ const InteractivePortfolio = () => {
               
               <button 
                 type="button"
-                className="w-full px-6 py-3 bg-[#b73235] text-white font-semibold rounded-lg transition-all duration-300 hover:bg-yellow-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
+                className="w-full px-6 py-3 bg-[#009000] text-white font-semibold rounded-lg transition-all duration-300 hover:bg-yellow-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
               >
                 Send Message
               </button>

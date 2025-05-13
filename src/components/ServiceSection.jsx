@@ -196,7 +196,7 @@ const ServicesSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-[#b73235] uppercase bg-[#b73235]/10 rounded-full mb-4">
+          <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-[#009000] uppercase bg-[#009000]/10 rounded-full mb-4">
             Our Solutions
           </span>
           <motion.h1 
@@ -204,7 +204,7 @@ const ServicesSection = () => {
             whileHover={{ scale: 1.01 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Comprehensive <span className="text-[#b73235]">eCommerce Services</span>
+            Comprehensive <span className="text-[#009000]">eCommerce Services</span>
           </motion.h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             End-to-end solutions to launch, manage, and scale your online business across all major platforms
@@ -217,13 +217,13 @@ const ServicesSection = () => {
           <div className="max-w-md flex items-center bg-white p-1 rounded-lg shadow-sm border border-gray-200 mb-4">
             <button
               onClick={() => setViewMode('grid')}
-              className={`px-6 py-2 text-sm font-medium rounded-md ${viewMode === 'grid' ? 'bg-[#b73235] text-white' : 'text-gray-700 hover:bg-gray-100'}`}
+              className={`px-6 py-2 text-sm font-medium rounded-md ${viewMode === 'grid' ? 'bg-[#009000] text-white' : 'text-gray-700 hover:bg-gray-100'}`}
             >
               Grid View
             </button>
             <button
               onClick={() => setViewMode('list')}
-              className={`px-6 py-2 text-sm font-medium rounded-md ${viewMode === 'list' ? 'bg-[#b73235] text-white' : 'text-gray-700 hover:bg-gray-100'}`}
+              className={`px-6 py-2 text-sm font-medium rounded-md ${viewMode === 'list' ? 'bg-[#009000] text-white' : 'text-gray-700 hover:bg-gray-100'}`}
             >
               List View
             </button>
@@ -236,7 +236,7 @@ const ServicesSection = () => {
                 onClick={() => setActiveKeyword(null)}
                 className={`px-3 py-1 text-xs sm:text-sm rounded-full font-medium transition-colors ${
                   !activeKeyword 
-                    ? 'bg-[#b73235] text-white' 
+                    ? 'bg-[#009000] text-white' 
                     : 'bg-white text-gray-700 hover:bg-gray-100'
                 }`}
               >
@@ -248,7 +248,7 @@ const ServicesSection = () => {
                   onClick={() => setActiveKeyword(activeKeyword === keyword ? null : keyword)}
                   className={`px-3 py-1 text-xs sm:text-sm rounded-full font-medium transition-colors ${
                     activeKeyword === keyword 
-                      ? 'bg-[#b73235] text-white' 
+                      ? 'bg-[#009000] text-white' 
                       : 'bg-white text-gray-700 hover:bg-gray-100'
                   }`}
                   whileHover={{ scale: 1.05 }}
@@ -268,7 +268,7 @@ const ServicesSection = () => {
               <motion.article 
                 key={service.id}
                 className={`relative overflow-hidden rounded-xl shadow-md hover:shadow-lg cursor-pointer transition-all duration-300 bg-white ${
-                  expandedService === index ? 'ring-2 ring-[#b73235]' : ''
+                  expandedService === index ? 'ring-2 ring-[#009000]' : ''
                 }`}
                 onClick={() => setExpandedService(expandedService === index ? null : index)}
                 onHoverStart={() => setHoveredService(index)}
@@ -388,7 +388,7 @@ const ServicesSection = () => {
               <motion.article
                 key={service.id}
                 className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 ${
-                  expandedService === index ? 'ring-2 ring-[#b73235]' : ''
+                  expandedService === index ? 'ring-2 ring-[#009000]' : ''
                 }`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -500,7 +500,7 @@ const ServicesSection = () => {
             <motion.button
     whileHover={{ scale: 1.02, boxShadow: "0 4px 12px rgba(183, 50, 53, 0.3)" }}
     whileTap={{ scale: 0.98 }}
-    className="bg-[#b73235] hover:bg-[#9c2a2d] text-white font-semibold py-2 sm:py-3 px-6 rounded-lg text-base sm:text-lg transition-all"
+    className="bg-[#009000] hover:bg-[#009000] text-white font-semibold py-2 sm:py-3 px-6 rounded-lg text-base sm:text-lg transition-all"
   >
     Contact Our Experts
   </motion.button>
@@ -511,7 +511,7 @@ const ServicesSection = () => {
   whileHover={{ scale: 1.02 }}
   whileTap={{ scale: 0.98 }}
   disabled
-  className="bg-white text-[#b73235] font-semibold py-2 sm:py-3 px-6 rounded-lg text-base sm:text-lg border border-[#b73235] transition-all opacity-50 cursor-not-allowed"
+  className="bg-white text-[#009000] font-semibold py-2 sm:py-3 px-6 rounded-lg text-base sm:text-lg border border-[#009000] transition-all opacity-50 cursor-not-allowed"
 >
   Case Studies Coming Soon
 </motion.button>

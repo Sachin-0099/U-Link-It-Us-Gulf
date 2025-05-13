@@ -2,6 +2,8 @@
   import { Menu, X } from 'lucide-react';
   import { Link, useLocation } from 'react-router-dom';
   import gsap from 'gsap';
+  import { FaGlobe } from 'react-icons/fa';
+
 
   function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,7 +50,7 @@
           {/* Logo */}
           <div className="w-32 md:w-60">
             <a href="/" aria-label="Ulink Home">
-              <img src="/Images/Ulink.png" alt="Ulink Logo" className="w-full h-auto" loading="lazy" />
+              <img src="/Images/Ulinkit.jpg" alt="Ulink Logo" className="w-full h-auto" loading="lazy" />
             </a>
           </div>
 
@@ -57,21 +59,27 @@
             {navItems.map((item) => (
               <li
                 key={item}
-                className="cursor-pointer hover:text-[#b73235] transition-transform duration-200 hover:scale-105"
+                className="cursor-pointer hover:text-[#009000] transition-transform duration-200 hover:scale-105"
               >
                 <Link to={`/${item.toLowerCase().replace(/ /g, '')}`}>{item}</Link>
               </li>
             ))}
             <li>
-              <Link to="/contact" className="px-4 py-3 border border-[#b73235] text-[#b73235] rounded-md hover:bg-red-100 transition hover:scale-105 inline-block">
+              <Link to="/contact" className="px-4 py-3 border border-[#009000] text-[#009000] rounded-md hover:bg-green-100 transition hover:scale-105 inline-block">
                 Contact Us
               </Link>
             </li>
             <li>
-              <Link to="/schedule" className="px-4 py-3 bg-[#b73235] text-white rounded-md hover:bg-[#a52a2a] transition font-semibold hover:scale-105 inline-block">
+              <Link to="/schedule" className="px-4 py-3 bg-[#009000] text-white rounded-md hover:bg-[#009000] transition font-semibold hover:scale-105 inline-block">
                 Schedule a Call
               </Link>
             </li>
+            <li className="cursor-pointer hover:text-[#009000] transition-transform duration-200 hover:scale-105 flex items-center gap-3">
+            <FaGlobe className="text-[#009000]" size={30} />
+
+
+</li>
+
           </ul>
 
           {/* Mobile Menu Button */}
@@ -99,6 +107,12 @@
                 {item}
               </Link>
             ))}
+
+<div className="flex items-center gap-2">
+  <FaGlobe className="text-[#009000]" />
+  <span>Choose Language</span>
+</div>
+
             <Link
               to="/contact"
               className="block px-4 py-2 border border-[#b73235] text-[#b73235] rounded-md hover:bg-red-100 transition hover:scale-105"

@@ -149,7 +149,7 @@ const ServicesPage = () => {
                     whileHover={{ scale: 1.03 }}
                     className="flex items-start p-4 bg-gray-50 rounded-lg transition-all duration-200 hover:shadow-md"
                   >
-                    <div className="flex-shrink-0 bg-[#b73235] rounded-lg p-3 text-white">
+                    <div className="flex-shrink-0 bg-[#009000] rounded-lg p-3 text-white">
                       {feature.icon}
                     </div>
                     <div className="ml-4">
@@ -176,14 +176,14 @@ const ServicesPage = () => {
             <div className="p-8">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <div className="flex-shrink-0 bg-[#b73235] rounded-lg p-3 text-white">
+                  <div className="flex-shrink-0 bg-[#009000] rounded-lg p-3 text-white">
                     {service.icon}
                   </div>
                   <div className="ml-4 text-2xl font-bold text-gray-900">{service.id}</div>
                 </div>
                 <button 
                   onClick={() => toggleService(service.id)}
-                  className="text-gray-400 hover:text-[#b73235] transition-colors duration-200"
+                  className="text-gray-400 hover:text-[#009000] transition-colors duration-200"
                   aria-label={expandedService === service.id ? "Collapse service details" : "Expand service details"}
                 >
                   {expandedService === service.id ? <FaChevronUp /> : <FaChevronDown />}
@@ -201,7 +201,7 @@ const ServicesPage = () => {
                     transition={{ duration: 0.3 }}
                     className="mt-6 pt-6 border-t border-gray-200"
                   >
-                    <h4 className="text-sm font-semibold text-[#b73235] uppercase tracking-wide">
+                    <h4 className="text-sm font-semibold text-[#009000] uppercase tracking-wide">
                       Detailed Features
                     </h4>
                     <ul className="mt-4 space-y-3">
@@ -266,7 +266,7 @@ const ServicesPage = () => {
               ].map((item) => (
                 <div key={item.step} className="flex">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#b73235] text-white text-xl font-bold">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#009000] text-white text-xl font-bold">
                       {item.step}
                     </div>
                   </div>
@@ -279,7 +279,7 @@ const ServicesPage = () => {
             </div>
           </div>
           <div className="mt-12 lg:mt-0 lg:w-1/2">
-            <div className="bg-[#b73235] bg-opacity-5 p-8 rounded-xl">
+            <div className="bg-[#009000] bg-opacity-5 p-8 rounded-xl">
               <img 
                 src="/Images/implementation.avif" 
                 alt="Implementation process visual"
@@ -342,7 +342,7 @@ const ServicesPage = () => {
               <p className="relative text-gray-600 italic">{testimonial.quote}</p>
             </div>
             <div className="mt-6 flex items-center">
-              <div className="flex-shrink-0 bg-[#b73235] rounded-full p-1">
+              <div className="flex-shrink-0 bg-[#009000] rounded-full p-1">
                 <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-500">
                   {testimonial.author.charAt(0)}
                 </div>
@@ -350,7 +350,7 @@ const ServicesPage = () => {
               <div className="ml-4">
                 <p className="text-sm font-semibold text-gray-900">{testimonial.author}</p>
                 <p className="text-sm text-gray-500">{testimonial.position}</p>
-                <p className="mt-1 text-xs font-medium text-[#b73235]">{testimonial.stats}</p>
+                <p className="mt-1 text-xs font-medium text-[#009000]">{testimonial.stats}</p>
               </div>
             </div>
           </motion.div>
@@ -405,7 +405,7 @@ const ServicesPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-base font-semibold text-[#b73235] tracking-wide uppercase">
+            <h2 className="text-base font-semibold text-[#009000] tracking-wide uppercase">
               Our  Management System
             </h2>
             <h1 className="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
@@ -426,7 +426,7 @@ const ServicesPage = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mt-24 bg-[#b73235] rounded-xl shadow-xl overflow-hidden"
+            className="mt-24 bg-[#009000] rounded-xl shadow-xl overflow-hidden"
           >
             <div className="px-6 py-12 sm:px-12 sm:py-16 lg:py-20 lg:px-16">
               <div className="lg:flex lg:items-center lg:justify-between">

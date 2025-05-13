@@ -19,10 +19,10 @@ function Hero() {
   const FloatingSphere = () => (
     <Sphere args={[1, 32, 32]} position={[0, 0, 0]}>
       <meshStandardMaterial 
-        color="#b73235" 
+        color="#009000" 
         metalness={0.8}
         roughness={0.2}
-        emissive="#b73235"
+        emissive="#009000"
         emissiveIntensity={0.3}
       />
     </Sphere>
@@ -77,9 +77,10 @@ Business Through
 
 
             <motion.span 
-              className="text-[#b73235] inline-block"
+              className="text-[#009000] inline-block"
               animate={{ 
-                textShadow: "0 0 10px rgba(183, 50, 53, 0.5)",
+                textShadow: "0 0 10px rgba(0, 144, 0, 0.5)",
+
               }}
               transition={{ 
                 repeat: Infinity, 
@@ -97,7 +98,7 @@ Business Through
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-U-Link It Us delivers end-to-end e-commerce, IT, and logistics solutions, expertly tailored to meet the demands of modern businesses.
+U-Link Gulf delivers end-to-end e-commerce, IT, and logistics solutions, expertly tailored to meet the demands of modern businesses.
           </motion.p>
 
           <motion.nav 
@@ -111,14 +112,15 @@ U-Link It Us delivers end-to-end e-commerce, IT, and logistics solutions, expert
       onClick={() => navigate("/contact")}  // Navigate to the contact page on click
       whileHover={{ scale: 1.05, boxShadow: "0 5px 15px rgba(183, 50, 53, 0.3)" }}
       whileTap={{ scale: 0.95 }}
-      className="bg-[#b73235] text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg relative overflow-hidden text-sm sm:text-base"
+      className="bg-[#009000] text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg relative overflow-hidden text-sm sm:text-base"
       aria-label="Get a free consultation from Ulinkit"
     >
       <span className="relative z-10">Get FREE Consultation</span>
       <motion.span
-        className="absolute inset-0 bg-gradient-to-r from-[#b73235] to-[#e74c3c] opacity-0 hover:opacity-100 transition-opacity duration-300 z-0"
-        aria-hidden="true"
-      />
+  className="absolute inset-0 bg-gradient-to-r from-[#009000] to-[#009000] opacity-0 hover:opacity-100 transition-opacity duration-300 z-0"
+  aria-hidden="true"
+/>
+
     </motion.button>
             
             <motion.button 
@@ -158,7 +160,7 @@ U-Link It Us delivers end-to-end e-commerce, IT, and logistics solutions, expert
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.span 
-                  className="text-[#b73235]"
+                  className="text-[#009000]"
                   animate={{ rotate: [0, 360] }}
                   transition={{ 
                     rotate: { 
@@ -187,7 +189,7 @@ U-Link It Us delivers end-to-end e-commerce, IT, and logistics solutions, expert
           style={{ y: window.innerWidth < 768 ? 0 : y, opacity }}
         >
           <motion.div 
-            className="hidden sm:block absolute -bottom-10 -left-10 w-full h-full bg-red-100 rounded-2xl z-0 shadow-2xl"
+            className="hidden sm:block absolute -bottom-10 -left-10 w-full h-full bg-green-100 rounded-2xl z-0 shadow-2xl"
             animate={{
               rotate: [-4, 4, -4],
               scale: [1, 1.02, 1]

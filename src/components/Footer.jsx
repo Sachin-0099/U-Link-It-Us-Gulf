@@ -64,13 +64,13 @@ const DubaiMap = () => {
           animate={hovered ? { scale: 1.1 } : { scale: 1 }}
           transition={{ duration: 0.3 }}
         >
-          <MapPin className="w-12 h-12 text-red-500 drop-shadow-lg" />
+          <MapPin className="w-12 h-12 text-[#009000] drop-shadow-lg" />
         </motion.div>
       </div>
 
       {/* Animated map markers */}
       <motion.div
-        className="absolute top-1/4 left-1/3 w-3 h-3 bg-red-500 rounded-full"
+        className="absolute top-1/4 left-1/3 w-3 h-3 bg-[#009000] rounded-full"
         animate={{
           y: [0, -5, 0],
           opacity: [0.7, 1, 0.7],
@@ -83,7 +83,7 @@ const DubaiMap = () => {
       />
 
       <motion.div
-        className="absolute top-1/3 right-1/4 w-3 h-3 bg-red-500 rounded-full"
+        className="absolute top-1/3 right-1/4 w-3 h-3 bg-[#009000] rounded-full"
         animate={{
           y: [0, -8, 0],
           opacity: [0.7, 1, 0.7],
@@ -113,7 +113,7 @@ const SocialLink = ({ href, icon: Icon, name }) => {
         whileHover={{
           scale: 1.2,
           rotate: [0, 10, -10, 0],
-          backgroundColor: "#ef4444",
+          backgroundColor: "#009000",
         }}
         whileTap={{ scale: 0.9 }}
         onHoverStart={() => setIsHovered(true)}
@@ -126,7 +126,7 @@ const SocialLink = ({ href, icon: Icon, name }) => {
       <AnimatePresence>
         {isHovered && (
           <motion.span
-            className="absolute -bottom-8 left-1/2 transform -translate-x-1/2  text-[#b73235] text-xs px-2 py-1 rounded whitespace-nowrap"
+            className="absolute -bottom-8 left-1/2 transform -translate-x-1/2  text-[#009000] text-xs px-2 py-1 rounded whitespace-nowrap"
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 5 }}
@@ -177,7 +177,7 @@ const NewsletterForm = () => {
 
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold text-[#b73235] dark:text-white">
+      <h3 className="text-lg font-semibold text-[#009000] dark:text-white">
         <motion.span
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -216,8 +216,8 @@ const NewsletterForm = () => {
             onBlur={() => setIsFocused(false)}
             required
             className={`w-full px-4 pt-5 pb-2 rounded border ${
-              shake ? "border-red-500" : "border-gray-300 dark:border-gray-700"
-            } dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-red-500`}
+              shake ? "border-[#009000]" : "border-gray-300 dark:border-gray-700"
+            } dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#009000]`}
             animate={{
               x: shake ? [0, -10, 10, -10, 10, 0] : 0,
             }}
@@ -232,7 +232,7 @@ const NewsletterForm = () => {
             htmlFor="message"
             className={`absolute left-4 transition-all duration-300 ${
               message
-                ? "top-1 text-xs text-[#b73235] dark:text-red-400"
+                ? "top-1 text-xs text-[#009000] dark:text-[#009000]"
                 : "top-3 text-gray-500"
             }`}
             initial={false}
@@ -259,7 +259,7 @@ const NewsletterForm = () => {
           className={`w-full px-4 py-3 rounded-md text-white font-medium ${
             isSubmitting
               ? "bg-gray-400 cursor-not-allowed"
-              : "bg-gradient-to-r from-[#b73235] to-[#e0474c] hover:from-[#a02a2d] hover:to-[#c93a3f]"
+              : "bg-gradient-to-r from-[#007a00] to-[#00b300] hover:from-[#006600] hover:to-[#00cc00]"
           } transition-all duration-300 relative overflow-hidden`}
           disabled={isSubmitting}
           whileHover={!isSubmitting ? { scale: 1.02 } : {}}
@@ -401,7 +401,7 @@ const NewsletterForm = () => {
         href={social.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-[#b73235] hover:text-white transition-colors duration-300"
+        className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-[#009000] hover:text-white transition-colors duration-300"
         whileHover={{ y: -3, scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         initial={{ opacity: 0, y: 20 }}
@@ -487,7 +487,7 @@ const FooterSection = () => {
     >
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 dark:opacity-5">
-        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-red-500 blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-[#009000] blur-3xl"></div>
         <div className="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-blue-500 blur-3xl"></div>
       </div>
 
@@ -501,12 +501,12 @@ const FooterSection = () => {
         >
           {/* India Office */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#b73235] dark:text-white flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-[#009000] dark:text-white flex items-center gap-2">
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
-                <MapPin className="w-5 h-5 text-[#b73235]" />
+                <MapPin className="w-5 h-5 text-[#009000]" />
               </motion.div>
               Corporate Office
             </h3>
@@ -515,7 +515,7 @@ const FooterSection = () => {
 
               <motion.a
                 href="tel:+918750518844"
-                className="flex items-center gap-2 hover:text-red-500 transition-colors"
+                className="flex items-center gap-2 hover:text-[#009000] transition-colors"
                 whileHover={{ x: 5 }}
               >
                 <Phone className="w-4 h-4" />
@@ -524,34 +524,34 @@ const FooterSection = () => {
 
               <motion.a
                 href="mailto:dhiraj@ulinkitus.com"
-                className="flex items-center gap-2 hover:text-red-500 transition-colors"
+                className="flex items-center gap-2 hover:text-[#009000] transition-colors"
                 whileHover={{ x: 5 }}
               >
                 <Mail className="w-4 h-4" />
-                dhiraj@ulinkitus.com
+                dhiraj@ulinkit.com
               </motion.a>
 
               <motion.a
                 href="https://www.ulinkitus.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-red-500 transition-colors"
+                className="flex items-center gap-2 hover:text-[#009000] transition-colors"
                 whileHover={{ x: 5 }}
               >
                 <Link className="w-4 h-4" />
-                www.ulinkitus.com
+                https://www.ulinkgulf.com
               </motion.a>
             </address>
           </motion.div>
 
           {/* UAE Office */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#b73235] dark:text-white flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-[#009000] dark:text-white flex items-center gap-2">
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
-                <MapPin className="w-5 h-5 text-[#b73235]" />
+                <MapPin className="w-5 h-5 text-[#009000]" />
               </motion.div>
               UAE  Office
             </h3>
@@ -560,21 +560,35 @@ const FooterSection = () => {
             </h4>
             <DubaiMap />
             <div className="space-y-2 text-gray-500 dark:text-gray-400">
-              <motion.p whileHover={{ x: 5 }}>
-                P.O. Box: 624498, Street 13
-              </motion.p>
-              <motion.p whileHover={{ x: 5 }}>
-                Umm Ramool, Dubai - U.A.E
-              </motion.p>
-              <motion.p whileHover={{ x: 5 }}>
-                Dhiraj Kumar Gupta (Director): +91-8750518844, +971 58 586 8470
-              </motion.p>
+            <motion.p whileHover={{ x: 5 }}>
+  P.O. Box: 624498, Street 13
+</motion.p>
+<motion.p whileHover={{ x: 5 }}>
+  Umm Ramool, Dubai - U.A.E
+</motion.p>
+<motion.p whileHover={{ x: 5 }}>
+  <a href="tel:+918750518844" className="hover:text-[#009000] underline">
+    India Contact +91-8750518844
+  </a>
+</motion.p>
+<motion.p whileHover={{ x: 5 }}>
+  <a href="tel:+966509917491" className="hover:text-[#009000] underline">
+    Saudi Contact +966 50 991 7491
+  </a>
+</motion.p>
+<motion.p whileHover={{ x: 5 }}>
+  <a href="tel:+971585868470" className="hover:text-[#009000] underline">
+    UAE Contact +971 58 586 8470
+  </a>
+</motion.p>
+
+              
             </div>
           </motion.div>
 
           {/* Quick Links */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#b73235] dark:text-white">
+            <h3 className="text-lg font-semibold text-[#009000] dark:text-white">
               QUICK LINKS
             </h3>
             <ul className="space-y-2 text-gray-500 dark:text-gray-400">
@@ -599,7 +613,7 @@ const FooterSection = () => {
                       e.preventDefault();
                       navigateToPage(link.id);
                     }}
-                    className="block py-1 hover:text-[#b73235] transition-colors"
+                    className="block py-1 hover:text-[#009000] transition-colors"
                   >
                     {link.name}
                   </a>
@@ -613,7 +627,7 @@ const FooterSection = () => {
             <NewsletterForm />
 
             <div className="mt-6">
-              <h4 className="text-md font-medium text-[#b73235] dark:text-gray-300 mb-3">
+              <h4 className="text-md font-medium text-[#009000] dark:text-gray-300 mb-3">
                 Follow Us
               </h4>
               <div className="flex gap-3">
@@ -636,7 +650,7 @@ const FooterSection = () => {
         >
           <div className="flex items-center">
             <Copyright className="w-4 h-4 mr-1" />
-            {currentYear} U-Link IT US. All rights reserved.
+            {currentYear} U-Link Gulf. All rights reserved.
           </div>
           <div className="hidden sm:block mx-2">•</div>
           <div>Designed with ❤️ in Dubai</div>
@@ -655,7 +669,7 @@ const FooterSection = () => {
           >
             <button
               onClick={scrollToTop}
-              className="bg-gradient-to-br from-red-500 to-red-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="bg-[#009000] text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
               aria-label="Back to Top"
             >
               <motion.div

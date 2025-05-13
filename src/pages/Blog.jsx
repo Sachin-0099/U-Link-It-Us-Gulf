@@ -329,8 +329,8 @@ const BlogPage = () => {
       <main className="container mx-auto px-4 py-8">
         {/* Blog Header */}
         <header className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-[#b73235] mb-4 bg-clip-text text-transparent bg-[#b73235]">
-            U-Link It Us Blog
+          <h1 className="text-5xl font-bold text-[#009000] mb-4 bg-clip-text text-transparent bg-[#009000]">
+            U-Link Gulf Blog
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
   Discover expert insights on seller account management, marketplace performance, and effective e-commerce growth strategies.
@@ -342,8 +342,8 @@ const BlogPage = () => {
               onClick={() => setShowSubmissionForm(!showSubmissionForm)}
               className={`px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 ${
                 showSubmissionForm 
-                  ? 'bg-[#b73235] text-white hover:bg-[#b73235]'
-                  : 'bg-[#b73235] text-white'
+                  ? 'bg-[#009000] text-white hover:bg-[#009000]'
+                  : 'bg-[#009000] text-white'
               } shadow-md hover:shadow-lg`}
             >
               {showSubmissionForm ? 'Cancel Submission' : 'Write a Blog Post'}
@@ -356,7 +356,7 @@ const BlogPage = () => {
               <input
                 type="text"
                 placeholder="Search articles..."
-                className="w-full px-5 py-3 border border-[#b73235] rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent shadow-sm"
+                className="w-full px-5 py-3 border border-[#009000] rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent shadow-sm"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -375,7 +375,7 @@ const BlogPage = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
                     selectedCategory === category
-                      ? 'bg-[#b73235] text-white shadow-md'
+                      ? 'bg-[#009000] text-white shadow-md'
                       : 'bg-white text-gray-700 hover:bg-gray-100 shadow-sm'
                   }`}
                 >
@@ -414,11 +414,11 @@ const BlogPage = () => {
                       value={newPost.title}
                       onChange={handleInputChange}
                       className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 ${
-                        formErrors.title ? 'border-red-400 focus:ring-red-200' : 'border-gray-200 focus:ring-blue-200'
+                        formErrors.title ? 'border-green-400 focus:ring-red-200' : 'border-gray-200 focus:ring-blue-200'
                       }`}
                       placeholder="Enter your post title"
                     />
-                    {formErrors.title && <p className="text-red-500 text-sm mt-1">{formErrors.title}</p>}
+                    {formErrors.title && <p className="text-green-500 text-sm mt-1">{formErrors.title}</p>}
                   </div>
                   
                   <div>
@@ -431,7 +431,7 @@ const BlogPage = () => {
                       value={newPost.category}
                       onChange={handleInputChange}
                       className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 ${
-                        formErrors.category ? 'border-red-400 focus:ring-red-200' : 'border-gray-200 focus:ring-blue-200'
+                        formErrors.category ? 'border-green-400 focus:ring-red-200' : 'border-gray-200 focus:ring-blue-200'
                       }`}
                     >
                       <option value="">Select a category</option>
@@ -440,7 +440,7 @@ const BlogPage = () => {
                       ))}
                       <option value="_new">+ Add new category</option>
                     </select>
-                    {formErrors.category && <p className="text-red-500 text-sm mt-1">{formErrors.category}</p>}
+                    {formErrors.category && <p className="text-green-500 text-sm mt-1">{formErrors.category}</p>}
                   </div>
                 </div>
                 
@@ -455,11 +455,11 @@ const BlogPage = () => {
                     onChange={handleInputChange}
                     rows="8"
                     className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 ${
-                      formErrors.content ? 'border-red-400 focus:ring-red-200' : 'border-gray-200 focus:ring-blue-200'
+                      formErrors.content ? 'border-green-400 focus:ring-red-200' : 'border-gray-200 focus:ring-blue-200'
                     }`}
                     placeholder="Write your blog post content here..."
                   ></textarea>
-                  {formErrors.content && <p className="text-red-500 text-sm mt-1">{formErrors.content}</p>}
+                  {formErrors.content && <p className="text-green-500 text-sm mt-1">{formErrors.content}</p>}
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -474,11 +474,11 @@ const BlogPage = () => {
                       value={newPost.authorName}
                       onChange={handleInputChange}
                       className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 ${
-                        formErrors.authorName ? 'border-red-400 focus:ring-red-200' : 'border-gray-200 focus:ring-blue-200'
+                        formErrors.authorName ? 'border-green-400 focus:ring-red-200' : 'border-gray-200 focus:ring-blue-200'
                       }`}
                       placeholder="Enter your name"
                     />
-                    {formErrors.authorName && <p className="text-red-500 text-sm mt-1">{formErrors.authorName}</p>}
+                    {formErrors.authorName && <p className="text-green-500 text-sm mt-1">{formErrors.authorName}</p>}
                   </div>
                   
                   <div>
@@ -492,11 +492,11 @@ const BlogPage = () => {
                       value={newPost.authorEmail}
                       onChange={handleInputChange}
                       className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 ${
-                        formErrors.authorEmail ? 'border-red-400 focus:ring-red-200' : 'border-gray-200 focus:ring-blue-200'
+                        formErrors.authorEmail ? 'border-green-400 focus:ring-red-200' : 'border-gray-200 focus:ring-blue-200'
                       }`}
                       placeholder="Enter your email"
                     />
-                    {formErrors.authorEmail && <p className="text-red-500 text-sm mt-1">{formErrors.authorEmail}</p>}
+                    {formErrors.authorEmail && <p className="text-green-500 text-sm mt-1">{formErrors.authorEmail}</p>}
                   </div>
                 </div>
                 
@@ -514,7 +514,7 @@ const BlogPage = () => {
         {/* Blog Posts Grid */}
         {isLoading ? (
           <div className="flex justify-center items-center h-64">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#b73235]"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#009000]"></div>
           </div>
         ) : (
           <>
@@ -594,7 +594,7 @@ const BlogPage = () => {
                         <div className="flex items-center space-x-4">
                           <button 
                             onClick={() => handleLikePost(post.id)}
-                            className="flex items-center text-gray-500 hover:text-red-500 transition-colors"
+                            className="flex items-center text-gray-500 hover:text-green-500 transition-colors"
                           >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />

@@ -9,7 +9,7 @@ const teamMembers = [
     position: 'Chairman',
     bio: 'U-Link IT US is an awesome place to work with a focus on innovation and employee growth.',
     image: '/Images/2.webp',
-    blobColor: 'bg-[#f9dcdc]',
+    blobColor: 'bg-green-100',
     social: {
       linkedin: 'https://www.linkedin.com/in/dhiraj-kumar-gupta-45b97730/',
       twitter: 'https://x.com/dhirajkgupta84',
@@ -76,7 +76,7 @@ const TeamShowcase = () => {
           transition={{ duration: 0.5 }}
         >
           <p className="text-gray-600 uppercase text-sm mb-2 tracking-widest font-medium">We Are There For You</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#b73235] mb-2">U-Link IT US</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#009000] mb-2">U-Link IT US</h2>
           <h3 className="text-2xl font-semibold text-gray-800 mb-12">Meet Our Professionals</h3>
         </motion.div>
 
@@ -128,7 +128,7 @@ const TeamShowcase = () => {
                     <a 
                       key={platform} 
                       href={link} 
-                      className="bg-white p-2 rounded-full shadow-md hover:bg-[#b73235] hover:text-white transition-colors"
+                      className="bg-white p-2 rounded-full shadow-md hover:bg-[#009000] hover:text-white transition-colors"
                       aria-label={`${member.name}'s ${platform}`}
                     >
                       <i className={`fab fa-${platform} text-sm`}></i>
@@ -137,7 +137,7 @@ const TeamShowcase = () => {
                 </motion.div>
               </div>
 
-              <h4 className="text-xl font-bold text-[#b73235] group-hover:text-[#9a292b] transition-colors">
+              <h4 className="text-xl font-bold text-[#009000] group-hover:text-[#009000] transition-colors">
                 {member.name}
               </h4>
               <p className="text-gray-800 text-sm font-medium mb-3">{member.position}</p>
@@ -154,7 +154,7 @@ const TeamShowcase = () => {
               
               {/* Contact button */}
               <motion.button
-                className="mt-4 px-6 py-2 bg-[#b73235] text-white rounded-full text-sm font-medium hover:bg-[#9a292b] transition-colors shadow-md"
+                className="mt-4 px-6 py-2 bg-[#009000] text-white rounded-full text-sm font-medium hover:bg-[#009000] transition-colors shadow-md"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: hoveredMember === member.id ? 1 : 0 }}
                 whileHover={{ scale: 1.05 }}
@@ -174,7 +174,7 @@ const TeamShowcase = () => {
 
       {/* Animated floating elements */}
       <motion.div 
-        className="absolute top-1/4 left-10 w-8 h-8 bg-[#b73235] rounded-full opacity-20"
+        className="absolute top-1/4 left-10 w-8 h-8 bg-[#009000] rounded-full opacity-20"
         animate={{
           y: [0, -20, 0],
         }}

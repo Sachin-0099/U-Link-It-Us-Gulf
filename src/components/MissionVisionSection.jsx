@@ -27,8 +27,9 @@ vision: {
   title: "Our Vision",
   text: "Our vision is to excel as the leading procurement and trading connectivity group in the Gulf region and beyond. We aim to set new benchmarks in global trade by creating a seamless, efficient, and trusted network that connects businesses in the UAE, Saudi Arabia, Qatar, and other Gulf countries to the global marketplace.",
   icon: <Eye size={48} className="text-white" />,
-  bgColor: "linear-gradient(135deg, #b73235 0%, #e74c3c 100%)",
-  accentColor: "#b73235",
+  bgColor: "linear-gradient(135deg, #006600 0%, #00cc00 100%)",
+  accentColor: "#009000",
+  
   points: [
     "Set new benchmarks in global trade with a focus on the Gulf",
     "Create seamless business networks across Gulf countries and globally",
@@ -50,7 +51,7 @@ vision: {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold !text-gray-900  mb-4">
-            Our <span className="text-[#b73235]">Core</span> Values
+            Our <span className="text-[#009000]">Core</span> Values
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Guiding principles that shape our company's culture and drive our success
@@ -74,7 +75,7 @@ vision: {
                   {activeTab === tab && (
                     <motion.span 
                       layoutId="activeTabIndicator"
-                      className="absolute inset-0 bg-gradient-to-r from-[#0066cc] to-[#b73235] rounded-md z-0"
+                      className="absolute inset-0 bg-gradient-to-r from-[#0066cc] to-[#009000] rounded-md z-0"
                       initial={false}
                       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     />

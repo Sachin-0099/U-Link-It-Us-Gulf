@@ -9,146 +9,147 @@ import { Helmet } from 'react-helmet';
 
 const partners = [
   {
-    name: "Official Amazon Global Selling Partner",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-    description:
-      "As an official Amazon Global Selling Partner, we enable Indian brands to launch, manage, and scale their business across Amazon's international marketplaces with hands-on expertise and strategic support.",
-    benefits: [
-      "Global store setup and optimization",
-      "Account health and policy compliance guidance",
-      "Marketplace expansion roadmap",
-      "Cross-border logistics consulting",
-      "Amazon advertising strategy support",
-      "Seller growth analytics & reporting",
-    ],
-  },
-  {
-    name: "Ulinkit eCommerce Expansion Partner",
-    logo: "/Images/Ulinkit.png",
-    description:
-      "Ulinkit empowers Indian sellers with borderless growth opportunities by providing cutting-edge tools and services for seamless international commerce across various platforms.",
-    benefits: [
-      "Multi-marketplace integration",
-      "Product catalog optimization",
-      "Localized onboarding assistance",
-      "AI-powered pricing intelligence",
-      "Inventory and logistics coordination",
-      "Dedicated account success managers",
-    ],
-  },
-  {
-    name: "Tredling eCommerce Expansion Partner",
-    logo: "/Images/tredling.png",
-    description:
-      "Tredling connects exporters with top eCommerce markets, offering digital trade infrastructure that simplifies B2B and B2C global distribution.",
-    benefits: [
-      "Export compliance and documentation support",
-      "Access to B2B buyer networks",
-      "Integrated trade finance solutions",
-      "Market-specific sales enablement",
-      "International payment facilitation",
-      "Real-time shipment visibility",
-    ],
-  },
-  {
-    name: "noon eCommerce Expansion Partner",
-    logo: "/Images/noon1.png",
-    description:
-      "We work with noon to enable product localization, fulfillment, and brand marketing for Indian sellers targeting the Middle East's fastest-growing digital marketplace.",
-    benefits: [
-      "Product listing translation and localization",
-      "Cross-border FBN (Fulfilled by noon) setup",
-      "Regional influencer marketing tie-ups",
-      "Noon promotional campaign access",
-      "Local currency pricing and settlement",
-      "Performance and conversion tracking",
-    ],
-  },
-  {
-    name: "Amazon SPN Partner (Service Provider Network)",
-    logo: "/Images/amazonspn.png",
-    description:
-      "Through Amazon’s SPN program, we offer sellers verified solutions for cataloging, imaging, advertising, and operational support tailored to marketplace performance goals.",
-    benefits: [
-      "SPN-verified service portfolio",
-      "Listing creation and enhancement",
-      "Sponsored Ads campaign management",
-      "High-conversion product imaging",
-      "Training workshops and certifications",
-      "Automated reporting and insights",
-    ],
-  },
-  {
-    name: "DP World Cross-Border Logistics Partner",
-    logo: "/Images/Logo New.svg",
-    description:
-      "DP World is our strategic logistics partner providing fast, reliable, and scalable global shipping and fulfillment services designed for ecommerce exports.",
-    benefits: [
-      "Warehouse and fulfillment integration",
-      "Customs clearance and compliance",
-      "Bulk shipping consolidation",
-      "Cross-border courier partnerships",
-      "Smart inventory management",
-      "End-to-end supply chain visibility",
-    ],
-  },
-  {
-    name: "Souq Legacy Marketplace Partner",
-    logo: "/Images/souq.png",
-    description:
-      "As Souq transitions to Amazon, we continue to support merchants who originally launched on Souq with legacy migration, catalog updates, and account preservation strategies.",
-    benefits: [
-      "Account migration to Amazon.ae",
-      "Listing and catalog data transfer",
-      "Legacy product data optimization",
-      "Continuity in sales performance tracking",
-      "Migration support and documentation",
-      "Customer review and rating transition",
-    ],
-  },
-  {
-    name: "Amazon.co.uk Marketplace Expansion Partner",
-    logo: "/Images/amazonco.png",
-    description:
-      "We help Indian sellers expand into Amazon UK, with a full-stack solution for compliance, VAT registration, and localized fulfillment strategies.",
-    benefits: [
-      "UK VAT registration and support",
-      "Product compliance documentation",
-      "FBA UK and pan-EU fulfillment setup",
-      "Currency exchange and remittance help",
-      "Localized marketing assets",
-      "Sales tax and invoicing automation",
-    ],
-  },
-  {
     name: "Amazon.ae Growth Partner",
     logo: "/Images/amazonae.png",
     description:
-      "We facilitate entry and scale-up on Amazon UAE with local compliance, logistics partnerships, and cultural alignment for product positioning.",
+      "We facilitate entry and scale-up on Amazon UAE by supporting sellers with Arabic content localization, local fulfillment, and tailored marketing for Emirati audiences.",
     benefits: [
-      "Arabic content localization",
-      "UAE-specific product keyword optimization",
+      "Arabic product listing translation",
+      "UAE-specific keyword research",
       "Local fulfillment and returns support",
-      "Hyper-local ad campaign setup",
-      "UAE customer insights and feedback loops",
-      "Local laws and customs compliance",
+      "Hyper-local advertising campaigns",
+      "UAE customer behavior insights",
+      "Compliance with UAE ecommerce laws",
     ],
   },
   {
     name: "Amazon.sa Growth Partner",
     logo: "/Images/amazonsa1.png",
     description:
-      "Our team empowers sellers to tap into Saudi Arabia’s rapidly growing digital economy with expert support for product-market fit, cultural targeting, and in-region fulfillment.",
+      "Our team helps Indian sellers thrive in Saudi Arabia’s booming digital space through cultural targeting, KSA logistics, and platform-specific strategies.",
     benefits: [
-      "Saudi localization strategies",
-      "Product eligibility checks and approval",
-      "In-country delivery network setup",
-      "Ramadan and cultural campaign planning",
-      "End-user behavior analytics",
-      "Customer support and SLA compliance",
+      "Saudi-focused product adaptation",
+      "Cross-border to local delivery setup",
+      "Campaign planning for Ramadan & national events",
+      "Arabic UI/UX product enhancements",
+      "KSA compliance and VAT registration",
+      "Behavioral analytics for Saudi consumers",
+    ],
+  },
+  {
+    name: "noon Partner Network - MENA Region",
+    logo: "/Images/noon1.png",
+    description:
+      "We collaborate with noon to drive seller success in the Gulf with product localization, Fulfilled by noon (FBN) logistics, and access to exclusive marketing channels.",
+    benefits: [
+      "Arabic listing optimization",
+      "noon FBN integration & onboarding",
+      "Access to influencer marketing in GCC",
+      "Participation in regional promotional events",
+      "Local pricing and settlement support",
+      "GCC-specific sales analytics",
+    ],
+  },
+  {
+    name: "U-Link Gulf eCommerce Expansion Partner",
+    logo: "/Images/Ulinkit.png",
+    description:
+      "Ulinkit empowers Indian sellers with smart technology, logistics, and marketing strategies to succeed in the Gulf’s fast-growing digital marketplaces.",
+    benefits: [
+      "Multi-platform Gulf marketplace integration",
+      "Tailored catalog enhancement for Arabic-speaking buyers",
+      "Cross-border and in-region logistics support",
+      "Arabic customer service enablement",
+      "AI-powered demand forecasting",
+      "Local compliance and legal guidance",
+    ],
+  },
+  {
+    name: "DP World Logistics Partner - GCC Region",
+    logo: "/Images/Logo New.svg",
+    description:
+      "DP World is our logistics backbone across the Gulf, offering fast, scalable, and customs-compliant shipping for ecommerce sellers targeting UAE, KSA, and beyond.",
+    benefits: [
+      "Warehousing hubs across Gulf countries",
+      "Smart cross-border logistics",
+      "Streamlined customs and clearance solutions",
+      "Regional courier and last-mile integration",
+      "Supply chain visibility dashboards",
+      "GCC trade documentation support",
+    ],
+  },
+  {
+    name: "Amazon SPN Partner (MENA Region Services)",
+    logo: "/Images/amazonspn.png",
+    description:
+      "As part of Amazon's SPN program, we offer verified services tailored to the Gulf market—spanning cataloging, ads, and performance optimization.",
+    benefits: [
+      "Arabic SPN-verified catalog creation",
+      "Gulf-centric Sponsored Ads setup",
+      "Professional imaging tailored to MENA consumers",
+      "Localized training and certifications",
+      "Automated sales reporting for Gulf accounts",
+      "Account health support for Amazon.ae & .sa",
+    ],
+  },
+  {
+    name: "Souq Legacy Partner",
+    logo: "/Images/souq.png",
+    description:
+      "We continue to support merchants who began their journey on Souq by offering seamless transition support to Amazon.ae and Amazon.sa platforms.",
+    benefits: [
+      "Souq to Amazon catalog migration",
+      "Legacy data optimization",
+      "Customer feedback retention",
+      "Sales tracking continuity",
+      "Migration documentation and help",
+      "Platform onboarding guidance",
+    ],
+  },
+  {
+    name: "Gulf Market VAT & Compliance Partner",
+    logo: "/Images/amazonco.png",
+    description:
+      "We assist sellers in understanding and fulfilling VAT, invoicing, and product compliance requirements across GCC ecommerce platforms.",
+    benefits: [
+      "UAE and KSA VAT registration help",
+      "Product eligibility checks",
+      "E-invoicing compliance systems",
+      "Customs and regulatory support",
+      "Translation of certificates and packaging",
+      "Audit-prepared documentation kits",
+    ],
+  },
+  {
+    name: "Official Amazon Global Selling Partner",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+    description:
+      "As an official Amazon Global Selling Partner, we enable sellers to expand into Amazon's global markets, including the Gulf, with region-aware strategies.",
+    benefits: [
+      "Gulf store setup and compliance",
+      "Amazon.ae and Amazon.sa growth planning",
+      "Cross-border logistics with Gulf integration",
+      "GCC marketplace health management",
+      "Arabic keyword & content support",
+      "Data-driven growth forecasting",
+    ],
+  },
+  {
+    name: "Tredling - B2B Gulf Export Channel",
+    logo: "/Images/tredling.png",
+    description:
+      "Tredling supports Indian exporters entering B2B ecommerce across Gulf countries by simplifying trade, finance, and product placement strategies.",
+    benefits: [
+      "Access to B2B buyer networks in the Gulf",
+      "Support with Halal certifications & compliance",
+      "Trade finance and credit risk solutions",
+      "Localized sales kits for Arab buyers",
+      "Real-time export visibility",
+      "Gulf-region payment processing help",
     ],
   },
 ];
+
 
 
 
@@ -219,48 +220,55 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
 
   return (
     <>
-      <Helmet>
-        <title>About U-Link It Us - Global IT, E-commerce & Procurement Solutions</title>
-        <meta name="description" content="Discover U-Link It Us - a leader in global IT solutions, e-commerce platforms, and procurement services with 15+ years of experience serving businesses worldwide." />
-        <meta name="keywords" content="IT solutions, e-commerce services, global procurement, business consulting, Amazon partner, digital transformation" />
-        <meta property="og:title" content="About U-Link It Us - Global Business Solutions Provider" />
-        <meta property="og:description" content="Leading provider of innovative IT, e-commerce, and procurement solutions with a global network spanning USA, UK, and Middle East markets." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ulinkitus.com/about" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About U-Link It Us | Global Business Solutions" />
-        <meta name="twitter:description" content="15+ years of excellence in delivering cutting-edge IT, e-commerce, and procurement solutions to businesses worldwide." />
-        <link rel="canonical" href="https://www.ulinkitus.com/about" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "U-Link It Us",
-            "url": "https://www.ulinkitus.com",
-            "logo": "https://www.ulinkitus.com/logo.png",
-            "description": "Global provider of IT solutions, e-commerce platforms, and procurement services",
-            "foundingDate": "2011",
-            "founder": {
-              "@type": "Person",
-              "name": "Dhiraj Kumar Gupta"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "India"
-            },
-            "sameAs": [
-              "https://www.linkedin.com/in/vineet-sharma-2663279/",
-              "https://x.com/dhirajkgupta84",
-             
-            ]
-          })}
-        </script>
-      </Helmet>
+    <Helmet>
+  <title>About U-Link Gulf - IT, E-commerce, Logistics & Procurement Experts</title>
+  
+  <meta name="description" content="Explore U-Link Gulf – your trusted partner for IT, e-commerce, logistics, and procurement services tailored for businesses across the UAE, Saudi Arabia, and the global market." />
+  
+  <meta name="keywords" content="IT solutions Gulf, e-commerce UAE, Saudi logistics, procurement services, cross-border ecommerce, Amazon Gulf partner, Middle East business support" />
+  
+  <meta property="og:title" content="About U-Link Gulf - IT, E-commerce & Logistics Experts in the Middle East" />
+  <meta property="og:description" content="Empowering Gulf businesses with advanced IT, e-commerce platforms, and logistics solutions. Serving the UAE, KSA, and global markets with 15+ years of expertise." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ulinkitus.com/about" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About U-Link Gulf | E-commerce & Logistics in the Middle East" />
+  <meta name="twitter:description" content="U-Link Gulf specializes in IT, e-commerce, and cross-border logistics solutions for businesses in the Gulf region and beyond." />
+  
+  <link rel="canonical" href="https://www.ulinkitus.com/about" />
+  
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "U-Link Gulf",
+      "url": "https://www.ulinkitus.com",
+      "logo": "https://www.ulinkitus.com/logo.png",
+      "description": "Trusted provider of IT, e-commerce, logistics, and procurement services tailored for the Gulf region and international markets.",
+      "foundingDate": "2011",
+      "founder": {
+        "@type": "Person",
+        "name": "Dhiraj Kumar Gupta"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "India"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/vineet-sharma-2663279/",
+        "https://x.com/dhirajkgupta84"
+      ]
+    })}
+  </script>
+</Helmet>
+
 
       <div className="min-h-screen bg-gray-50">
         {/* Hero Section with semantic h1 */}
-        <section className="relative bg-[#b73235] text-white py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#a52a2d] to-[#d13a3d] opacity-95"></div>
+        <section className="relative bg-[#009000] text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#007d00] to-[#009000] opacity-95"></div>
+
           <div className="container mx-auto px-6 relative z-10">
             <motion.div 
               initial={{ opacity: 0, y: -20 }}
@@ -272,8 +280,9 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                 Pioneering Global Business Solutions Since 2011
               </h1>
               <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto">
-                U-Link It Us is transforming industries through innovative IT, e-commerce, and procurement solutions across USA, UK, UAE and Middle East markets.
-              </p>
+  U-Link Gulf empowers businesses across the UAE, Saudi Arabia, and wider Gulf region with cutting-edge IT, e-commerce, logistics, and procurement solutions—driving growth through cross-border marketplace expansion, strategic partnerships, and regional expertise.
+</p>
+
             </motion.div>
           </div>
         </section>
@@ -292,8 +301,8 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                     aria-controls={`${section.id}-tab`}
                     id={`${section.id}-btn`}
                     className={`flex items-center px-5 py-3 rounded-md transition-all ${activeSection === section.id 
-                      ? 'bg-[#b73235] text-white shadow-md' 
-                      : 'text-gray-700 hover:bg-gray-100 hover:text-[#b73235]'}`}
+                      ? 'bg-[#009000] text-white shadow-md' 
+                      : 'text-gray-700 hover:bg-gray-100 hover:text-[#009000]'}`}
                   >
                     <span className="mr-2 text-sm" aria-hidden="true">{section.icon}</span>
                     <span className="whitespace-nowrap text-sm font-medium">{section.title}</span>
@@ -319,53 +328,56 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                 aria-labelledby="about-btn"
                 role="tabpanel"
               >
-                <motion.div variants={fadeIn}>
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-1 bg-[#b73235] mr-4"></div>
-                    <h2 className="text-2xl font-semibold text-gray-700">OUR COMPANY</h2>
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-                    Redefining Business Solutions Since 2011
-                  </h3>
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                    U-Link It Us stands at the forefront of India's digital transformation, delivering cutting-edge IT, e-commerce, 
-                    and procurement solutions to businesses worldwide. Our relentless pursuit of excellence and passion for innovation 
-                    drive us to create impactful solutions.
-                  </p>
-                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                    With meticulous attention to detail and a commitment to quality, we empower businesses to thrive in the digital 
-                    economy through our comprehensive suite of services and expert manpower.
-                  </p>
-                  
-                  <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-[#b73235]">
-                    <h4 className="text-xl font-semibold mb-4 text-gray-800">Global Business Aggregator</h4>
-                    <p className="text-gray-600 mb-4">
-                      We operate across international markets including the USA, UK, Middle East, and UAE and Other Gulf Countries serving as a strategic 
-                      partner for businesses expanding globally.
-                    </p>
-                    <ul className="grid grid-cols-2 gap-4">
-                      {['USA', 'UK', 'UAE', 'Other Gulf Countries'].map((country) => (
-                        <li key={country} className="flex items-center">
-                          <div className="w-2 h-2 bg-[#b73235] rounded-full mr-2"></div>
-                          <span className="text-gray-700">{country}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
+               <motion.div variants={fadeIn}>
+  <div className="flex items-center mb-6">
+    <div className="w-12 h-1 bg-[#009000] mr-4"></div>
+    <h2 className="text-2xl font-semibold text-gray-700">OUR COMPANY</h2>
+  </div>
+
+  <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
+    Redefining Business Solutions Since 2011
+  </h3>
+
+  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+    U-Link Gulf leads digital innovation by delivering next-gen IT, e-commerce, logistics, and procurement solutions to businesses across the Gulf region and beyond. 
+    Our technology-driven approach and deep market knowledge enable clients to scale confidently in competitive markets.
+  </p>
+
+  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+    With over 15 years of industry experience, we specialize in cross-border commerce, regional marketplace entry, and full-service operational support—empowering brands 
+    to grow across the UAE, Saudi Arabia, and global markets with confidence.
+  </p>
+
+  <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-[#009000]">
+    <h4 className="text-xl font-semibold mb-4 text-gray-800">Global Business Aggregator</h4>
+    <p className="text-gray-600 mb-4">
+      From strategic expansion to fulfillment and compliance, U-Link Gulf serves as a trusted partner for businesses looking to grow in the USA, UK, UAE, Saudi Arabia, 
+      and other Gulf Cooperation Council (GCC) countries.
+    </p>
+    <ul className="grid grid-cols-2 gap-4">
+      {['UAE', 'Saudi Arabia', 'Qatar', 'Kuwait', 'USA', 'UK'].map((country) => (
+        <li key={country} className="flex items-center">
+          <div className="w-2 h-2 bg-[#009000] rounded-full mr-2"></div>
+          <span className="text-gray-700">{country}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</motion.div>
+
 
                 <motion.div variants={fadeIn} className="relative">
                   <figure className="relative overflow-hidden rounded-xl shadow-2xl">
                     <img 
                       src="/Images/Order.avif" 
-                      alt="U-Link It Us team collaborating in modern office" 
+                      alt="U-Link Gulf team collaborating in modern office" 
                       className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   </figure>
-                  <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-xl border-t-4 border-[#b73235]">
-                    <div className="text-4xl font-bold text-[#b73235] mb-1">
+                  <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-xl border-t-4 border-[#009000]">
+                    <div className="text-4xl font-bold text-[#009000] mb-1">
                       {isMounted ? yearsExperience : '0'}+
                     </div>
                     <div className="text-gray-600 font-medium">Years of Excellence</div>
@@ -389,13 +401,13 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                 <motion.div variants={fadeIn} className="mb-16">
                   <div className="flex justify-center mb-6">
                     <div className="bg-[#b73235]/10 p-4 rounded-full">
-                      <FaLightbulb className="text-4xl text-[#b73235]" />
+                      <FaLightbulb className="text-4xl text-[#009000]" />
                     </div>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                     Our Guiding Principles
                   </h2>
-                  <div className="w-24 h-1 bg-[#b73235] mx-auto mb-6"></div>
+                  <div className="w-24 h-1 bg-[#009000] mx-auto mb-6"></div>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     To deliver unparalleled business solutions through innovation, quality, and client-centric services that drive sustainable growth.
                   </p>
@@ -403,21 +415,27 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
 
                 <motion.div variants={staggerContainer} className="grid md:grid-cols-3 gap-8">
                   {[
+                   [
                     {
-                      icon: <FaShieldAlt className="text-3xl" />,
+                      icon: <FaShieldAlt className="text-3xl text-[#009000]" />,
                       title: 'Quality Assurance',
-                      description: 'Continuous innovation of tools and services to meet evolving industry standards and exceed client expectations.'
+                      description:
+                        'We maintain the highest standards through continuous innovation, ensuring our services align with Gulf market expectations and global benchmarks.'
                     },
                     {
-                      icon: <FaUsers className="text-3xl" />,
+                      icon: <FaUsers className="text-3xl text-[#009000]" />,
                       title: 'Client Success',
-                      description: 'Tailored solutions designed to empower businesses with comprehensive, intuitive tools for digital transformation.'
+                      description:
+                        'We empower regional businesses with tailored, end-to-end solutions—designed to foster growth, streamline operations, and drive long-term success.'
                     },
                     {
-                      icon: <FaNetworkWired className="text-3xl" />,
+                      icon: <FaNetworkWired className="text-3xl text-[#009000]" />,
                       title: 'Global Network',
-                      description: 'Strategic partnerships including our role as Amazon\'s channel partner for pan-India business development.'
+                      description:
+                        'Our global network and strategic partnerships—including our Amazon and noon collaborations—enable seamless cross-border eCommerce expansion across Gulf countries.'
                     }
+                  ]
+                  
                   ].map((item, index) => (
                     <motion.div 
                       key={index}
@@ -425,7 +443,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                       whileHover={{ y: -8 }}
                       className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-b-4 border-transparent hover:border-[#b73235]"
                     >
-                      <div className="text-[#b73235] mb-5 flex justify-center">{item.icon}</div>
+                      <div className="text-[#009000] mb-5 flex justify-center">{item.icon}</div>
                       <h3 className="text-xl font-semibold mb-3 text-gray-800">{item.title}</h3>
                       <p className="text-gray-600">{item.description}</p>
                     </motion.div>
@@ -449,67 +467,74 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                 <div className="max-w-4xl mx-auto text-center">
                   <motion.div variants={fadeIn} className="mb-12">
                     <div className="inline-flex items-center justify-center bg-white p-4 rounded-full shadow-lg mb-6">
-                      <FaChartLine className="text-4xl text-[#b73235]" />
+                      <FaChartLine className="text-4xl text-[#009000]" />
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                       Our Vision for the Future
                     </h2>
-                    <div className="w-24 h-1 bg-[#b73235] mx-auto mb-6"></div>
+                    <div className="w-24 h-1 bg-[#009000] mx-auto mb-6"></div>
                     <p className="text-2xl text-gray-700 font-medium leading-relaxed">
-                      To establish ourselves as the premier global connectivity platform for procurement and trading, 
-                      revolutionizing how businesses interact worldwide.
-                    </p>
+  To lead the digital evolution of global procurement and trade by creating seamless, tech-driven connections between businesses across the Gulf and international markets.
+</p>
+
                   </motion.div>
 
                   <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-8 text-left">
                     {[
-                      
+                      [
                         {
-                          title: 'SP-API & SPP ',
-                          description: 'Driving the future of e-commerce by leveraging Amazon SP-API to automate operations, streamline seller management, and lead the transformation to the new Selling Partner Platform (SPP) era.'
+                          title: 'SP-API & SPP Enablement',
+                          description:
+                            'Accelerating the adoption of Amazon’s Selling Partner API and new SPP platform to automate seller workflows, compliance, and multi-country operations—especially for Gulf-based exporters.'
                         },
                         {
-                          title: 'Business 2025 Initiative',
-                          description: 'Our strategic roadmap is transforming global business operations through digital innovation and expanded market access.'
+                          title: 'Business 2025 Vision',
+                          description:
+                            'Executing a bold digital transformation roadmap that enhances operational efficiency, unlocks new Gulf markets, and positions businesses for global competitiveness.'
                         },
                         {
                           title: 'Universal Business Platform',
-                          description: 'Developing an integrated ecosystem that connects industry players worldwide with seamless communication tools.'
+                          description:
+                            'Engineering a centralized ecosystem that connects stakeholders across procurement, logistics, e-commerce, and compliance within the Gulf and beyond.'
                         },
-                       
                         {
                           title: 'AI-Powered Business Intelligence',
-                          description: 'Implementing AI solutions to deliver predictive analytics, intelligent recommendations, and performance insights for global sellers.'
+                          description:
+                            'Deploying AI-driven analytics to empower sellers with predictive data, automated insights, and decision-making support tailored to Gulf market behaviors.'
                         },
                         {
                           title: 'Global Trade Automation',
-                          description: 'Building tools to automate procurement, compliance, and payment flows for cross-border trade.'
+                          description:
+                            'Digitizing and automating end-to-end trade processes—from customs documentation to FX and settlement—to simplify global exports from the Gulf.'
                         },
                         {
                           title: 'Seller Success Ecosystem',
-                          description: 'Creating a full-service ecosystem that supports sellers from onboarding to growth with expert-driven, tech-supported solutions.'
+                          description:
+                            'Providing Gulf-based sellers with a 360° growth framework that includes onboarding, advertising, compliance, and operational scale-up support.'
                         },
                         {
                           title: 'Cloud-First Architecture',
-                          description: 'Migrating core infrastructure to a scalable cloud environment to ensure speed, security, and global availability.'
+                          description:
+                            'Transitioning to a robust, secure cloud infrastructure to deliver scalable, always-on services across the Gulf and international markets.'
                         },
                         {
                           title: 'Multi-Marketplace Expansion',
-                          description: 'Expanding seller access to new marketplaces beyond Amazon, including Walmart, eBay, Noon, and regional B2B hubs.'
+                          description:
+                            'Expanding access to platforms beyond Amazon—including noon, Walmart, eBay, and localized Gulf B2B/B2C marketplaces—to maximize seller reach.'
                         },
                         {
                           title: 'End-to-End Logistics Innovation',
-                          description: 'Integrating smart warehousing, real-time tracking, and last-mile delivery partnerships into our logistics services.'
+                          description:
+                            'Building a smart logistics network featuring bonded warehousing, regional fulfillment, real-time tracking, and last-mile partnerships across the GCC.'
                         }
-                      
-                      
+                      ]
                     ].map((item, index) => (
                       <motion.div 
                         key={index}
                         variants={fadeIn}
                         className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow"
                       >
-                        <h3 className="text-xl font-semibold mb-3 text-[#b73235]">{item.title}</h3>
+                        <h3 className="text-xl font-semibold mb-3 text-[#009000]">{item.title}</h3>
                         <p className="text-gray-600">{item.description}</p>
                       </motion.div>
                     ))}
@@ -540,7 +565,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                   </figure>
-                  <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border-t-4 border-[#b73235]">
+                  <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border-t-4 border-[#009000]">
                     <div className="text-2xl font-bold text-gray-800">15+ Years</div>
                     <div className="text-gray-600">Industry Leadership</div>
                   </div>
@@ -548,7 +573,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
 
                 <motion.div variants={fadeIn} className="order-1 lg:order-2">
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-1 bg-[#b73235] mr-4"></div>
+                    <div className="w-12 h-1 bg-[#009000] mr-4"></div>
                     <h2 className="text-2xl font-semibold text-gray-700">OUR JOURNEY</h2>
                   </div>
                   <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
@@ -567,18 +592,18 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                   <div className="space-y-6">
                     {[
                       {
-                        icon: <FaShieldAlt className="text-xl text-[#b73235]" />,
+                        icon: <FaShieldAlt className="text-xl text-[#009000]" />,
                         title: 'Precision Execution',
                         description: 'We combine strategic vision with operational excellence to deliver projects on time, every time.'
                       },
                       {
-                        icon: <FaUsers className="text-xl text-[#b73235]" />,
+                        icon: <FaUsers className="text-xl text-[#009000]" />,
                         title: 'Expert Team',
                         description: 'Our specialists bring deep expertise in e-commerce, supply chain management, and global trade.'
                       }
                     ].map((item, index) => (
                       <div key={index} className="flex items-start">
-                        <div className="bg-[#b73235]/10 p-3 rounded-full mr-4 flex-shrink-0">
+                        <div className="bg-[#009000]/10 p-3 rounded-full mr-4 flex-shrink-0">
                           {item.icon}
                         </div>
                         <div>
@@ -607,7 +632,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                     Comprehensive Business Solutions
                   </h2>
-                  <div className="w-24 h-1 bg-[#b73235] mx-auto mb-6"></div>
+                  <div className="w-24 h-1 bg-[#009000] mx-auto mb-6"></div>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     We offer end-to-end services designed to accelerate your business growth in the digital economy
                   </p>
@@ -615,37 +640,38 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
 
                 <motion.div variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {[
-                    {
-                      icon: <FaGlobe className="text-3xl" />,
-                      title: "Global Expansion",
-                      description: "Facilitating business growth in international markets including USA, UK, and Middle East and Other Gulf Countries"
-                    },
-                    {
-                      icon: <FaShieldAlt className="text-3xl" />,
-                      title: "IT Infrastructure",
-                      description: "Secure and scalable technology solutions with robust data protection"
-                    },
-                    {
-                      icon: <FaSearchDollar className="text-3xl" />,
-                      title: "Market Intelligence",
-                      description: "Comprehensive data collection and research to inform strategic decisions"
-                    },
-                    {
-                      icon: <FaBoxes className="text-3xl" />,
-                      title: "Global Procurement",
-                      description: "End-to-end supply chain solutions for international markets"
-                    },
-                    {
-                      icon: <FaHandshake className="text-3xl" />,
-                      title: "Seller Ecosystem",
-                      description: "Management services for over 2.5 million sellers across diverse categories"
-                    },
-                    {
-                      icon: <FaShippingFast className="text-3xl" />,
-                      title: "Logistics Network",
-                      description: "Efficient global distribution and fulfillment solutions"
-                    }
-                  ].map((service, index) => (
+  {
+    "icon": <FaGlobe className='text-3xl' />,
+    "title": "Global Expansion",
+    "description": "Facilitating business growth in international markets including Gulf countries like Saudi Arabia, UAE, Qatar, Kuwait, Oman, and Bahrain."
+  },
+  {
+    "icon": <FaShieldAlt className='text-3xl' />,
+    "title": "IT Infrastructure",
+    "description": "Secure and scalable technology solutions with robust data protection."
+  },
+  {
+    "icon": <FaSearchDollar className='text-3xl' />,
+    "title": "Market Intelligence",
+    "description": "Comprehensive data collection and research to inform strategic decisions."
+  },
+  {
+    "icon":<FaBoxes className='text-3xl' />,
+    "title": "Global Procurement",
+    "description": "End-to-end supply chain solutions for international markets."
+  },
+  {
+    "icon": <FaHandshake className='text-3xl' />,
+    "title": "Seller Ecosystem",
+    "description": "Management services for over 2.5 million sellers across diverse categories."
+  },
+  {
+    "icon": <FaShippingFast className='text-3xl' />,
+    "title": "Logistics Network",
+    "description": "Efficient global distribution and fulfillment solutions."
+  }
+]
+.map((service, index) => (
                     <ServiceCard 
                       key={index}
                       icon={service.icon}
@@ -673,7 +699,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                     Visionary Leadership
                   </h2>
-                  <div className="w-24 h-1 bg-[#b73235] mx-auto mb-6"></div>
+                  <div className="w-24 h-1 bg-[#009000] mx-auto mb-6"></div>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     Guided by experience and driven by innovation
                   </p>
@@ -693,14 +719,14 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                       </figure>
                     </div>
                     <div className="p-8 md:w-3/5">
-                      <div className="uppercase tracking-wider text-sm text-[#b73235] font-semibold mb-2">
+                      <div className="uppercase tracking-wider text-sm text-[#009000] font-semibold mb-2">
                         Founder & Managing Director
                       </div>
                       <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                         Dhiraj Kumar Gupta
                       </h3>
                       <p className="text-gray-600 mb-6 leading-relaxed">
-                        A seasoned business strategist with over 15 years of experience, Mr. Gupta founded U-Link It Us with a vision 
+                        A seasoned business strategist with over 15 years of experience, Mr. Gupta founded U-Link Gulf with a vision 
                         to bridge global business opportunities through technology. His expertise in consultancy and business advisory 
                         has been instrumental in shaping the company's growth trajectory.
                       </p>
@@ -719,7 +745,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                             "Commitment to innovation and operational excellence"
                           ].map((item, index) => (
                             <li key={index} className="flex items-start">
-                              <div className="bg-[#b73235] rounded-full p-1 mr-3 mt-1 flex-shrink-0">
+                              <div className="bg-[#009000] rounded-full p-1 mr-3 mt-1 flex-shrink-0">
                                 <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                 </svg>
@@ -752,7 +778,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
       <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
         Strategic Global Partnerships
       </h2>
-      <div className="w-24 h-1 bg-[#b73235] mx-auto mb-6"></div>
+      <div className="w-24 h-1 bg-[#009000] mx-auto mb-6"></div>
       <p className="text-xl text-gray-600 max-w-3xl mx-auto">
         Collaborating with industry leaders to deliver exceptional value
       </p>
@@ -794,7 +820,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                   <ul className="grid md:grid-cols-2 gap-4">
                     {partner.benefits.map((item, i) => (
                       <li key={i} className="flex items-start">
-                        <div className="bg-[#b73235] rounded-full p-1 mr-3 mt-1 flex-shrink-0">
+                        <div className="bg-[#009000] rounded-full p-1 mr-3 mt-1 flex-shrink-0">
                           <svg className="w-2 h-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
@@ -816,7 +842,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 transition-colors z-10"
         aria-label="Previous partner"
       >
-        <svg className="w-6 h-6 text-[#b73235]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-[#009000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
@@ -825,7 +851,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
         className="absolute right-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 transition-colors z-10"
         aria-label="Next partner"
       >
-        <svg className="w-6 h-6 text-[#b73235]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-[#009000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
@@ -836,7 +862,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
           <button
             key={index}
             onClick={() => setActivePartner(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${activePartner === index ? 'bg-[#b73235]' : 'bg-gray-300 hover:bg-[#b73235]/50'}`}
+            className={`w-3 h-3 rounded-full transition-colors ${activePartner === index ? 'bg-[#009000]' : 'bg-gray-300 hover:bg-[#009000]/50'}`}
             aria-label={`Go to partner ${index + 1}`}
           />
         ))}
@@ -868,7 +894,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
           countries: ["UK", "Germany", "France"]
         },
         {
-          region: "Middle East",
+          region: "Gulf Countries",
           description: "Established network of trade partners and business aggregators in key Gulf markets",
           countries: ["UAE", "Saudi Arabia", "Qatar"]
         }
@@ -887,7 +913,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
         </main>
 
         {/* Stats Section */}
-        <section className="bg-[#b73235] text-white py-20">
+        <section className="bg-[#009000] text-white py-20">
           <div className="container mx-auto px-6">
             <motion.div 
               initial={{ opacity: 0 }}
@@ -949,17 +975,18 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                 Ready to Accelerate Your Business Growth?
               </h2>
               <p className="text-xl mb-8 leading-relaxed">
-                Partner with U-Link It Us for comprehensive IT, e-commerce, and procurement solutions tailored to your 
+                Partner with U-Link Gulf for comprehensive IT, e-commerce, and procurement solutions tailored to your 
                 specific business requirements and market objectives.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                <a href="/contact">
-               <button className="bg-[#b73235] hover:bg-[#9c2a2d] text-white font-semibold py-3 px-8 rounded-md text-lg transition-colors shadow-lg">
-                  Contact Our Team
-                </button>
+               <button className="bg-[#008000] hover:bg-[#006400] text-white font-semibold py-3 px-8 rounded-md text-lg transition-colors shadow-lg">
+  Contact Our Team
+</button>
+
                </a>
               <a href="/services">
-              <button className="bg-white hover:bg-gray-100 text-[#b73235] font-semibold py-3 px-8 rounded-md text-lg transition-colors shadow-lg">
+              <button className="bg-white hover:bg-gray-100 text-[#009000] font-semibold py-3 px-8 rounded-md text-lg transition-colors shadow-lg">
                   Explore Services
                 </button>
               </a>
@@ -985,9 +1012,9 @@ const ServiceCard = ({ icon, title, description }) => {
         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
       }}
       transition={{ type: "spring", stiffness: 300 }}
-      className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-[#b73235]"
+      className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-[#009000]"
     >
-      <div className="text-[#b73235] mb-5 flex justify-center">{icon}</div>
+      <div className="text-[#009000] mb-5 flex justify-center">{icon}</div>
       <h3 className="text-xl font-semibold mb-3 text-gray-800 text-center">{title}</h3>
       <p className="text-gray-600 text-center">{description}</p>
     </motion.div>
@@ -1003,13 +1030,13 @@ const PartnerCard = ({ region, description, countries }) => {
       }}
       className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
     >
-      <div className="text-3xl font-bold text-[#b73235] mb-4 text-center">{region}</div>
+      <div className="text-3xl font-bold text-[#009000] mb-4 text-center">{region}</div>
       <p className="text-gray-600 mb-6 text-center">{description}</p>
       <ul className="flex flex-wrap justify-center gap-2">
         {countries.map((country, index) => (
           <li key={index}>
             <span 
-              className="bg-[#b73235]/10 text-[#b73235] px-3 py-1 rounded-full text-sm font-medium"
+              className="bg-[#b73235]/10 text-[#009000] px-3 py-1 rounded-full text-sm font-medium"
             >
               {country}
             </span>
