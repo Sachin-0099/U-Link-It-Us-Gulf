@@ -10,6 +10,7 @@ import About from '../components/About';
 import Journey from '../components/Journey';
 import TeamShowcase from '../components/TeamShowCase';
 import PartnerTestimonials from '../components/Testimonials';
+import PricingSection from '../components/PricingSection';
 
 function Home() {
   return (
@@ -21,6 +22,7 @@ function Home() {
   
    
     <ServicesSection/>
+    <PricingSection/>
  
     <StatsSection/>
     <TeamShowcase/>
