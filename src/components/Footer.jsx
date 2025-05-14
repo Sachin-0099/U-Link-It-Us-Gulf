@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 import {
   MapPin,
   Mail,
@@ -28,6 +29,7 @@ L.Icon.Default.mergeOptions({
 
 // Interactive map component
 const DubaiMap = () => {
+
   const [hovered, setHovered] = useState(false);
   const [mapLoaded, setMapLoaded] = useState(false);
 
@@ -140,12 +142,14 @@ const SocialLink = ({ href, icon: Icon, name }) => {
 };
 
 const NewsletterForm = () => {
+    const { t } = useTranslation();  // Translation hook
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [shake, setShake] = useState(false);
   const emailRef = useRef(null);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -184,7 +188,7 @@ const NewsletterForm = () => {
           transition={{ delay: 0.2 }}
           className="inline-block"
         >
-          NEWSLETTER
+          {t("NEWSLETTER")}
         </motion.span>
       </h3>
 
@@ -194,7 +198,7 @@ const NewsletterForm = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        Subscribe to get updates on our latest offers and news.
+        {t("Subscribe to get updates on our latest offers and news")}
       </motion.p>
 
       <motion.form
@@ -205,7 +209,7 @@ const NewsletterForm = () => {
         transition={{ delay: 0.4 }}
       >
         <div className="relative">
-          Email Address
+          {t("Email Address")}
           <motion.input
             id="email"
             type="email"
@@ -241,7 +245,7 @@ const NewsletterForm = () => {
               scale: message ? 0.9 : 1,
             }}
           >
-            Your Message (optional)
+            {t("Your Message (optional)")}
           </motion.label>
           <motion.textarea
             id="message"
@@ -295,7 +299,7 @@ const NewsletterForm = () => {
                     ></path>
                   </svg>
                 </motion.span>
-                Processing...
+                {t("Processing...")}
               </span>
             </>
           ) : (
@@ -323,7 +327,7 @@ const NewsletterForm = () => {
                   ></path>
                 </svg>
               </motion.span>
-              Subscribe Now
+              {t("Subscribe Now")}
             </span>
           )}
         </motion.button>
@@ -350,8 +354,8 @@ const NewsletterForm = () => {
                     d="M5 13l4 4L19 7"
                   ></path>
                 </svg>
-                Thank you for subscribing! We've sent a confirmation to your
-                email.
+                
+              {t("Thank you for subscribing! We've sent a confirmation to your email")}
               </div>
               <motion.div
                 className="h-1 bg-green-300 dark:bg-green-700 mt-2 rounded-full"
@@ -371,7 +375,7 @@ const NewsletterForm = () => {
   transition={{ delay: 0.6 }}
 >
   <p className="text-sm text-gray-500 dark:text-gray-400">
-    Or connect with:
+   {t("Or connect with:")}
   </p>
   <div className="flex gap-3">
     {[
@@ -419,6 +423,7 @@ const NewsletterForm = () => {
 };
 
 const FooterSection = () => {
+    const { t } = useTranslation();  // Translation hook
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [currentYear] = useState(new Date().getFullYear());
   const [isMounted, setIsMounted] = useState(false);
@@ -508,10 +513,10 @@ const FooterSection = () => {
               >
                 <MapPin className="w-5 h-5 text-[#009000]" />
               </motion.div>
-              Corporate Office
+             {t("Corporate Office")}
             </h3>
             <address className="text-gray-500 dark:text-gray-400 not-italic space-y-2">
-              <motion.p whileHover={{ x: 5 }}>Uttam Nagar, New Delhi</motion.p>
+              <motion.p whileHover={{ x: 5 }}>{t("Uttam Nagar, New Delhi")}</motion.p>
 
               <motion.a
                 href="tel:+918750518844"
@@ -553,32 +558,32 @@ const FooterSection = () => {
               >
                 <MapPin className="w-5 h-5 text-[#009000]" />
               </motion.div>
-              UAE  Office
+              {t("UAE  Office")}
             </h3>
             <h4 className="text-md font-medium text-gray-600 dark:text-gray-300">
-              Where to find us
+              {t("Where to find us")}
             </h4>
             <DubaiMap />
             <div className="space-y-2 text-gray-500 dark:text-gray-400">
             <motion.p whileHover={{ x: 5 }}>
-  P.O. Box: 624498, Street 13
+ {t("P.O. Box: 624498, Street 13")}
 </motion.p>
 <motion.p whileHover={{ x: 5 }}>
-  Umm Ramool, Dubai - U.A.E
+  {t("Umm Ramool, Dubai - U.A.E")}
 </motion.p>
 <motion.p whileHover={{ x: 5 }}>
   <a href="tel:+918750518844" className="hover:text-[#009000] underline">
-    India Contact +91-8750518844
+    {t("India Contact +91-8750518844")}
   </a>
 </motion.p>
 <motion.p whileHover={{ x: 5 }}>
   <a href="tel:+966509917491" className="hover:text-[#009000] underline">
-    Saudi Contact +966 50 991 7491
+    {t("Saudi Contact +966 50 991 7491")}
   </a>
 </motion.p>
 <motion.p whileHover={{ x: 5 }}>
   <a href="tel:+971585868470" className="hover:text-[#009000] underline">
-    UAE Contact +971 58 586 8470
+    {t("UAE Contact +971 58 586 8470")}
   </a>
 </motion.p>
 
@@ -589,7 +594,7 @@ const FooterSection = () => {
           {/* Quick Links */}
           <motion.div variants={itemVariants} className="space-y-4">
             <h3 className="text-lg font-semibold text-[#009000] dark:text-white">
-              QUICK LINKS
+             {t("QUICK LINKS")}
             </h3>
             <ul className="space-y-2 text-gray-500 dark:text-gray-400">
               {[
@@ -628,7 +633,7 @@ const FooterSection = () => {
 
             <div className="mt-6">
               <h4 className="text-md font-medium text-[#009000] dark:text-gray-300 mb-3">
-                Follow Us
+               {t("Follow Us")}
               </h4>
               <div className="flex gap-3">
                 <SocialLink href="#" icon={Facebook} name="Facebook" />
@@ -650,10 +655,10 @@ const FooterSection = () => {
         >
           <div className="flex items-center">
             <Copyright className="w-4 h-4 mr-1" />
-            {currentYear} U-Link Gulf. All rights reserved.
+            {currentYear} {t("U-Link Gulf. All rights reserved.")}
           </div>
           <div className="hidden sm:block mx-2">•</div>
-          <div>Designed with ❤️ in Dubai</div>
+          <div>{t("Designed with ❤️ in Dubai")}</div>
         </motion.div>
       </div>
 

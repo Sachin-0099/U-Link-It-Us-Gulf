@@ -1,39 +1,39 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const teamMembers = [
-
   {
     id: 1,
-    name: 'Dhiraj Kumar Gupta',
-    position: 'Chairman',
-    bio: 'U-Link Gulf is an awesome place to work with a focus on innovation and employee growth.',
+    nameKey: 'Dhiraj Kumar Gupta',  // Store the key, not the result of t()
+    positionKey: 'Chairman',
+    bioKey: 'U-Link Gulf is an awesome place to work with a focus on innovation and employee growth.',
     image: '/Images/2.webp',
     blobColor: 'bg-green-100',
     social: {
       linkedin: 'https://www.linkedin.com/in/dhiraj-kumar-gupta-45b97730/',
       twitter: 'https://x.com/dhirajkgupta84',
-      email: 'dhiraj@ulinkit.com'
+      emailKey: 'dhiraj@ulinkit.com'  // Store the key for email
     }
   },
   {
     id: 2,
-    name: 'Vineet Sharma',
-    position: 'IT HEAD Director',
-    bio: 'U-Link IT US provides consistent product quality and excellent customer service to ensure complete satisfaction.',
+    nameKey: 'Vineet Sharma',
+    positionKey: 'IT HEAD Director',
+    bioKey: 'U-Link IT US provides consistent product quality and excellent customer service to ensure complete satisfaction.',
     image: '/Images/6.webp',
     blobColor: 'bg-[#f5f5f5]',
     social: {
       linkedin: 'https://www.linkedin.com/in/vineet-sharma-2663279/',
       twitter: '#',
-      email: 'support@ulinkit.com'
+      emailKey: 'support@ulinkit.com'
     }
   },
-  
 ];
 
 const TeamShowcase = () => {
   const [hoveredMember, setHoveredMember] = useState(null);
+  const { t } = useTranslation(); // Use t for translation
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -75,9 +75,9 @@ const TeamShowcase = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-gray-600 uppercase text-sm mb-2 tracking-widest font-medium">We Are There For You</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#009000] mb-2">U-Link Gulf</h2>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-12">Meet Our Professionals</h3>
+          <p className="text-gray-600 uppercase text-sm mb-2 tracking-widest font-medium">{t("We Are There For You")}</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#009000] mb-2">{t("U-Link Gulf")}</h2>
+          <h3 className="text-2xl font-semibold text-gray-800 mb-12">{t("Meet Our Professionals")}</h3>
         </motion.div>
 
         <motion.div 
@@ -138,9 +138,9 @@ const TeamShowcase = () => {
               </div>
 
               <h4 className="text-xl font-bold text-[#009000] group-hover:text-[#009000] transition-colors">
-                {member.name}
+                {t(member.nameKey)}  {/* Use t() here to get the translated name */}
               </h4>
-              <p className="text-gray-800 text-sm font-medium mb-3">{member.position}</p>
+              <p className="text-gray-800 text-sm font-medium mb-3">{t(member.positionKey)}</p>
               <motion.p 
                 className="mt-3 text-sm text-gray-600"
                 initial={{ opacity: 0, height: 0 }}
@@ -149,7 +149,7 @@ const TeamShowcase = () => {
                   height: 'auto'
                 }}
               >
-                {member.bio}
+                {t(member.bioKey)}
               </motion.p>
               
               {/* Contact button */}
@@ -160,12 +160,10 @@ const TeamShowcase = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
-                  window.location.href = `mailto:${member.social.email}?subject=Let's Connect&body=Hi ${member.name},%0D%0A%0D%0AI would love to connect with you.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]`;
+                  window.location.href = `mailto:${t(member.social.emailKey)}?subject=Let's Connect&body=Hi ${t(member.nameKey)},%0D%0A%0D%0AI would love to connect with you.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]`;
                 }}
-                
-                
               >
-                Contact Mr.{member.name.split(' ')[0]}
+                {t("Contact Mr.")} {t(member.nameKey).split(' ')[0]}
               </motion.button>
             </motion.div>
           ))}

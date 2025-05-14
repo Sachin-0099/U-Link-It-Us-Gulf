@@ -1,184 +1,184 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const services = [
-  {
-    id: "marketplace-onboarding",
-    title: "Marketplace Onboarding for GCC Sellers",
-    description: "Seamlessly launch your business on platforms like Amazon UAE, Noon, and Carrefour GCC. We guide you through every step — from account setup to catalog creation — ensuring you're marketplace-ready across the Gulf region.",
-    image: "/Images/AccountH.avif",
-    color: "#4f46e5",
-    features: [
-      "Precision implementation",
-      "Quality assurance",
-      "Continuous improvement",
-      "Client-focused solutions"
-    ],
-    keywords: "Amazon seller setup, Noon onboarding, Gulf eCommerce integration, GCC marketplace support"
-  },
-  {
-    id: "cross-border-ecommerce",
-    title: "Cross-Border eCommerce Solutions in the Gulf",
-    description: "Sell globally from the Gulf with zero hassle. Our end-to-end export services help businesses in UAE, Saudi Arabia, and other GCC countries access international markets, managing logistics, compliance, and payment processing.",
-    image: "/Images/crossBorder.avif",
-    color: "#10b981",
-    features: [
-      "Comprehensive screening",
-      "Skills assessment",
-      "Cultural fit evaluation",
-      "Industry-specific expertise"
-    ],
-    keywords: "Gulf eCommerce export, cross-border selling GCC, international selling"
-  },
-  {
-    id: "inventory-management",
-    title: "Smart Inventory & Order Management for Gulf Sellers",
-    description: "Stay on top of your stock and sales across marketplaces like Amazon.sa, Noon.com, and Carrefour UAE. Our dashboard supports real-time inventory tracking for sellers in the GCC region.",
-    image: "/Images/Inventory & Order Management.avif",
-    color: "#f59e0b",
-    features: [
-      "Real-time tracking",
-      "Automated stock alerts",
-      "Multi-platform sync",
-      "Detailed analytics"
-    ],
-    keywords: "inventory management Gulf, order tracking KSA, multi-platform eCommerce UAE"
-  },
-  {
-    id: "last-mile-delivery",
-    title: "Gulf-Focused Last-Mile Delivery & Logistics",
-    description: "Fast, reliable delivery within and beyond the Gulf. We offer integrated shipping services in the UAE, Saudi Arabia, and GCC countries — including COD, express shipping, and international fulfillment.",
-    image: "/Images/Last-Mile Delivery & Logistics.avif",
-    color: "#ef4444",
-    features: [
-      "Flexible delivery options",
-      "Real-time tracking",
-      "Return handling",
-      "Global reach"
-    ],
-    keywords: "last-mile delivery UAE, eCommerce shipping GCC, COD logistics Saudi Arabia"
-  },
-  {
-    id: "digital-marketing",
-    title: "Digital Marketing & Growth Strategy for GCC",
-    description: "Grow your online presence across the Gulf. We specialize in performance marketing, SEO for Arabic audiences, and high-conversion campaigns tailored to platforms popular in the UAE, KSA, and Qatar.",
-    image: "/Images/Digital Marketing & Growth Strategy.avif",
-    color: "#6366f1",
-    features: [
-      "Performance-based marketing",
-      "Brand awareness campaigns",
-      "Influencer collaboration",
-      "Conversion optimization"
-    ],
-    keywords: "GCC digital marketing, SEO UAE, eCommerce ads Saudi Arabia"
-  },
-  {
-    id: "product-cataloging",
-    title: "Product Cataloging & Photography for Gulf Marketplaces",
-    description: "Make your listings stand out on Gulf eCommerce platforms. From professional shoots to Arabic content optimization, we help sellers in the UAE, Qatar, and Bahrain improve visibility and conversions.",
-    image: "/Images/Product Cataloging & Photography  .avif",
-    color: "#0ea5e9",
-    features: [
-      "High-resolution product shoots",
-      "SEO-optimized content",
-      "Bulk catalog uploads",
-      "Platform-specific templates"
-    ],
-    keywords: "product photography Gulf, eCommerce listings UAE, catalog management Saudi Arabia"
-  },
-  {
-    id: "It-services",
-    title: "IT Services & Infrastructure for Gulf Enterprises",
-    description: "Empower your business in the GCC with robust IT solutions. From cloud hosting to software development, we provide secure, scalable tech services tailored for companies in UAE, KSA, and Oman.",
-    image: "/Images/IT Services & Infrastructure.avif",
-    color: "#3b82f6",
-    features: [
-      "Cloud hosting & support",
-      "Custom app development",
-      "Security & compliance",
-      "Tech infrastructure setup"
-    ],
-    keywords: "Gulf IT solutions, UAE business infrastructure, cloud services KSA"
-  },
-  {
-    id: "Logistics-management",
-    title: "Integrated Logistics Management for GCC Businesses",
-    description: "Optimize logistics across the Gulf region. From warehousing in Dubai to delivery in Riyadh, our tech-enabled logistics service ensures efficiency throughout the supply chain.",
-    image: "/Images/Last-Mile Delivery & Logistics.avif",
-    color: "#8b5cf6",
-    features: [
-      "Smart warehousing",
-      "Route optimization",
-      "Reverse logistics",
-      "Carrier integration"
-    ],
-    keywords: "GCC logistics tech, supply chain optimization Gulf, smart shipping UAE"
-  },
-  {
-    id: "Brand-empowerment",
-    title: "Brand Empowerment Solutions for Gulf Markets",
-    description: "Take control of your brand’s image across the Gulf. We help you protect your brand, engage customers, and establish presence across platforms in Saudi Arabia, UAE, and the wider GCC.",
-    image: "/Images/Brand Empowerment Solutions.avif",
-    color: "#ec4899",
-    features: [
-      "Brand protection tools",
-      "Trademark & IP support",
-      "Audience engagement",
-      "Marketplace brand stores"
-    ],
-    keywords: "Gulf brand building, eCommerce branding UAE, brand protection KSA"
-  },
-  {
-    id: "Global-reach",
-    title: "Global Reach Enablement from the Gulf",
-    description: "Expand globally from your Gulf base. Our services localize your strategy for international markets while ensuring compliance and customer alignment from the UAE to the world.",
-    image: "/Images/Global.avif",
-    color: "#14b8a6",
-    features: [
-      "Market localization",
-      "International compliance",
-      "Global payment gateways",
-      "Cultural adaptation"
-    ],
-    keywords: "GCC global expansion, UAE eCommerce internationalization, cross-border strategy"
-  },
-  {
-    id: "Branch-expansion",
-    title: "Branch Expansion Strategy Across the Gulf",
-    description: "Thinking of opening new branches in Saudi Arabia, UAE, or Qatar? Our data-driven strategies help you choose the right location, build infrastructure, and scale efficiently across the Gulf.",
-    image: "/Images/Branch Expansion Strategy.avif",
-    color: "#f97316",
-    features: [
-      "Location analytics",
-      "Market demand forecasting",
-      "Franchise models",
-      "Operational planning"
-    ],
-    keywords: "business expansion GCC, branch growth UAE, franchise strategy Saudi Arabia"
-  },
-  {
-    id: "customer-expectations",
-    title: "Customer Expectations Management in the Gulf",
-    description: "Build long-lasting customer relationships in the Gulf region. We design feedback loops, support systems, and loyalty strategies for businesses in UAE, Bahrain, and Oman.",
-    image: "/Images/Customer Expectations Management.avif",
-    color: "#10b981",
-    features: [
-      "Feedback management",
-      "Retention campaigns",
-      "Customer support setup",
-      "Satisfaction tracking"
-    ],
-    keywords: "customer loyalty Gulf, client satisfaction UAE, support strategies GCC"
-  }
-];
-
-
-
+import { useTranslation } from 'react-i18next';
 const ServicesSection = () => {
+  const { t, i18n } = useTranslation(); // Use t for translation
+ 
   const [expandedService, setExpandedService] = useState(null);
   const [hoveredService, setHoveredService] = useState(null);
   const [activeKeyword, setActiveKeyword] = useState(null);
   const [viewMode, setViewMode] = useState('grid');
+  const services = [
+    {
+      id: t("marketplace-onboarding"),
+      title: t("Marketplace Onboarding for GCC Sellers"),
+      description: t("Seamlessly launch your business on platforms like Amazon UAE, Noon, and Carrefour GCC. We guide you through every step — from account setup to catalog creation — ensuring you're marketplace-ready across the Gulf region."),
+      image: "/Images/AccountH.avif",
+      color: "#4f46e5",
+      features: [
+        t("Precision implementation"),
+        t("Quality assurance"),
+        t("Continuous improvement"),
+        t("Client-focused solutions")
+      ],
+      keywords: `${t("Amazon seller setup")}, ${t("Noon onboarding")}, ${t("Gulf eCommerce integration")}, ${t("GCC marketplace support")}`
+    },
+    {
+      id: "cross-border-ecommerce",
+      title: t("Cross-Border eCommerce Solutions in the Gulf"),
+      description: t("Sell globally from the Gulf with zero hassle. Our end-to-end export services help businesses in UAE, Saudi Arabia, and other GCC countries access international markets, managing logistics, compliance, and payment processing."),
+      image: "/Images/crossBorder.avif",
+      color: "#10b981",
+      features: [
+        t("Comprehensive screening"),
+        t("Skills assessment"),
+        t("Cultural fit evaluation"),
+        t("Industry-specific expertise")
+      ],
+      keywords: `${t("Gulf eCommerce export")}, ${t("cross-border selling GCC")}, ${t("international selling")}`
+    },
+    {
+      id: "inventory-management",
+      title: t("Smart Inventory & Order Management for Gulf Sellers"),
+      description: t("Stay on top of your stock and sales across marketplaces like Amazon.sa, Noon.com, and Carrefour UAE. Our dashboard supports real-time inventory tracking for sellers in the GCC region."),
+      image: "/Images/Inventory & Order Management.avif",
+      color: "#f59e0b",
+      features: [
+        t("Real-time tracking"),
+        t("Automated stock alerts"),
+        t("Multi-platform sync"),
+        t("Detailed analytics")
+      ],
+      keywords: `${t("inventory management Gulf")}, ${t("order tracking KSA")}, ${t("multi-platform eCommerce UAE")}`
+    },
+    {
+      id: "last-mile-delivery",
+      title: t("Gulf-Focused Last-Mile Delivery & Logistics"),
+      description: t("Fast, reliable delivery within and beyond the Gulf. We offer integrated shipping services in the UAE, Saudi Arabia, and GCC countries — including COD, express shipping, and international fulfillment."),
+      image: "/Images/Last-Mile Delivery & Logistics.avif",
+      color: "#ef4444",
+      features: [
+        t("Flexible delivery options"),
+        t("Real-time tracking"),
+        t("Return handling"),
+        t("Global reach")
+      ],
+      keywords: `${t("last-mile delivery UAE")}, ${t("eCommerce shipping GCC")}, ${t("COD logistics Saudi Arabia")}`
+    },
+    {
+      id: "digital-marketing",
+      title: t("Digital Marketing & Growth Strategy for GCC"),
+      description: t("Grow your online presence across the Gulf. We specialize in performance marketing, SEO for Arabic audiences, and high-conversion campaigns tailored to platforms popular in the UAE, KSA, and Qatar."),
+      image: "/Images/Digital Marketing & Growth Strategy.avif",
+      color: "#6366f1",
+      features: [
+        t("Performance-based marketing"),
+        t("Brand awareness campaigns"),
+        t("Influencer collaboration"),
+        t("Conversion optimization")
+      ],
+      keywords: `${t("GCC digital marketing")}, ${t("SEO UAE")}, ${t("eCommerce ads Saudi Arabia")}`
+    },
+    {
+      id: "product-cataloging",
+      title: t("Product Cataloging & Photography for Gulf Marketplaces"),
+      description: t("Make your listings stand out on Gulf eCommerce platforms. From professional shoots to Arabic content optimization, we help sellers in the UAE, Qatar, and Bahrain improve visibility and conversions."),
+      image: "/Images/Product Cataloging & Photography  .avif",
+      color: "#0ea5e9",
+      features: [
+        t("High-resolution product shoots"),
+        t("SEO-optimized content"),
+        t("Bulk catalog uploads"),
+        t("Platform-specific templates")
+      ],
+      keywords: `${t("product photography Gulf")}, ${t("eCommerce listings UAE")}, ${t("catalog management Saudi Arabia")}`
+    },
+    {
+      id: "It-services",
+      title: t("IT Services & Infrastructure for Gulf Enterprises"),
+      description: t("Empower your business in the GCC with robust IT solutions. From cloud hosting to software development, we provide secure, scalable tech services tailored for companies in UAE, KSA, and Oman."),
+      image: "/Images/IT Services & Infrastructure.avif",
+      color: "#3b82f6",
+      features: [
+        t("Cloud hosting & support"),
+        t("Custom app development"),
+        t("Security & compliance"),
+        t("Tech infrastructure setup")
+      ],
+      keywords: `${t("Gulf IT solutions")}, ${t("UAE business infrastructure")}, ${t("cloud services KSA")}`
+    },
+    {
+      id: "Logistics-management",
+      title: t("Integrated Logistics Management for GCC Businesses"),
+      description: t("Optimize logistics across the Gulf region. From warehousing in Dubai to delivery in Riyadh, our tech-enabled logistics service ensures efficiency throughout the supply chain."),
+      image: "/Images/Last-Mile Delivery & Logistics.avif",
+      color: "#8b5cf6",
+      features: [
+        t("Smart warehousing"),
+        t("Route optimization"),
+        t("Reverse logistics"),
+        t("Carrier integration")
+      ],
+      keywords: `${t("GCC logistics tech")}, ${t("supply chain optimization Gulf")}, ${t("smart shipping UAE")}`
+    },
+    {
+      id: "Brand-empowerment",
+      title: t("Brand Empowerment Solutions for Gulf Markets"),
+      description: t("Take control of your brand’s image across the Gulf. We help you protect your brand, engage customers, and establish presence across platforms in Saudi Arabia, UAE, and the wider GCC."),
+      image: "/Images/Brand Empowerment Solutions.avif",
+      color: "#ec4899",
+      features: [
+        t("Brand protection tools"),
+        t("Trademark & IP support"),
+        t("Audience engagement"),
+        t("Marketplace brand stores")
+      ],
+      keywords: `${t("Gulf brand building")}, ${t("eCommerce branding UAE")}, ${t("brand protection KSA")}`
+    },
+    {
+      id: "Global-reach",
+      title: t("Global Reach Enablement from the Gulf"),
+      description: t("Expand globally from your Gulf base. Our services localize your strategy for international markets while ensuring compliance and customer alignment from the UAE to the world."),
+      image: "/Images/Global.avif",
+      color: "#14b8a6",
+      features: [
+        t("Market localization"),
+        t("International compliance"),
+        t("Global payment gateways"),
+        t("Cultural adaptation")
+      ],
+      keywords: `${t("GCC global expansion")}, ${t("UAE eCommerce internationalization")}, ${t("cross-border strategy")}`
+    },
+    {
+      id: "Branch-expansion",
+      title: t("Branch Expansion Strategy Across the Gulf"),
+      description: t("Thinking of opening new branches in Saudi Arabia, UAE, or Qatar? Our data-driven strategies help you choose the right location, build infrastructure, and scale efficiently across the Gulf."),
+      image: "/Images/Branch Expansion Strategy.avif",
+      color: "#f97316",
+      features: [
+        t("Location analytics"),
+        t("Market demand forecasting"),
+        t("Franchise models"),
+        t("Operational planning")
+      ],
+      keywords: `${t("business expansion GCC")}, ${t("branch growth UAE")}, ${t("franchise strategy Saudi Arabia")}`
+    },
+    {
+      id: "customer-expectations",
+      title: t("Customer Expectations Management in the Gulf"),
+      description: t("Build long-lasting customer relationships in the Gulf region. We design feedback loops, support systems, and loyalty strategies for businesses in UAE, Bahrain, and Oman."),
+      image: "/Images/Customer Expectations Management.avif",
+      color: "#10b981",
+      features: [
+        t("Feedback management"),
+        t("Retention campaigns"),
+        t("Customer support setup"),
+        t("Satisfaction tracking")
+      ],
+      keywords: `${t("customer loyalty Gulf")}, ${t("client satisfaction UAE")}, ${t("support strategies GCC")}`
+    }
+  ];
+  
 
   const filteredServices = activeKeyword
     ? services.filter(service => 
@@ -197,17 +197,17 @@ const ServicesSection = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-[#009000] uppercase bg-[#009000]/10 rounded-full mb-4">
-            Our Solutions
+            {t("Our Solutions")}
           </span>
           <motion.h1 
             className="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-4 leading-tight"
             whileHover={{ scale: 1.01 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Comprehensive <span className="text-[#009000]">eCommerce Services</span>
+             {t("Comprehensive")} <span className="text-[#009000]">{t("eCommerce Services")}</span>
           </motion.h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            End-to-end solutions to launch, manage, and scale your online business across all major platforms
+            {t("End-to-end solutions to launch, manage, and scale your online business across all major platforms")}
           </p>
         </motion.header>
 
@@ -219,13 +219,13 @@ const ServicesSection = () => {
               onClick={() => setViewMode('grid')}
               className={`px-6 py-2 text-sm font-medium rounded-md ${viewMode === 'grid' ? 'bg-[#009000] text-white' : 'text-gray-700 hover:bg-gray-100'}`}
             >
-              Grid View
+             {t("Grid View")}
             </button>
             <button
               onClick={() => setViewMode('list')}
               className={`px-6 py-2 text-sm font-medium rounded-md ${viewMode === 'list' ? 'bg-[#009000] text-white' : 'text-gray-700 hover:bg-gray-100'}`}
             >
-              List View
+              {t("List View")}
             </button>
           </div>
 
@@ -240,7 +240,7 @@ const ServicesSection = () => {
                     : 'bg-white text-gray-700 hover:bg-gray-100'
                 }`}
               >
-                All Services
+                {t("All Services")}
               </button>
               {[...new Set(services.flatMap(service => service.keywords.split(', ')))].map(keyword => (
                 <motion.button
@@ -320,7 +320,7 @@ const ServicesSection = () => {
                         className="mt-auto"
                       >
                         <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                          Key Features
+                          {t("Key Features")}
                         </h3>
                         <ul className="space-y-3">
                           {service.features.map((feature, i) => (
@@ -366,7 +366,7 @@ const ServicesSection = () => {
                       className="w-full py-3 px-6 rounded-lg font-semibold text-white transition-all"
                       style={{ backgroundColor: service.color }}
                     >
-                      Get Started
+                      {t("Get Started")}
                     </motion.button>
                   </motion.div>
                 </div>
@@ -438,7 +438,7 @@ const ServicesSection = () => {
                       className="px-6 pb-6"
                     >
                       <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                        Key Features
+                        {t("Key Features")}
                       </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {service.features.map((feature, i) => (
@@ -472,7 +472,7 @@ const ServicesSection = () => {
                         className="w-full mt-6 py-3 px-6 rounded-lg font-semibold text-white transition-all"
                         style={{ backgroundColor: service.color }}
                       >
-                        Get Started
+                       {t("Get Started")}
                       </motion.button>
                     </motion.div>
                   )}
@@ -490,10 +490,10 @@ const ServicesSection = () => {
           transition={{ delay: 0.5 }}
         >
           <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-            Need a custom solution for your business?
+            {t("Need a custom solution for your business?")}
           </h3>
           <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-            Our team of eCommerce experts can tailor a package specifically for your business needs and growth goals.
+            {t("Our team of eCommerce experts can tailor a package specifically for your business needs and growth goals")}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="mailto:dhiraj@ulinkit.com?subject=Custom eCommerce Solution Inquiry">
@@ -502,7 +502,7 @@ const ServicesSection = () => {
     whileTap={{ scale: 0.98 }}
     className="bg-[#009000] hover:bg-[#009000] text-white font-semibold py-2 sm:py-3 px-6 rounded-lg text-base sm:text-lg transition-all"
   >
-    Contact Our Experts
+    {t("Contact Our Experts")}
   </motion.button>
 </a>
 
@@ -513,7 +513,7 @@ const ServicesSection = () => {
   disabled
   className="bg-white text-[#009000] font-semibold py-2 sm:py-3 px-6 rounded-lg text-base sm:text-lg border border-[#009000] transition-all opacity-50 cursor-not-allowed"
 >
-  Case Studies Coming Soon
+  {t("Case Studies Coming Soon")}
 </motion.button>
           </div>
         </motion.div>

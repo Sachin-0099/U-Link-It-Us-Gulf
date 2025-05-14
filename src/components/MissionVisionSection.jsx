@@ -1,79 +1,78 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Target, Eye, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const MissionVisionSection = () => {
+    const { t, i18n } = useTranslation(); // Use t for translation
   const [activeTab, setActiveTab] = useState('mission');
 
   const content = {
     mission: {
-      title: "Our Mission",
-      text: "At U-link IT US, our mission is to provide our clients across the Gulf region with best-in-class services under one roof. We are committed to delivering excellence through innovation, professionalism, and integrity in everything we do. Our goal is to help businesses thrive in Gulf marketplaces and expand globally, ensuring seamless account management, logistics, and cutting-edge IT services tailored to the unique needs of this region.",
+      title: t("Our Mission"),
+      text: t("At U-link IT US, our mission is to provide our clients across the Gulf region with best-in-class services under one roof. We are committed to delivering excellence through innovation, professionalism, and integrity in everything we do. Our goal is to help businesses thrive in Gulf marketplaces and expand globally, ensuring seamless account management, logistics, and cutting-edge IT services tailored to the unique needs of this region."),
       icon: <Target size={48} className="text-white" />,
       bgColor: "linear-gradient(135deg, #0066cc 0%, #00aaff 100%)",
       accentColor: "#0066cc",
       points: [
-        "Deliver excellence through innovation",
-        "Offer comprehensive seller account setup and management for Gulf and international markets",
-        "Enhance operational efficiency with cutting-edge IT services tailored for the Gulf region",
-        "Ensure seamless logistics and fulfillment for global reach, with a focus on the Gulf",
-        "Provide end-to-end solutions for marketplace performance in the UAE, Saudi Arabia, Qatar, and beyond",
-        "Help businesses grow and expand across Gulf countries and beyond",
-        "Exceed client expectations with tailored growth strategies in the Gulf region"
+        t("Deliver excellence through innovation"),
+        t("Offer comprehensive seller account setup and management for Gulf and international markets"),
+        t("Enhance operational efficiency with cutting-edge IT services tailored for the Gulf region"),
+        t("Ensure seamless logistics and fulfillment for global reach, with a focus on the Gulf"),
+        t("Provide end-to-end solutions for marketplace performance in the UAE, Saudi Arabia, Qatar, and beyond"),
+        t("Help businesses grow and expand across Gulf countries and beyond"),
+        t("Exceed client expectations with tailored growth strategies in the Gulf region")
+      ]
+    },
+    vision: {
+      title: t("Our Vision"),
+      text: t("Our vision is to excel as the leading procurement and trading connectivity group in the Gulf region and beyond. We aim to set new benchmarks in global trade by creating a seamless, efficient, and trusted network that connects businesses in the UAE, Saudi Arabia, Qatar, and other Gulf countries to the global marketplace."),
+      icon: <Eye size={48} className="text-white" />,
+      bgColor: "linear-gradient(135deg, #006600 0%, #00cc00 100%)",
+      accentColor: "#009000",
+      points: [
+        t("Set new benchmarks in global trade with a focus on the Gulf"),
+        t("Create seamless business networks across Gulf countries and globally"),
+        t("Empower businesses with unmatched opportunities in the Gulf region"),
+        t("Redefine industry standards for Gulf and international trade")
       ]
     }
-,    
-vision: {
-  title: "Our Vision",
-  text: "Our vision is to excel as the leading procurement and trading connectivity group in the Gulf region and beyond. We aim to set new benchmarks in global trade by creating a seamless, efficient, and trusted network that connects businesses in the UAE, Saudi Arabia, Qatar, and other Gulf countries to the global marketplace.",
-  icon: <Eye size={48} className="text-white" />,
-  bgColor: "linear-gradient(135deg, #006600 0%, #00cc00 100%)",
-  accentColor: "#009000",
-  
-  points: [
-    "Set new benchmarks in global trade with a focus on the Gulf",
-    "Create seamless business networks across Gulf countries and globally",
-    "Empower businesses with unmatched opportunities in the Gulf region",
-    "Redefine industry standards for Gulf and international trade"
-  ]
-}
-
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16  ">
+    <section className="py-20 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold !text-gray-900  mb-4">
-            Our <span className="text-[#009000]">Core</span> Values
+          <h2 className="text-4xl font-bold !text-gray-900 mb-4">
+            {t("Our")} <span className="text-[#009000]">{t("Core")}</span> {t("Values")}
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Guiding principles that shape our company's culture and drive our success
+            {t("Guiding principles that shape our company's culture and drive our success")}
           </p>
         </motion.div>
 
         <div className="flex flex-col">
-          {/* Professional Tab Navigation */}
+          {/* Tab Navigation */}
           <div className="flex justify-center mb-8">
-            <div className="inline-flex bg-gray-100  p-1 rounded-lg">
+            <div className="inline-flex bg-gray-100 p-1 rounded-lg">
               {['mission', 'vision'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`relative px-6 py-3 rounded-md text-lg font-medium transition-colors duration-300 ${
-                    activeTab === tab 
-                      ? 'text-white' 
+                    activeTab === tab
+                      ? 'text-white'
                       : 'text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'
                   }`}
                 >
                   {activeTab === tab && (
-                    <motion.span 
+                    <motion.span
                       layoutId="activeTabIndicator"
                       className="absolute inset-0 bg-gradient-to-r from-[#0066cc] to-[#009000] rounded-md z-0"
                       initial={false}
@@ -82,7 +81,7 @@ vision: {
                   )}
                   <span className="relative z-10 flex items-center gap-2">
                     {tab === 'mission' ? <Target size={20} /> : <Eye size={20} />}
-                    {tab === 'mission' ? 'Mission' : 'Vision'}
+                    {tab === 'mission' ? t("Mission") : t("Vision")}
                   </span>
                 </button>
               ))}
@@ -94,8 +93,8 @@ vision: {
             <motion.div
               key={activeTab}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ 
-                opacity: 1, 
+              animate={{
+                opacity: 1,
                 y: 0,
                 background: content[activeTab].bgColor
               }}
@@ -104,7 +103,7 @@ vision: {
               className="rounded-xl p-8 md:p-12 shadow-xl relative overflow-hidden max-w-4xl mx-auto"
             >
               {/* Floating elements */}
-              <motion.div 
+              <motion.div
                 className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white opacity-10"
                 animate={{
                   x: [0, 10, 0],
@@ -118,7 +117,7 @@ vision: {
               />
               
               <div className="relative z-10">
-                <motion.div 
+                <motion.div
                   className="mb-8"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -177,25 +176,23 @@ vision: {
                   transition={{ delay: 1 }}
                 >
                   <a href="/aboutus">
-                  <motion.button 
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-3 bg-white text-gray-900 font-medium rounded-lg flex items-center gap-2"
-                  
-                  >
-                    Learn more
-                    <motion.span
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{
-                        repeat: Infinity,
-                        duration: 1.5
-                      }}
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-8 py-3 bg-white text-gray-900 font-medium rounded-lg flex items-center gap-2"
                     >
-                      →
-                    </motion.span>
-                  </motion.button>
+                      {t("Learn more")}
+                      <motion.span
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 1.5
+                        }}
+                      >
+                        →
+                      </motion.span>
+                    </motion.button>
                   </a>
-                  
                 </motion.div>
               </div>
             </motion.div>

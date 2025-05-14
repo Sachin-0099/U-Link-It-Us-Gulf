@@ -34,7 +34,7 @@ const WhatsAppButton = () => {
     showButton && (
       <button
         onClick={handleClick}
-        className="fixed bottom-25 right-8 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition z-50"
+        className="fixed bottom-25 right-8 bg-[#009000] text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition z-50"
         aria-label="Contact us on WhatsApp"
       >
         <FaWhatsapp size={22} />

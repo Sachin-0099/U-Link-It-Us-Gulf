@@ -1,81 +1,94 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, A11y, Autoplay } from "swiper/modules";
+import { useTranslation } from 'react-i18next';
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
-const testimonials = [
-  {
-    logo: "/Images/amazon-ae.png",
-    title: "Amazon.ae",
-    content:
-      "U-link Gulf has played a key role in elevating our seller operations in the UAE. Their vision, professionalism, and technical expertise have been truly impressive.",
-    inventoryManaged: true,
-  },
-  {
-    logo: "/Images/Noon.png",
-    title: "Noon",
-    content:
-      "Partnering with U-link Gulf gave our platform a competitive edge. Their expert solutions helped streamline our seller support and account performance.",
-    inventoryManaged: true,
-  },
-  {
-    logo: "/Images/tradling.png",
-    title: "Tradeling.com",
-    content:
-      "U-link Gulf brings valuable insights and innovative marketplace solutions. Their understanding of the Gulf e-commerce market is unmatched.",
-    inventoryManaged: true,
-  },
-  {
-    logo: "/Images/soug.png",
-    title: "Souq",
-    content:
-      "Working with U-link Gulf has been an excellent experience. Their team is reliable and always focused on delivering results that matter to our region.",
-    inventoryManaged: true,
-  },
-  {
-    logo: "/Images/Amazon.sa_.png",
-    title: "Amazon.sa",
-    content:
-      "U-link Gulf understands the Saudi marketplace like few others. Their support has helped us scale with confidence and efficiency.",
-    inventoryManaged: true,
-  },
-  {
-    logo: "/Images/talabat.png",
-    title: "Talabat",
-    content:
-      "The level of service and commitment we received from U-link Gulf was outstanding. Their team adapted to our needs and exceeded expectations.",
-    inventoryManaged: false,
-  },
-  {
-    logo: "/Images/carina.png",
-    title: "Carina Kuwait",
-    content:
-      "From Kuwait, we recognize U-link Gulf as a dependable digital partner. Their solutions helped optimize our seller accounts across platforms.",
-    inventoryManaged: true,
-  },
-  {
-    logo: "/Images/dawrat.png",
-    title: "Dawrat (Bahrain)",
-    content:
-      "U-Link Gulf brought a level of structure and strategy to our operations that helped us compete in Bahrain's digital market more effectively.",
-    inventoryManaged: true,
-  },
-  {
-    logo: "/Images/mzadqatar.svg",
-    title: "Mzad Qatar",
-    content:
-      "In Qatar's evolving online market, U-link Gulf provided us with scalable and flexible solutions. A great team to collaborate with!",
-    inventoryManaged: true,
-  },
 
-];
+
+
 
 
 
 const PartnerTestimonials = () => {
+  const { t } = useTranslation();
+  const testimonials = [
+    {
+      logo: "/Images/amazon-ae.png",
+      title: t("Amazon.ae"),
+      content: t(
+        "U-link Gulf has played a key role in elevating our seller operations in the UAE. Their vision, professionalism, and technical expertise have been truly impressive."
+      ),
+      inventoryManaged: true,
+    },
+    {
+      logo: "/Images/Noon.png",
+      title: t("Noon"),
+      content: t(
+        "Partnering with U-link Gulf gave our platform a competitive edge. Their expert solutions helped streamline our seller support and account performance."
+      ),
+      inventoryManaged: true,
+    },
+    {
+      logo: "/Images/tradling.png",
+      title: t("Tradeling.com"),
+      content: t(
+        "U-link Gulf brings valuable insights and innovative marketplace solutions. Their understanding of the Gulf e-commerce market is unmatched."
+      ),
+      inventoryManaged: true,
+    },
+    {
+      logo: "/Images/soug.png",
+      title: t("Souq"),
+      content: t(
+        "Working with U-link Gulf has been an excellent experience. Their team is reliable and always focused on delivering results that matter to our region."
+      ),
+      inventoryManaged: true,
+    },
+    {
+      logo: "/Images/Amazon.sa_.png",
+      title: t("Amazon.sa"),
+      content: t(
+        "U-link Gulf understands the Saudi marketplace like few others. Their support has helped us scale with confidence and efficiency."
+      ),
+      inventoryManaged: true,
+    },
+    {
+      logo: "/Images/talabat.png",
+      title: t("Talabat"),
+      content: t(
+        "The level of service and commitment we received from U-link Gulf was outstanding. Their team adapted to our needs and exceeded expectations."
+      ),
+      inventoryManaged: false,
+    },
+    {
+      logo: "/Images/carina.png",
+      title: t("Carina Kuwait"),
+      content: t(
+        "From Kuwait, we recognize U-link Gulf as a dependable digital partner. Their solutions helped optimize our seller accounts across platforms."
+      ),
+      inventoryManaged: true,
+    },
+    {
+      logo: "/Images/dawrat.png",
+      title: t("Dawrat (Bahrain)"),
+      content: t(
+        "U-Link Gulf brought a level of structure and strategy to our operations that helped us compete in Bahrain's digital market more effectively."
+      ),
+      inventoryManaged: true,
+    },
+    {
+      logo: "/Images/mzadqatar.svg",
+      title: t("Mzad Qatar"),
+      content: t(
+        "In Qatar's evolving online market, U-link Gulf provided us with scalable and flexible solutions. A great team to collaborate with!"
+      ),
+      inventoryManaged: true,
+    },
+  ];
   return (
     <section className="bg-white py-16 px-4 relative">
       <Swiper
