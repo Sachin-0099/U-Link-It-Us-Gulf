@@ -15,6 +15,7 @@ import Blog from './pages/Blog';
 import Schedule from './pages/Schedule';
 import NotFound from './pages/NotFound';
 import WhatsAppButton from './components/WhatsappButton';
+import ServiceDetail from './components/ServiceDetail';
 
 function App() {
   const { i18n } = useTranslation();
@@ -36,6 +37,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/schedule" element={<Schedule />} />
+          <Route path="/services/:serviceId" element={<ServiceDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>
