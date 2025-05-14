@@ -1,52 +1,52 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
-const milestones = [
-  {
-    id: "01",
-    description:
-      "Started as data mining firm in 2011 providing Global business based data to various clients.",
-    img: "/images/journey-bg.jpg",
-    alt: "Our company's early office in 2011",
-  },
-  {
-    id: "02",
-    description:
-      "Started developing IT tools & outsourced clients Global business promotion activities and backend process.",
-    img: "/images/journey-bg.jpg",
-    alt: "Our IT development team working",
-  },
-  {
-    id: "03",
-    description:
-      "Global Partnered with Amazon, Flipkart and Snapdeal for the seller onboarding program with more than 21k seller onboard.",
-    img: "/images/journey-bg.jpg",
-    alt: "Our e-commerce partnership celebration",
-  },
-  {
-    id: "04",
-    description:
-      "Started Global warehousing business with more than 300 storage facilities in Dubai, India and USA.",
-    img: "/images/journey-bg.jpg",
-    alt: "One of our global warehouses",
-  },
-  {
-    id: "05",
-    description:
-      "Started as a procurement firm for global trade with payment facilitations.",
-    img: "/images/journey-bg.jpg",
-    alt: "Global trade team meeting",
-  },
-];
+
+
 
 const CompanyJourney = () => {
+  const { t } = useTranslation(); // ✅ Hook used inside the component
+
+  const milestones = [
+    {
+      id: "01",
+      description: t("Started as data mining firm in 2011 providing Global business based data to various clients."),
+      img: "/images/journey-bg.jpg",
+      alt: t("Our company's early office in 2011"),
+    },
+    {
+      id: "02",
+      description: t("Started developing IT tools & outsourced clients Global business promotion activities and backend process."),
+      img: "/images/journey-bg.jpg",
+      alt: t("Our IT development team working"),
+    },
+    {
+      id: "03",
+      description: t("Global Partnered with Amazon, Flipkart and Snapdeal for the seller onboarding program with more than 21k seller onboard."),
+      img: "/images/journey-bg.jpg",
+      alt: t("Our e-commerce partnership celebration"),
+    },
+    {
+      id: "04",
+      description: t("Started Global warehousing business with more than 300 storage facilities in Dubai, India and USA."),
+      img: "/images/journey-bg.jpg",
+      alt: t("One of our global warehouses"),
+    },
+    {
+      id: "05",
+      description: t("Started as a procurement firm for global trade with payment facilitations."),
+      img: "/images/journey-bg.jpg",
+      alt: t("Global trade team meeting"),
+    },
+  ];
   return (
     <section className="py-12 md:py-20 px-4 bg-white" aria-label="Our Company Journey Timeline">
       {/* Header */}
       <header className="text-center mb-12 md:mb-16">
-        <p className="text-lg text-gray-600 mb-2">Our Journey and Success milestone till</p>
+        <p className="text-lg text-gray-600 mb-2">{t("Our Journey and Success milestone till")}</p>
         <h1 className="text-3xl md:text-4xl font-bold text-[#009000]">
-          Global Business <span className="text-gray-800">Journey</span>
+         {t("Global Business")} <span className="text-gray-800">{t("Journey")}</span>
         </h1>
       </header>
 
@@ -84,7 +84,7 @@ const CompanyJourney = () => {
 
                 {/* Title for mobile */}
                 <h2 className="md:hidden ml-4 text-xl font-semibold text-gray-800">
-                  Milestone {milestone.id}
+                {t("Milestone ")}{milestone.id}
                 </h2>
               </div>
 

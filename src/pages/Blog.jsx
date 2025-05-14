@@ -27,108 +27,108 @@ const BlogPage = () => {
   const [isSubscribed, setIsSubscribed] = useState(false);
 
   const postsPerPage = 6;
-
-   const initialPosts=[
+  const initialPosts = [
     {
-      "id": 1,
-      "slug": "Account-management-program",
-      "title": "Ulinkitus.com Seller Account Management Program",
-      "content": "<p>Ulinkitus.com is one of India’s fastest-growing companies providing IT & e-commerce solutions. We are partnered with Amazon to help sellers manage their accounts and boost their online business performance. Our program offers comprehensive services like inventory management, sales management, and sales boost strategies to ensure your account remains in top health.</p><p>In this program, we cover the following:</p><ul><li>Inventory Management</li><li>Sales Management</li><li>Order Management</li><li>Reviews & Ratings Management</li><li>Account Health Management</li><li>Buyer-Seller Communication</li><li>Sales Boost</li></ul>",
-      "excerpt": "Ulinkitus.com provides a comprehensive Seller Account Management Program, including inventory, sales, order, and review management to boost your Amazon business.",
-      "featuredImage": "/Images/AccountM.avif",
-      "category": "Account Management",
-      "publishedAt": "2024-01-01T00:00:00Z",
-      "readTime": "7 min",
-      "author": "Ulinkitus.com Team",
-      "likes": 35,
-      "views": 120
+      id: 1,
+      slug: "account-management-program",
+      title: "U-Link Gulf Seller Account Management Program",
+      content: `<p>U-Link Gulf is one of the fastest-growing companies offering Account Management, IT Services, and Logistics solutions across the Gulf region. We partner with Amazon and OEMs to help sellers in countries like the UAE, Saudi Arabia, and Qatar manage their accounts and grow their e-commerce businesses.</p><p>This program includes:</p><ul><li>Inventory Management</li><li>Sales Management</li><li>Order Management</li><li>Reviews & Ratings Management</li><li>Account Health Management</li><li>Buyer-Seller Communication</li><li>Sales Boost</li></ul>`,
+      excerpt: "U-Link Gulf delivers end-to-end Amazon Seller Account Management, IT Services, and Logistics support in the Gulf, in collaboration with OEMs.",
+      featuredImage: "/Images/AccountM.avif",
+      category: "Account Management",
+      publishedAt: "2024-01-01T00:00:00Z",
+      readTime: "7 min",
+      author: "U-Link Gulf Team",
+      likes: 35,
+      views: 120
     },
     {
-      "id": 2,
-      "slug": "sales-boost-strategy",
-      "title": "Sales Boost Strategy for Amazon Sellers",
-      "content": "<p>Our Sales Boost strategy is designed to help Amazon sellers achieve greater visibility and success on the platform. It includes listing enhancement, sponsored products, and managing reviews & ratings to ensure your products get noticed and perform well.</p><p>The strategy includes the following steps:</p><ol><li>Listing Enhancement: Optimize listings with images, keywords, bullet points, and detailed descriptions.</li><li>Sponsored Products: Run ad campaigns with a daily budget to boost visibility.</li><li>Reviews and Ratings: Maintain high reviews and ratings to improve product rankings and sales.</li></ol>",
-      "excerpt": "Our Sales Boost strategy enhances your Amazon listings, runs targeted ads, and maintains high reviews to increase product visibility and sales.",
-      "featuredImage": "/Images/Sales.avif",
-      "category": "Sales Boost",
-      "publishedAt": "2024-01-02T12:00:00Z",
-      "readTime": "6 min",
-      "author": "Ulinkitus.com Team",
-      "likes": 45,
-      "views": 230
+      id: 2,
+      slug: "sales-boost-strategy",
+      title: "Sales Boost Strategy for Amazon Sellers in the Gulf",
+      content: `<p>Our Sales Boost strategy is designed specifically for Gulf-based Amazon sellers, including OEM product lines. We enhance visibility and results through localized listings, Arabic-English content, and targeted advertising.</p><p>The strategy includes:</p><ol><li>Listing Enhancement with keyword-optimized Arabic & English content</li><li>Gulf-specific Sponsored Product Ads</li><li>Reviews & Ratings Strategy</li></ol>`,
+      excerpt: "Tailored for Gulf sellers and OEM brands, this strategy optimizes listings, boosts visibility, and drives conversions across Amazon marketplaces.",
+      featuredImage: "/Images/Sales.avif",
+      category: "Sales Boost",
+      publishedAt: "2024-01-02T12:00:00Z",
+      readTime: "6 min",
+      author: "U-Link Gulf Team",
+      likes: 45,
+      views: 230
     },
     {
-      "id": 3,
-      "slug": "account-health-management",
-      "title": "Account Health Management for Amazon Sellers",
-      "content": "<p>Maintaining account health is crucial for continued success on Amazon. Our Account Health Management service ensures that your account stays in good standing by monitoring key metrics such as ODR, LSR, and CR, and addressing any negative feedback or claims promptly.</p><p>Our service includes:</p><ul><li>Monitoring Order Defect Ratio (ODR), Late Shipment Ratio (LSR), and Cancellation Ratio (CR).</li><li>Handling Negative Feedback and A-Z Claims.</li><li>Ensuring adherence to Amazon’s policies and avoiding account suspensions.</li></ul>",
-      "excerpt": "Our Account Health Management service helps Amazon sellers maintain a healthy account by managing key metrics and handling negative feedback and claims.",
-      "featuredImage": "/Images/AccountH.avif",
-      "category": "Account Health",
-      "publishedAt": "2024-01-03T09:00:00Z",
-      "readTime": "8 min",
-      "author": "Ulinkitus.com Team",
-      "likes": 55,
-      "views": 310
+      id: 3,
+      slug: "account-health-management",
+      title: "Account Health Management for Amazon Gulf Sellers",
+      content: `<p>Good account health is key to seller success. We support Amazon and OEM sellers across the Gulf (UAE, Saudi Arabia, Qatar) by monitoring key metrics and ensuring compliance with Amazon's regional guidelines.</p><p>We provide:</p><ul><li>ODR, LSR, CR monitoring</li><li>Negative feedback & A-to-Z resolution</li><li>Account reinstatement & policy compliance</li></ul>`,
+      excerpt: "U-Link Gulf ensures Amazon and OEM sellers maintain strong account health across Gulf marketplaces through performance tracking and compliance support.",
+      featuredImage: "/Images/AccountH.avif",
+      category: "Account Health",
+      publishedAt: "2024-01-03T09:00:00Z",
+      readTime: "8 min",
+      author: "U-Link Gulf Team",
+      likes: 55,
+      views: 310
+    },
+    {
+      id: 4,
+      slug: "inventory-management-best-practices",
+      title: "Best Practices for Inventory Management in the Gulf",
+      content: `<p>Inventory issues impact seller performance. U-Link Gulf enables Amazon and OEM sellers to manage inventory across Gulf warehouses using real-time tools and analytics.</p><p>Key practices include:</p><ul><li>Live stock tracking</li><li>Gulf marketplace sync</li><li>Stock velocity insights</li><li>Automated reorders</li></ul>`,
+      excerpt: "Smart inventory tools designed for Amazon and OEM sellers in the Gulf to ensure availability and operational efficiency.",
+      featuredImage: "/Images/Inventory.avif",
+      category: "Inventory Management",
+      publishedAt: "2024-01-04T08:00:00Z",
+      readTime: "6 min",
+      author: "U-Link Gulf Team",
+      likes: 30,
+      views: 180
+    },
+    {
+      id: 5,
+      slug: "order-management-system",
+      title: "Streamlining Order Management for Gulf Amazon Sellers",
+      content: `<p>U-Link Gulf offers advanced logistics and order processing support to Amazon and OEM sellers across the GCC. Our Order Management System (OMS) enhances fulfillment accuracy and speed.</p><p>Our OMS features:</p><ul><li>Real-time order tracking</li><li>Status-based fulfillment automation</li><li>Priority dispatch by region</li><li>Gulf 3PL integrations</li></ul>`,
+      excerpt: "From real-time order updates to 3PL integration, U-Link Gulf powers efficient logistics and fulfillment in the Gulf region.",
+      featuredImage: "/Images/Order.avif",
+      category: "Order Management",
+      publishedAt: "2024-01-05T07:00:00Z",
+      readTime: "5 min",
+      author: "U-Link Gulf Team",
+      likes: 40,
+      views: 210
+    },
+    {
+      id: 6,
+      slug: "reviews-and-rating-management-strategy",
+      title: "Effective Strategy for Managing Amazon Reviews in the Gulf",
+      content: `<p>Reputation matters. We help Amazon and OEM sellers across the Gulf manage public perception through active review and rating strategies tailored to local markets.</p><p>Our service includes:</p><ul><li>Monitoring Amazon review channels</li><li>Fast responses to customer feedback</li><li>Insight-based product improvement</li><li>Amazon policy adherence</li></ul>`,
+      excerpt: "U-Link Gulf supports review management and customer sentiment improvement for Amazon & OEM sellers in the Gulf.",
+      featuredImage: "/Images/reviews.avif",
+      category: "Reviews & Ratings Management",
+      publishedAt: "2024-01-06T10:00:00Z",
+      readTime: "7 min",
+      author: "U-Link Gulf Team",
+      likes: 50,
+      views: 250
+    },
+    {
+      id: 7,
+      slug: "sales-performance-analysis",
+      title: "Analyzing Sales Performance for Gulf-Based Amazon Sellers",
+      content: `<p>We provide deep insights into sales performance for Amazon and OEM sellers operating in the Gulf. Our analytics reveal patterns in buyer behavior, pricing effectiveness, and ad results.</p><p>Analysis includes:</p><ul><li>Conversion rates & trends</li><li>Traffic source breakdown</li><li>Pricing optimization review</li><li>Actionable insights & forecasts</li></ul>`,
+      excerpt: "Our Sales Performance Analysis helps OEMs and Amazon sellers in the Gulf understand growth levers through data-driven insights.",
+      featuredImage: "/Images/analysis.avif",
+      category: "Sales Analysis",
+      publishedAt: "2024-01-07T11:00:00Z",
+      readTime: "6 min",
+      author: "U-Link Gulf Team",
+      likes: 60,
+      views: 320
     }
-  ,
-    {
-      "id": 4,
-      "slug": "inventory-management-best-practices",
-      "title": "Best Practices for Inventory Management on Amazon",
-      "content": "<p>Inventory management is crucial for maintaining a smooth Amazon seller account. Our program helps you efficiently manage your inventory to ensure stock levels are optimal, preventing stockouts or excess stock. We offer advanced tools for syncing inventory across multiple platforms.</p><p>Key Practices include:</p><ul><li>Real-time stock monitoring and alerts</li><li>Synchronizing inventory across marketplaces</li><li>Optimizing stock levels based on sales velocity</li><li>Preventing overselling with automated reorder alerts</li></ul>",
-      "excerpt": "Our Inventory Management service helps you optimize stock levels, preventing stockouts and excess stock, and keeping your account in top shape.",
-      "featuredImage": "/Images/Inventory.avif",
-      "category": "Inventory Management",
-      "publishedAt": "2024-01-04T08:00:00Z",
-      "readTime": "6 min",
-      "author": "Ulinkitus.com Team",
-      "likes": 30,
-      "views": 180
-    },
-    {
-      "id": 5,
-      "slug": "order-management-system",
-      "title": "Streamlining Order Management for Amazon Sellers",
-      "content": "<p>Our Order Management System (OMS) ensures timely dispatch and accurate tracking of your orders. We work closely with your team to monitor the status of each order and resolve any issues that arise during processing, preventing late shipments and maintaining a high level of customer satisfaction.</p><p>Our OMS includes:</p><ul><li>Automated order processing and tracking</li><li>Real-time order status updates</li><li>Order prioritization based on urgency</li><li>Integration with third-party logistics providers</li></ul>",
-      "excerpt": "Our Order Management System ensures timely dispatch and tracking of orders, preventing late shipments and improving customer satisfaction.",
-      "featuredImage": "/Images/Order.avif",
-      "category": "Order Management",
-      "publishedAt": "2024-01-05T07:00:00Z",
-      "readTime": "5 min",
-      "author": "Ulinkitus.com Team",
-      "likes": 40,
-      "views": 210
-    },
-    {
-      "id": 6,
-      "slug": "reviews-and-rating-management-strategy",
-      "title": "Effective Strategy for Managing Reviews & Ratings on Amazon",
-      "content": "<p>Reviews and ratings are vital for the success of your products on Amazon. Our strategy helps you maintain a high average rating by addressing customer feedback and ensuring that your products are meeting customer expectations.</p><p>Our strategy includes:</p><ul><li>Monitoring and responding to customer reviews</li><li>Resolving issues with low-rated reviews</li><li>Using customer feedback to improve products</li><li>Ensuring compliance with Amazon’s review guidelines</li></ul>",
-      "excerpt": "Our strategy for managing reviews and ratings ensures high customer satisfaction and helps maintain your product’s ranking on Amazon.",
-      "featuredImage": "/Images/reviews.avif",
-      "category": "Reviews & Ratings Management",
-      "publishedAt": "2024-01-06T10:00:00Z",
-      "readTime": "7 min",
-      "author": "Ulinkitus.com Team",
-      "likes": 50,
-      "views": 250
-    },
-    {
-      "id": 7,
-      "slug": "sales-performance-analysis",
-      "title": "Analyzing Sales Performance for Amazon Sellers",
-      "content": "<p>Our Sales Performance Analysis service helps you understand how your products are performing on Amazon. By analyzing key performance metrics such as conversion rates, average order value, and traffic sources, we provide insights to optimize your strategy for better sales results.</p><p>Our analysis includes:</p><ul><li>Reviewing conversion rates and identifying improvement areas</li><li>Tracking traffic sources and optimizing for high-converting channels</li><li>Analyzing pricing strategies and their impact on sales</li><li>Recommending new strategies based on sales data</li></ul>",
-      "excerpt": "Our Sales Performance Analysis service helps you optimize your Amazon sales strategy by providing detailed insights into performance metrics.",
-      "featuredImage": "/Images/analysis.avif",
-      "category": "Sales Analysis",
-      "publishedAt": "2024-01-07T11:00:00Z",
-      "readTime": "6 min",
-      "author": "Ulinkitus.com Team",
-      "likes": 60,
-      "views": 320
-    }
-  ]
+  ];
+  
+  
   
   
 
@@ -301,7 +301,7 @@ const BlogPage = () => {
   return (
     <>
     <Helmet>
-  <title>Blog - U-Link It Us | Insights on IT, E-commerce & Business Growth</title>
+  <title>Blog - U-Link Gulf | Insights on IT, E-commerce & Business Growth</title>
   <meta
     name="description"
     content="Read the latest insights, strategies, and updates from U-Link It Us — covering IT trends, e-commerce tips, procurement strategies, and more."
@@ -309,19 +309,19 @@ const BlogPage = () => {
 </Helmet>
 
     
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-white">
       {/* SEO Meta Tags */}
       <Helmet>
-  <title>Ulinkitus Blog | Expert Seller Account Management & Marketplace Performance</title>
+  <title>U-Link Gulf Blog | Expert Seller Account Management & Marketplace Performance</title>
 
   <meta 
     name="description" 
-    content="Explore the Ulinkitus blog for expert insights on seller account management, marketplace performance, digital marketing strategies, and e-commerce growth." 
+    content="Explore the U-Link Gulf blog for expert insights on seller account management, marketplace performance, digital marketing strategies, and e-commerce growth." 
   />
-  <meta property="og:title" content="Ulinkitus Blog | Expert Seller Account Management & Marketplace Performance" />
+  <meta property="og:title" content="U-Link Gulf Blog | Expert Seller Account Management & Marketplace Performance" />
   <meta property="og:description" content="Gain insights on maximizing marketplace performance, e-commerce strategies, and effective seller account management." />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://ulinkitus.com/blog" />
+  <link rel="canonical" href="https://www.ulinkgulf.com/blog" />
 </Helmet>
 
 
@@ -333,7 +333,7 @@ const BlogPage = () => {
             U-Link Gulf Blog
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-  Discover expert insights on seller account management, marketplace performance, and effective e-commerce growth strategies.
+          Discover expert insights on seller account management, IT services, and logistics for effective e-commerce growth strategies.
 </p>
 
           
@@ -540,7 +540,7 @@ const BlogPage = () => {
                     </div>
                     <div className="p-6">
                       <div className="flex justify-between items-center mb-3">
-                        <span className="text-sm font-medium text-blue-600">{post.category}</span>
+                        <span className="text-sm font-medium text-[#009000]">{post.category}</span>
                         <span className="text-sm text-gray-500">
                           {new Date(post.publishedAt).toLocaleDateString('en-US', {
                             year: 'numeric',
@@ -581,7 +581,7 @@ const BlogPage = () => {
                               />
                               <button
                                 onClick={() => handleAddComment(post.id)}
-                                className="px-5 py-2.5 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-colors duration-300"
+                                className="px-5 py-2.5 bg-green-500 text-white rounded-xl hover:bg-green-600 transition-colors duration-300"
                               >
                                 Post Comment
                               </button>
@@ -612,7 +612,7 @@ const BlogPage = () => {
                         
                         <button
                           onClick={() => togglePostExpansion(post)}
-                          className="flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                          className="flex items-center text-[#009000] font-medium hover:text-green-800 transition-colors"
                         >
                           {activePost?.id === post.id ? (
                             <>
@@ -648,7 +648,7 @@ const BlogPage = () => {
                       setSearchQuery('');
                       setSelectedCategory('all');
                     }}
-                    className="px-5 py-2.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                    className="px-5 py-2.5 bg-[#009000] text-white rounded-lg hover:bg-green-600 transition-colors"
                   >
                     Reset Filters
                   </button>
@@ -679,7 +679,7 @@ const BlogPage = () => {
                 onClick={() => paginate(number)}
                 className={`px-4 py-2 rounded-lg transition-colors ${
                   currentPage === number
-                    ? 'bg-blue-500 text-white shadow-md'
+                    ? 'bg-[#009000] text-white shadow-md'
                     : 'bg-white text-gray-700 hover:bg-gray-100 shadow-sm'
                 }`}
               >

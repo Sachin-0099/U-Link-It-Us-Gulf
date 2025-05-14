@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
-import * as THREE from "three";
+import { useTranslation } from "react-i18next";
 
 function Hero() {
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -69,9 +70,9 @@ function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-Transforming
+{t("Transforming")}
 <br className="hidden sm:block" />
-Business Through
+{t("Business Through")}
 <br className="hidden sm:block" />
 
 
@@ -88,7 +89,7 @@ Business Through
                 duration: 2 
               }}
             >
-            Smart Innovation
+     {t("Smart Innovation")}
             </motion.span>
           </motion.h1>
 
@@ -98,7 +99,7 @@ Business Through
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-U-Link Gulf delivers end-to-end e-commerce, IT, and logistics solutions, expertly tailored to meet the demands of modern businesses.
+{t("U-Link Gulf delivers end-to-end e-commerce, IT, and logistics solutions, expertly tailored to meet the demands of modern businesses.")}
           </motion.p>
 
           <motion.nav 
@@ -115,7 +116,7 @@ U-Link Gulf delivers end-to-end e-commerce, IT, and logistics solutions, expertl
       className="bg-[#009000] text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg relative overflow-hidden text-sm sm:text-base"
       aria-label="Get a free consultation from Ulinkit"
     >
-      <span className="relative z-10">Get FREE Consultation</span>
+      <span className="relative z-10">{t("Get FREE Consultation")}</span>
       <motion.span
   className="absolute inset-0 bg-gradient-to-r from-[#009000] to-[#009000] opacity-0 hover:opacity-100 transition-opacity duration-300 z-0"
   aria-hidden="true"
@@ -134,7 +135,7 @@ U-Link Gulf delivers end-to-end e-commerce, IT, and logistics solutions, expertl
               className="bg-white border border-gray-200 text-gray-800 font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg flex items-center justify-center gap-2 shadow-sm text-sm sm:text-base"
               aria-label="View Ulinkit's portfolio"
             >
-              View Portfolio 
+            {t("View Portfolio")}
               <motion.span
                 animate={{ x: [0, 5, 0] }}
                 transition={{ repeat: Infinity, duration: 1.5 }}
@@ -146,37 +147,37 @@ U-Link Gulf delivers end-to-end e-commerce, IT, and logistics solutions, expertl
           </motion.nav>
 
           <motion.ul 
-            className="flex justify-center sm:justify-start gap-4 sm:gap-6 text-gray-700 font-medium text-xs sm:text-sm"
-            aria-label="Company strengths"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-          >
-            {["Innovative", "Precise", "Excellent"].map((item, index) => (
-              <motion.li 
-                key={item}
-                className="flex items-center gap-1"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <motion.span 
-                  className="text-[#009000]"
-                  animate={{ rotate: [0, 360] }}
-                  transition={{ 
-                    rotate: { 
-                      duration: 0.5, 
-                      repeat: Infinity, 
-                      repeatType: "reverse", 
-                      delay: index * 0.2 
-                    } 
-                  }}
-                >
-                  ✓
-                </motion.span>
-                <span className="text-gray-700">{item}</span>
-              </motion.li>
-            ))}
-          </motion.ul>
+  className="flex justify-center sm:justify-start gap-4 sm:gap-6 text-gray-700 font-medium text-xs sm:text-sm"
+  aria-label={t("strengths.ariaLabel")}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.8, duration: 0.8 }}
+>
+  {[t("Innovative"), t("Precise"), t("Excellent")].map((item, index) => (
+    <motion.li 
+      key={item}
+      className="flex items-center gap-1"
+      whileHover={{ scale: 1.1 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      <motion.span 
+        className="text-[#009000]"
+        animate={{ rotate: [0, 360] }}
+        transition={{ 
+          rotate: { 
+            duration: 0.5, 
+            repeat: Infinity, 
+            repeatType: "reverse", 
+            delay: index * 0.2 
+          } 
+        }}
+      >
+        ✓
+      </motion.span>
+      <span className="text-gray-700">{item}</span>
+    </motion.li>
+  ))}
+</motion.ul>
         </motion.header>
 
         {/* Right Section - Full width on mobile, below text */}

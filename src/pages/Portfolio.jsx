@@ -20,7 +20,7 @@ const InteractivePortfolio = () => {
     dheeraj: {
       name: "Dheeraj Kumar Gupta",
       title: "Founder & CEO",
-      description: "U-link IT US is an awesome place to work. A high energy atmosphere, transparent culture, internal communication, leadership support coupled with loads of learning opportunities help the individual act as an entrepreneur in their own space.",
+      description: "U-Link Gulf is an awesome place to work. A high energy atmosphere, transparent culture, internal communication, leadership support coupled with loads of learning opportunities help the individual act as an entrepreneur in their own space.",
       email: "dhiraj@ulinkit.com",
       imagePath: "/Images/2.webp",
       social: {
@@ -33,7 +33,7 @@ const InteractivePortfolio = () => {
     vineet: {
       name: "Vineet Sharma",
       title: "IT HEAD DIRECTOR",
-      description: "Leading the technical vision at U-link IT US, Vineet ensures we stay at the cutting edge of technology while delivering robust and scalable solutions to our clients.",
+      description: "Leading the technical vision at U-Link Gulf , Vineet ensures we stay at the cutting edge of technology while delivering robust and scalable solutions to our clients.",
       email: "vineet@ulinkit.com",
       imagePath: "/Images/6.webp",
       social: {
@@ -78,7 +78,7 @@ const InteractivePortfolio = () => {
   return (
     <>
     <Helmet>
-  <title>Our Portfolio - U-Link It Us | Proven Success in IT & E-commerce</title>
+  <title>Our Portfolio - U-Link Gulf | Proven Success in IT, E-commerce and Logistics</title>
   <meta
     name="description"
     content="Take a look at our portfolio showcasing successful IT, e-commerce, and procurement projects we've delivered for clients across the globe."

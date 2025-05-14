@@ -264,7 +264,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
 </Helmet>
 
 
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-white">
         {/* Hero Section with semantic h1 */}
         <section className="relative bg-[#009000] text-white py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#007d00] to-[#009000] opacity-95"></div>
@@ -414,7 +414,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                 </motion.div>
 
                 <motion.div variants={staggerContainer} className="grid md:grid-cols-3 gap-8">
-                  {[
+                  {
                    [
                     {
                       icon: <FaShieldAlt className="text-3xl text-[#009000]" />,
@@ -434,14 +434,14 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                       description:
                         'Our global network and strategic partnerships—including our Amazon and noon collaborations—enable seamless cross-border eCommerce expansion across Gulf countries.'
                     }
-                  ]
+                  
                   
                   ].map((item, index) => (
                     <motion.div 
                       key={index}
                       variants={fadeIn}
                       whileHover={{ y: -8 }}
-                      className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-b-4 border-transparent hover:border-[#b73235]"
+                      className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-b-4 border-transparent hover:border-[#009000]"
                     >
                       <div className="text-[#009000] mb-5 flex justify-center">{item.icon}</div>
                       <h3 className="text-xl font-semibold mb-3 text-gray-800">{item.title}</h3>
@@ -459,7 +459,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                 initial="hidden"
                 animate="visible"
                 variants={staggerContainer}
-                className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-12 md:p-16"
+                className="bg-white rounded-3xl p-12 md:p-16"
                 id="vision-tab"
                 aria-labelledby="vision-btn"
                 role="tabpanel"
@@ -479,8 +479,8 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
 
                   </motion.div>
 
-                  <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-8 text-left">
-                    {[
+                  <motion.div variants={staggerContainer} className="grid md:grid-cols-3 gap-8 text-left">
+                    {
                       [
                         {
                           title: 'SP-API & SPP Enablement',
@@ -527,7 +527,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                           description:
                             'Building a smart logistics network featuring bonded warehousing, regional fulfillment, real-time tracking, and last-mile partnerships across the GCC.'
                         }
-                      ]
+                      
                     ].map((item, index) => (
                       <motion.div 
                         key={index}

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   FaBoxes, FaChartLine, FaClipboardCheck, FaStar, 
   FaShieldAlt, FaComments, FaRocket, FaChevronDown, FaChevronUp,
-  FaCheck, FaHandshake, FaChartBar, FaHeadset, FaTools
+  FaCheck, FaHandshake, FaChartBar, FaHeadset, FaTools,FaLaptopCode,FaTruck
 } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 
@@ -102,6 +102,32 @@ const ServicesPage = () => {
           "Performance analytics dashboard"
         ],
         icon: <FaRocket className="text-3xl" />
+      },
+      {
+        id: 8,
+        title: "IT Services",
+        description: "Customized IT solutions designed to support the growth of your e-commerce business in the Gulf region.",
+        detailedDescription: [
+          "E-commerce platform integration for local marketplaces",
+          "Technical troubleshooting tailored to Gulf-specific needs",
+          "API integrations and automation for regional platforms",
+          "Security & data protection for Gulf-based e-commerce businesses",
+          "Cloud computing solutions with Gulf data centers"
+        ],
+        icon: <FaLaptopCode className="text-3xl" />
+      },
+      {
+        id: 9,
+        title: "Logistics Management",
+        description: "Streamlining logistics operations to ensure timely deliveries and efficient supply chain management across the Gulf region.",
+        detailedDescription: [
+          "Real-time tracking of shipments across Gulf countries",
+          "Third-party logistics (3PL) integration in the Gulf",
+          "Route optimization for deliveries within UAE, Saudi Arabia, and Qatar",
+          "Customs clearance & import/export support specific to Gulf regulations",
+          "Warehousing & distribution management across the GCC"
+        ],
+        icon: <FaTruck className="text-3xl" />
       }
     ];
 
@@ -242,28 +268,29 @@ const ServicesPage = () => {
         <div className="lg:flex lg:items-center lg:justify-between">
           <div className="lg:w-1/2">
             <div className="space-y-12">
-              {[
-                {
-                  step: "1",
-                  title: "Discovery & Analysis",
-                  description: "We conduct a comprehensive audit of your current account status, performance metrics, and competitive landscape."
-                },
-                {
-                  step: "2",
-                  title: "Strategy Development",
-                  description: "Our team creates a customized management plan with specific KPIs and optimization strategies."
-                },
-                {
-                  step: "3",
-                  title: "Implementation",
-                  description: "We deploy our systems and processes while maintaining transparent communication throughout."
-                },
-                {
-                  step: "4",
-                  title: "Ongoing Optimization",
-                  description: "Continuous monitoring and adjustment of strategies based on performance data and market changes."
-                }
-              ].map((item) => (
+              { [
+  {
+    step: "1",
+    title: "Discovery & Analysis",
+    description: "We conduct a comprehensive audit of your current seller account performance across Gulf marketplaces, analyzing key metrics and competitor positioning in the UAE, Saudi Arabia, Qatar, and beyond."
+  },
+  {
+    step: "2",
+    title: "Strategy Development",
+    description: "Our team creates a customized management plan for your Gulf-based account, with tailored KPIs and optimization strategies aligned to local market demands and regional selling trends."
+  },
+  {
+    step: "3",
+    title: "Implementation",
+    description: "We deploy our proven systems and processes across your seller account, ensuring smooth operations while maintaining transparent communication with you throughout the Gulf-focused campaign."
+  },
+  {
+    step: "4",
+    title: "Ongoing Optimization",
+    description: "Continuous monitoring and adjustments are made to enhance your performance based on real-time data, feedback, and changes in Gulf market conditions."
+  }
+]
+.map((item) => (
                 <div key={item.step} className="flex">
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#009000] text-white text-xl font-bold">
@@ -279,7 +306,7 @@ const ServicesPage = () => {
             </div>
           </div>
           <div className="mt-12 lg:mt-0 lg:w-1/2">
-            <div className="bg-[#009000] bg-opacity-5 p-8 rounded-xl">
+            <div className="bg-[#009000] bg-opacity-5 p-8 rounded-xl m-4">
               <img 
                 src="/Images/implementation.avif" 
                 alt="Implementation process visual"
@@ -308,7 +335,7 @@ const ServicesPage = () => {
       <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {[
           {
-            quote: "U-Link transformed our Amazon business. Sales increased by 68% in the first quarter with their management.",
+            quote: "U-Link Gulf transformed our Amazon business. Sales increased by 68% in the first quarter with their management.",
             author: "Sarah Johnson",
             position: "CEO, Home Essentials Inc.",
             stats: "68% sales increase"
@@ -362,10 +389,10 @@ const ServicesPage = () => {
   return (
     <>
    <Helmet>
-  <title>Our Services - U-Link It Us | IT, E-commerce & Procurement Solutions</title>
+  <title>Our Services - U-Link Gulf | IT, E-commerce & Procurement Solutions</title>
   <meta
     name="description"
-    content="Explore the wide range of services offered by U-Link It Us — from IT consulting to e-commerce management and procurement solutions tailored to drive your business forward."
+    content="Explore the wide range of services offered by U-Link Gulf — from IT consulting to e-commerce management and procurement solutions tailored to drive your business forward."
   />
 </Helmet>
 
@@ -376,19 +403,19 @@ const ServicesPage = () => {
           <nav className="flex justify-center space-x-8">
             <button
               onClick={() => setActiveTab("services")}
-              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${activeTab === "services" ? 'border-[#b73235] text-[#b73235]' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
+              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${activeTab === "services" ? 'border-[#009000] text-[#009000]' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
             >
               Our Services
             </button>
             <button
               onClick={() => setActiveTab("process")}
-              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${activeTab === "process" ? 'border-[#b73235] text-[#b73235]' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
+              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${activeTab === "process" ? 'border-[#009000] text-[#009000]' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
             >
               Our Process
             </button>
             <button
               onClick={() => setActiveTab("results")}
-              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${activeTab === "results" ? 'border-[#b73235] text-[#b73235]' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
+              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${activeTab === "results" ? 'border-[#009000] text-[#009000]' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
             >
               Client Results
             </button>
@@ -412,7 +439,7 @@ const ServicesPage = () => {
               Comprehensive Account Management Solution
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-xl text-gray-600">
-              We provide end-to-end management of your seller account with our proven methodology that combines technology, expertise, and dedicated support to maximize your marketplace performance.
+            Specialized in Account Management, IT Services, and Logistics for the Gulf—powered by technology, expertise, and trusted support to accelerate your marketplace growth.
             </p>
           </motion.div>
 
@@ -449,12 +476,17 @@ const ServicesPage = () => {
                     </a>
                   </div>
                   <div className="inline-flex rounded-md shadow">
-                    <a
-                      href="/demo"
-                      className="inline-flex items-center justify-center px-8 py-3 border border-2 border-white text-base font-medium rounded-md text-white bg-transparent hover:bg-white hover:bg-opacity-10 md:py-4 md:text-lg md:px-10 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
-                    >
-                      Request Demo
-                    </a>
+                  <a
+  href="#"
+  className="inline-flex items-center justify-center px-8 py-3 border border-2 border-white text-base font-medium rounded-md text-white bg-transparent hover:bg-[#009000] hover:bg-opacity-10 md:py-4 md:text-lg md:px-10 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white cursor-not-allowed"
+  aria-disabled="true"
+  title="Coming Soon"
+>
+Request Demo
+</a>
+
+
+
                   </div>
                 </div>
               </div>

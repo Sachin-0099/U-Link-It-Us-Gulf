@@ -1,8 +1,10 @@
-// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './layout/MainLayout';
-import ScrollToTop from './components/ScrollToTop'; // Import ScrollToTop
+import ScrollToTop from './components/ScrollToTop';
+import i18n from './i18n/i18n';
+import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
@@ -15,9 +17,15 @@ import NotFound from './pages/NotFound';
 import WhatsAppButton from './components/WhatsappButton';
 
 function App() {
+  const { i18n } = useTranslation();
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+  }, [i18n.language]);
+
   return (
     <Router>
-      <ScrollToTop /> {/* Add ScrollToTop here */}
+      <ScrollToTop />
       <MainLayout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -31,7 +39,6 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>
-      {/* Place WhatsAppButton outside of Routes */}
       <WhatsAppButton />
     </Router>
   );
