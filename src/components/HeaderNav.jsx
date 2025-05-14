@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
-import { FaGlobe } from 'react-icons/fa';
+import { FaGlobe, FaPhone } from 'react-icons/fa'; // Added FaPhone
 import { useTranslation } from 'react-i18next';
 
 function Navbar() {
-  const { t, i18n } = useTranslation(); // Use t for translation
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
@@ -22,14 +22,12 @@ function Navbar() {
     { code: 'ar', name: 'العربية' }
   ];
 
-  // Scroll behavior
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Animate mobile menu
   useEffect(() => {
     if (isMenuOpen && mobileMenuRef.current) {
       gsap.fromTo(
@@ -40,7 +38,6 @@ function Navbar() {
     }
   }, [isMenuOpen]);
 
-  // Animate language dropdown
   useEffect(() => {
     if (isLanguageOpen && languageMenuRef.current) {
       gsap.fromTo(
@@ -51,13 +48,11 @@ function Navbar() {
     }
   }, [isLanguageOpen]);
 
-  // Close menus on route change
   useEffect(() => {
     setIsMenuOpen(false);
     setIsLanguageOpen(false);
   }, [location.pathname]);
 
-  // Close language dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (languageMenuRef.current && !languageMenuRef.current.contains(event.target)) {
@@ -68,7 +63,6 @@ function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Keep current language in sync
   useEffect(() => {
     setCurrentLanguage(i18n.language);
     document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
@@ -100,19 +94,25 @@ function Navbar() {
         <ul className="hidden lg:flex items-center gap-6 text-[#2b2b2b] font-medium">
           {navItems.map((item) => (
             <li key={item} className="cursor-pointer hover:text-[#009000] transition-transform duration-200 hover:scale-105">
-              <Link to={`/${item.toLowerCase().replace(/ /g, '')}`}>{t(item)}</Link> {/* Translated item */}
+              <Link to={`/${item.toLowerCase().replace(/ /g, '')}`}>{t(item)}</Link>
             </li>
           ))}
-          <li>
-            <Link to="/contact" className="px-4 py-3 border border-[#009000] text-[#009000] rounded-md hover:bg-green-100 transition hover:scale-105 inline-block">
-              {t('Contact Us')} {/* Translated text */}
-            </Link>
+            <li>
+            <a
+              href="tel:8252404188"
+              className="flex items-center gap-2 px-4 py-3 text-[#009000] border border-[#009000] rounded-md hover:bg-green-100 transition hover:scale-105"
+            >
+              <FaPhone size={18} />
+              <span>{t('Call Us')}</span>
+            </a>
           </li>
+         
           <li>
             <Link to="/schedule" className="px-4 py-3 bg-[#009000] text-white rounded-md hover:bg-[#009000] transition font-semibold hover:scale-105 inline-block">
-              {t('Schedule a Call')} {/* Translated text */}
+              {t('Schedule a Call')}
             </Link>
           </li>
+        
           <li className="relative">
             <div 
               className="cursor-pointer hover:text-[#009000] transition-transform duration-200 hover:scale-105 flex items-center gap-3"
@@ -153,7 +153,7 @@ function Navbar() {
         <div ref={mobileMenuRef} className="lg:hidden bg-white shadow-md px-6 py-4 space-y-4 text-[#2b2b2b] font-medium">
           {navItems.map((item) => (
             <Link key={item} to={`/${item.toLowerCase().replace(/ /g, '')}`} className="block hover:text-[#009000] transition hover:translate-x-1">
-              {t(item)} {/* Translated item */}
+              {t(item)}
             </Link>
           ))}
 
@@ -178,13 +178,19 @@ function Navbar() {
               </div>
             )}
           </div>
+          <a
+            href="tel:8252404188"
+            className="block px-4 py-2 text-[#009000] border border-[#009000] rounded-md hover:bg-green-100 transition hover:scale-105 flex items-center gap-2"
+          >
+            <FaPhone size={16} />
+            <span>{t('Call Us')}</span>
+          </a>
 
-          <Link to="/contact" className="block px-4 py-2 border border-[#009000] text-[#009000] rounded-md hover:bg-green-100 transition hover:scale-105">
-            {t('Contact Us')} {/* Translated text */}
-          </Link>
+          
           <Link to="/schedule" className="block px-4 py-2 bg-[#009000] text-white rounded-md hover:bg-[#009000] transition font-semibold hover:scale-105">
-            {t('Schedule a Call')} {/* Translated text */}
+            {t('Schedule a Call')}
           </Link>
+         
         </div>
       )}
     </header>

@@ -18,7 +18,7 @@ const InteractivePortfolio = () => {
   
   const portfolioData = {
     dheeraj: {
-      name: "Dheeraj Kumar Gupta",
+      name: "Dhiraj Kumar Gupta",
       title: "Founder & CEO",
       description: "U-Link Gulf is an awesome place to work. A high energy atmosphere, transparent culture, internal communication, leadership support coupled with loads of learning opportunities help the individual act as an entrepreneur in their own space.",
       email: "dhiraj@ulinkit.com",
@@ -129,7 +129,7 @@ const InteractivePortfolio = () => {
             <div className="space-y-8 order-2 lg:order-1">
               <motion.div variants={fadeIn}>
                 <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold ${theme === "dark" ? "text-white" : "text-gray-900"} leading-tight`}>
-                  Hi, I'm <span className="text-[#009000]">Dheeraj</span>
+                  Hi, I'm <span className="text-[#009000]">Dhiraj</span>
                 </h1>
                 <div className="w-20 h-1 bg-[#009000] my-4"></div>
               </motion.div>
