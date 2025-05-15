@@ -11,6 +11,8 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language || 'ar');
+  const languageToggleRef = useRef(null);
+
 
   const mobileMenuRef = useRef(null);
   const headerRef = useRef(null);
@@ -55,14 +57,20 @@ function Navbar() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (languageMenuRef.current && !languageMenuRef.current.contains(event.target)) {
+      if (
+        languageMenuRef.current && 
+        !languageMenuRef.current.contains(event.target) &&
+        languageToggleRef.current &&
+        !languageToggleRef.current.contains(event.target)
+      ) {
         setIsLanguageOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
-
+  
+  
   useEffect(() => {
     setCurrentLanguage(i18n.language);
     document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
@@ -114,63 +122,72 @@ function Navbar() {
           </li>
         
           <li className="relative">
-            <div 
-              className="cursor-pointer hover:text-[#009000] transition-transform duration-200 hover:scale-105 flex items-center gap-3"
-              onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-            >
-              <FaGlobe className="text-[#009000]" size={30} />
-              <span className="text-sm">{currentLanguage === 'ar' ? 'AR' : 'EN'}</span>
-            </div>
+          <div 
+  ref={languageToggleRef}
+  className="cursor-pointer hover:text-[#009000] transition-transform duration-200 hover:scale-105 flex items-center gap-3"
+  onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+>
+  <FaGlobe className="text-[#009000]" size={30} />
+  <span className="text-sm">{currentLanguage === 'ar' ? 'AR' : 'EN'}</span>
+</div>
+
 
             {isLanguageOpen && (
               <div ref={languageMenuRef} className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg py-1 z-50">
                 {languages.map((lang) => (
-                  <div
-                    key={lang.code}
-                    className={`px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center ${
-                      currentLanguage === lang.code ? 'bg-green-50 text-[#009000]' : ''
-                    }`}
-                    onClick={() => toggleLanguage(lang.code)}
-                  >
-                    <span className={lang.code === 'ar' ? 'text-right w-full' : ''}>
-                      {lang.name}
-                    </span>
-                  </div>
-                ))}
+  <div
+    key={lang.code}
+    className={`px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center ${
+      currentLanguage === lang.code ? 'bg-green-50 text-[#009000]' : ''
+    }`}
+    onClick={(e) => {
+      e.stopPropagation();
+      toggleLanguage(lang.code);
+    }}
+  >
+    <span className={lang.code === 'ar' ? 'text-right w-full' : ''}>
+      {lang.name}
+    </span>
+  </div>
+))}
+
               </div>
             )}
           </li>
         </ul>
 
-        {/* Mobile Menu Button */}
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-[#2b2b2b]" aria-label="Toggle menu">
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </nav>
-
-      {/* Mobile Dropdown Menu */}
-      {isMenuOpen && (
-        <div ref={mobileMenuRef} className="lg:hidden bg-white shadow-md px-6 py-4 space-y-4 text-[#2b2b2b] font-medium">
-          {navItems.map((item) => (
-            <Link key={item} to={`/${item.toLowerCase().replace(/ /g, '')}`} className="block hover:text-[#009000] transition hover:translate-x-1">
-              {t(item)}
-            </Link>
-          ))}
-
-          <div className="relative" onClick={() => setIsLanguageOpen(!isLanguageOpen)}>
-            <div className="flex items-center gap-2 cursor-pointer">
-              <FaGlobe className="text-[#009000]" />
+           {/* Mobile Menu Items (always visible) */}
+           <div className="flex lg:hidden items-center gap-4">
+          {/* Language Selector */}
+          <div className="relative">
+            <div 
+              className="cursor-pointer hover:text-[#009000] transition-transform duration-200 hover:scale-105 flex items-center gap-1"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsLanguageOpen(!isLanguageOpen);
+              }}
+              aria-expanded={isLanguageOpen}
+              aria-haspopup="true"
+            >
+              <FaGlobe className="text-[#009000]" size={20} />
+              <span className="text-xs">{currentLanguage === 'ar' ? 'AR' : 'EN'}</span>
             </div>
 
             {isLanguageOpen && (
-              <div ref={languageMenuRef} className="mt-2 bg-white rounded-md shadow-lg py-1 z-50">
+              <div 
+                ref={languageMenuRef} 
+                className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200"
+              >
                 {languages.map((lang) => (
                   <div
                     key={lang.code}
-                    className={`px-4 py-2 cursor-pointer hover:bg-gray-100 ${
+                    className={`px-3 py-1 cursor-pointer hover:bg-gray-100 text-sm ${
                       currentLanguage === lang.code ? 'bg-green-50 text-[#009000]' : ''
                     }`}
-                    onClick={() => toggleLanguage(lang.code)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleLanguage(lang.code);
+                    }}
                   >
                     {lang.name}
                   </div>
@@ -178,19 +195,49 @@ function Navbar() {
               </div>
             )}
           </div>
+
+          {/* Call Us Button */}
           <a
             href="tel:8252404188"
-            className="block px-4 py-2 text-[#009000] border border-[#009000] rounded-md hover:bg-green-100 transition hover:scale-105 flex items-center gap-2"
+            className="flex items-center gap-1 px-2 py-1 text-[#009000] border border-[#009000] rounded-md hover:bg-green-100 transition text-sm"
+            aria-label="Call Us"
           >
-            <FaPhone size={16} />
-            <span>{t('Call Us')}</span>
+            <FaPhone size={14} />
+            <span className="hidden sm:inline">{t('Call Us')}</span>
           </a>
 
-          
-          <Link to="/schedule" className="block px-4 py-2 bg-[#009000] text-white rounded-md hover:bg-[#009000] transition font-semibold hover:scale-105">
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={() => setIsMenuOpen(!isMenuOpen)} 
+            className="text-[#2b2b2b]" 
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Dropdown Menu */}
+      {isMenuOpen && (
+        <div 
+          ref={mobileMenuRef} 
+          className="lg:hidden bg-white shadow-md px-6 py-4 space-y-4 text-[#2b2b2b] font-medium"
+        >
+          {navItems.map((item) => (
+            <Link 
+              key={item} 
+              to={`/${item.toLowerCase().replace(/ /g, '')}`} 
+              className="block hover:text-[#009000] transition hover:translate-x-1"
+            >
+              {t(item)}
+            </Link>
+          ))}
+          <Link 
+            to="/schedule" 
+            className="block px-4 py-2 bg-[#009000] text-white rounded-md hover:bg-[#007000] transition font-semibold hover:scale-105 text-center"
+          >
             {t('Schedule a Call')}
           </Link>
-         
         </div>
       )}
     </header>
