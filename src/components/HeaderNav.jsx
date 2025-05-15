@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
-import { FaGlobe, FaPhone } from 'react-icons/fa'; // Added FaPhone
+import { FaGlobe, FaPhone } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 function Navbar() {
@@ -11,7 +11,10 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language || 'ar');
-  const languageToggleRef = useRef(null);
+  const languageMenuRefDesktop = useRef(null);
+  const languageMenuRefMobile = useRef(null);
+  const languageToggleRefDesktop = useRef(null);
+const languageToggleRefMobile = useRef(null);
 
 
   const mobileMenuRef = useRef(null);
@@ -58,10 +61,9 @@ function Navbar() {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
-        languageMenuRef.current && 
-        !languageMenuRef.current.contains(event.target) &&
-        languageToggleRef.current &&
-        !languageToggleRef.current.contains(event.target)
+        (languageMenuRefDesktop.current && !languageMenuRefDesktop.current.contains(event.target)) &&
+        (languageMenuRefMobile.current && !languageMenuRefMobile.current.contains(event.target)) &&
+        languageToggleRef.current && !languageToggleRef.current.contains(event.target)
       ) {
         setIsLanguageOpen(false);
       }
@@ -70,15 +72,21 @@ function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
   
-  
+
   useEffect(() => {
     setCurrentLanguage(i18n.language);
     document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = i18n.language;
   }, [i18n.language]);
 
   const toggleLanguage = (langCode) => {
     i18n.changeLanguage(langCode);
     setIsLanguageOpen(false);
+  };
+
+  const handleLanguageToggle = (e) => {
+    e.stopPropagation();
+    setIsLanguageOpen(!isLanguageOpen);
   };
 
   const navItems = ['Home', 'About-Us', 'Services', 'Portfolio', 'Blog'];
@@ -105,67 +113,65 @@ function Navbar() {
               <Link to={`/${item.toLowerCase().replace(/ /g, '')}`}>{t(item)}</Link>
             </li>
           ))}
-            <li>
+          <li>
             <a
-              href="tel:8252404188"
+              href="tel:8750518844"
               className="flex items-center gap-2 px-4 py-3 text-[#009000] border border-[#009000] rounded-md hover:bg-green-100 transition hover:scale-105"
             >
               <FaPhone size={18} />
               <span>{t('Call Us')}</span>
             </a>
           </li>
-         
           <li>
-            <Link to="/schedule" className="px-4 py-3 bg-[#009000] text-white rounded-md hover:bg-[#009000] transition font-semibold hover:scale-105 inline-block">
+            <Link to="/schedule" className="px-4 py-3 bg-[#009000] text-white rounded-md hover:bg-[#007000] transition font-semibold hover:scale-105 inline-block">
               {t('Schedule a Call')}
             </Link>
           </li>
-        
           <li className="relative">
-          <div 
-  ref={languageToggleRef}
-  className="cursor-pointer hover:text-[#009000] transition-transform duration-200 hover:scale-105 flex items-center gap-3"
-  onClick={() => setIsLanguageOpen(!isLanguageOpen)}
->
-  <FaGlobe className="text-[#009000]" size={30} />
-  <span className="text-sm">{currentLanguage === 'ar' ? 'AR' : 'EN'}</span>
-</div>
-
-
-            {isLanguageOpen && (
-              <div ref={languageMenuRef} className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg py-1 z-50">
-                {languages.map((lang) => (
-  <div
-    key={lang.code}
-    className={`px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center ${
-      currentLanguage === lang.code ? 'bg-green-50 text-[#009000]' : ''
-    }`}
-    onClick={(e) => {
-      e.stopPropagation();
-      toggleLanguage(lang.code);
-    }}
+  <div 
+    ref={languageToggleRefDesktop}   // NEW ref for desktop toggle
+    className="cursor-pointer hover:text-[#009000] transition-transform duration-200 hover:scale-105 flex items-center gap-3"
+    onClick={handleLanguageToggle}
+    aria-expanded={isLanguageOpen}
+    aria-haspopup="true"
   >
-    <span className={lang.code === 'ar' ? 'text-right w-full' : ''}>
-      {lang.name}
-    </span>
+    <FaGlobe className="text-[#009000]" size={30} />
+    <span className="text-sm">{currentLanguage === 'ar' ? 'AR' : 'EN'}</span>
   </div>
-))}
 
-              </div>
-            )}
-          </li>
+  {isLanguageOpen && (
+    <div 
+      ref={languageMenuRefDesktop}   // NEW ref for desktop menu
+      className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200"
+    >
+      {languages.map((lang) => (
+        <button
+          key={lang.code}
+          className={`w-full text-left px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center ${
+            currentLanguage === lang.code ? 'bg-green-50 text-[#009000]' : ''
+          }`}
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleLanguage(lang.code);
+          }}
+        >
+          <span className={lang.code === 'ar' ? 'text-right w-full' : ''}>
+            {lang.name}
+          </span>
+        </button>
+      ))}
+    </div>
+  )}
+</li>
+
         </ul>
 
-           {/* Mobile Menu Items (always visible) */}
-           <div className="flex lg:hidden items-center gap-4">
-          {/* Language Selector */}
+        {/* Mobile Menu Items */}
+        <div className="flex lg:hidden items-center gap-4">
           <div className="relative">
             <div 
               className="cursor-pointer hover:text-[#009000] transition-transform duration-200 hover:scale-105 flex items-center gap-1"
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsLanguageOpen(!isLanguageOpen);
-              }}
+              onClick={handleLanguageToggle}
               aria-expanded={isLanguageOpen}
               aria-haspopup="true"
             >
@@ -179,9 +185,9 @@ function Navbar() {
                 className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200"
               >
                 {languages.map((lang) => (
-                  <div
+                  <button
                     key={lang.code}
-                    className={`px-3 py-1 cursor-pointer hover:bg-gray-100 text-sm ${
+                    className={`w-full text-left px-3 py-1 cursor-pointer hover:bg-gray-100 text-sm ${
                       currentLanguage === lang.code ? 'bg-green-50 text-[#009000]' : ''
                     }`}
                     onClick={(e) => {
@@ -190,13 +196,12 @@ function Navbar() {
                     }}
                   >
                     {lang.name}
-                  </div>
+                  </button>
                 ))}
               </div>
             )}
           </div>
 
-          {/* Call Us Button */}
           <a
             href="tel:8252404188"
             className="flex items-center gap-1 px-2 py-1 text-[#009000] border border-[#009000] rounded-md hover:bg-green-100 transition text-sm"
@@ -206,7 +211,6 @@ function Navbar() {
             <span className="hidden sm:inline">{t('Call Us')}</span>
           </a>
 
-          {/* Mobile Menu Button */}
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)} 
             className="text-[#2b2b2b]" 

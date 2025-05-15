@@ -23,7 +23,7 @@ const CompanyJourney = () => {
     },
     {
       id: "03",
-      description: t("Global Partnered with Amazon, Flipkart and Snapdeal for the seller onboarding program with more than 21k seller onboard."),
+      description: t("Global Partnered with Amazon, noon and beyond for the seller onboarding program with more than 21k seller onboard."),
       img: "/images/journey-bg.jpg",
       alt: t("Our e-commerce partnership celebration"),
     },
