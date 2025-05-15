@@ -62,7 +62,6 @@ const ServiceDetail = () => {
 
   // Enhanced services data with more details
   const services = [
-
     {
       id: 'account-management',
       title: t("Full Account Management"),
@@ -126,206 +125,67 @@ const ServiceDetail = () => {
         t("Achieve premium seller status faster")
       ]
     },
-    
     {
       id: 'vendor-central',
       title: t("Amazon Vendor Central Management"),
-      fullDescription: t("Maximize your Amazon Vendor Central potential with our expert B2B management services. We handle purchase orders, inventory forecasting, and vendor performance to ensure optimal results."),
+      fullDescription: t("Our specialized Vendor Central management service is designed for brands selling wholesale to Amazon. We optimize your vendor relationship, streamline operations, and maximize profitability through strategic purchase order management and retail analytics."),
       features: [
-        t("B2B account setup and configuration"),
-        t("Purchase order management"),
-        t("Vendor Central optimization"),
-        t("Dispute resolution"),
-        t("Performance analytics"),
-        t("Inventory forecasting"),
-        t("Retail readiness management")
+        t("Vendor Central account setup and configuration"),
+        t("Automated purchase order management"),
+        t("Advanced inventory forecasting and replenishment"),
+        t("Vendor performance analytics and optimization"),
+        t("Dispute resolution and chargeback management"),
+        t("Retail readiness and compliance management"),
+        t("Marketing and promotion management"),
+        t("Amazon Vine program enrollment"),
+        t("Amazon Fresh and Prime Now integration")
       ],
       pricing: {
         basic: {
           price: "2,500 SAR",
-          coverage: t("Startup & configuration"),
+          coverage: t("Up to 500 SKUs"),
           features: [
-            t("Vendor setup"),
-            t("Initial PO management"),
-            t("Performance dashboard setup")
+            t("Basic PO management"),
+            t("Monthly performance review"),
+            t("Inventory alerts")
           ]
         },
         professional: {
-          price: "3,800 SAR",
-          coverage: t("Monthly management"),
+          price: "3,750 SAR",
+          coverage: t("Up to 2,000 SKUs"),
           features: [
-            t("Ongoing PO management"),
-            t("Dispute resolution"),
-            t("Performance improvement actions")
+            t("All Basic features"),
+            t("Advanced analytics"),
+            t("Weekly performance review"),
+            t("Dispute management")
           ]
         },
         enterprise: {
           price: "5,000 SAR",
-          coverage: t("Full B2B operations"),
+          coverage: t("Unlimited SKUs"),
           features: [
             t("All Professional features"),
-            t("Weekly vendor performance insights"),
-            t("Consultation and strategy meetings")
+            t("Dedicated vendor manager"),
+            t("Daily performance monitoring"),
+            t("Strategic vendor negotiations"),
+            t("Custom reporting")
           ]
         }
       },
       serviceLevels: [
-        { name: t("Response Time"), basic: "48h", professional: "24h", enterprise: "6h" },
-        { name: t("Reporting Frequency"), basic: t("Initial"), professional: t("Bi-weekly"), enterprise: t("Weekly") },
-        { name: t("Support Channels"), basic: t("Email"), professional: t("Email + Chat"), enterprise: t("Full Support Suite") },
-        { name: t("Vendor Strategy"), basic: "-", professional: t("Quarterly"), enterprise: t("Monthly") }
+        { name: t("PO Response Time"), basic: "48h", professional: "24h", enterprise: "12h" },
+        { name: t("Dispute Resolution"), basic: "5 days", professional: "3 days", enterprise: "24h" },
+        { name: t("Inventory Forecasting"), basic: t("Manual"), professional: t("Automated"), enterprise: t("AI-Powered") },
+        { name: t("Vendor Negotiations"), basic: "-", professional: t("Basic"), enterprise: t("Advanced") }
       ],
       benefits: [
-        t("Stronger purchase order accuracy"),
-        t("Improved vendor scorecard performance"),
-        t("Fewer chargebacks and deductions"),
-        t("Enhanced retail relationships with Amazon")
+        t("Increase wholesale order volume by 40-60%"),
+        t("Reduce chargebacks and disputes by 30-50%"),
+        t("Improve inventory turnover by 25-35%"),
+        t("Achieve premium vendor status and benefits"),
+        t("Optimize marketing spend and promotions")
       ]
     },
-    {
-      id: 'aplus-content',
-      title: t("A+ Content & Enhanced Brand Content"),
-      fullDescription: t("Transform your product pages with professionally designed A+ Content that tells your brand story and significantly boosts conversion rates."),
-      features: [
-        t("Professional A+ content design"),
-        t("Multimedia integration (images/videos)"),
-        t("Brand storytelling"),
-        t("Mobile-optimized layouts"),
-        t("Conversion-focused elements"),
-        t("SEO-optimized content"),
-        t("Competitor benchmarking")
-      ],
-      pricing: {
-        basic: {
-          price: "500 SAR",
-          coverage: t("Per ASIN"),
-          features: [
-            t("Basic layout"),
-            t("Image + text"),
-            t("Mobile optimization")
-          ]
-        },
-        professional: {
-          price: "800 SAR",
-          coverage: t("Per ASIN"),
-          features: [
-            t("Multimedia integration"),
-            t("SEO enhancements"),
-            t("Conversion-focused sections")
-          ]
-        },
-        enterprise: {
-          price: "1,200 SAR",
-          coverage: t("Per ASIN"),
-          features: [
-            t("Custom design"),
-            t("Full brand story"),
-            t("A/B testing support")
-          ]
-        }
-      },
-      serviceLevels: [],
-      benefits: [
-        t("Boost conversion rates by up to 20%"),
-        t("Enhance mobile shopping experience"),
-        t("Strengthen brand image and trust")
-      ]
-    },
-   {
-      id: 'logistics',
-      title: t("Logistics Solutions"),
-      fullDescription: t("Streamline your supply chain with our tailored logistics solutions designed specifically for Amazon sellers."),
-      features: [
-        t("Shipping coordination"),
-        t("Customs clearance assistance"),
-        t("Inventory replenishment planning"),
-        t("Multi-channel fulfillment"),
-        t("Freight forwarding"),
-        t("Duty optimization"),
-        t("Warehousing solutions")
-      ],
-      pricing: {
-        custom: true,
-        message: t("Contact us for a custom logistics quote tailored to your business needs.")
-      },
-      serviceLevels: [],
-      benefits: [
-        t("Faster fulfillment times"),
-        t("Lower shipping costs"),
-        t("Improved supply chain reliability")
-      ]
-    },
-    {
-      id: 'brand-registry',
-      title: t("Brand Registry & Approval"),
-      fullDescription: t("Protect your brand and unlock powerful selling tools by getting approved for Amazon Brand Registry."),
-      features: [
-        t("Trademark verification"),
-        t("Brand registry application"),
-        t("Brand protection setup"),
-        t("Enhanced brand content eligibility"),
-        t("Counterfeit protection"),
-        t("Brand analytics access"),
-        t("Sponsored Brands eligibility")
-      ],
-      pricing: {
-        basic: {
-          price: "1,500 SAR",
-          coverage: t("One-time service"),
-          features: [
-            t("Application process handling"),
-            t("Document preparation"),
-            t("Post-registration setup")
-          ]
-        }
-      },
-      serviceLevels: [],
-      benefits: [
-        t("Protect intellectual property"),
-        t("Access brand-exclusive tools"),
-        t("Prevent unauthorized sellers")
-      ]
-    },
-    {
-      id: 'social-media',
-      title: t("Social Media Marketing"),
-      fullDescription: t("Amplify your brand presence and drive traffic to your Amazon listings with our professional social media management."),
-      features: [
-        t("Platform management (FB/IG/TikTok)"),
-        t("Content creation & scheduling"),
-        t("Audience engagement"),
-        t("Performance analytics"),
-        t("Ad campaign management"),
-        t("Influencer partnerships"),
-        t("Community building")
-      ],
-      pricing: {
-        basic: {
-          price: "2,000 SAR",
-          coverage: t("Monthly management"),
-          features: [
-            t("1 platform"),
-            t("Content planning"),
-            t("Engagement tracking")
-          ]
-        },
-        professional: {
-          price: "3,500 SAR",
-          coverage: t("Multi-platform"),
-          features: [
-            t("Ad campaign management"),
-            t("Influencer collaboration"),
-            t("Weekly analytics")
-          ]
-        }
-      },
-      serviceLevels: [],
-      benefits: [
-        t("Increased brand visibility"),
-        t("Higher Amazon listing traffic"),
-        t("Stronger customer engagement")
-      ]
-    }
     // Add other services here...
   ];
 

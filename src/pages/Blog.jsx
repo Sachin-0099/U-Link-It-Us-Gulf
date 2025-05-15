@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { useTranslation } from 'react-i18next';
 
 
 const BlogPage = () => {
   // State management
-    const { t } = useTranslation();  // Translation hook
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -33,7 +31,6 @@ const BlogPage = () => {
     {
       id: 1,
       slug: "account-management-program",
-
       title: "U-Link Gulf Seller Account Management Program",
       content: `<p>U-Link Gulf is one of the fastest-growing companies offering Account Management, IT Services, and Logistics solutions across the Gulf region. We partner with Amazon and OEMs to help sellers in countries like the UAE, Saudi Arabia, and Qatar manage their accounts and grow their e-commerce businesses.</p><p>This program includes:</p><ul><li>Inventory Management</li><li>Sales Management</li><li>Order Management</li><li>Reviews & Ratings Management</li><li>Account Health Management</li><li>Buyer-Seller Communication</li><li>Sales Boost</li></ul>`,
       excerpt: "U-Link Gulf delivers end-to-end Amazon Seller Account Management, IT Services, and Logistics support in the Gulf, in collaboration with OEMs.",
@@ -333,10 +330,10 @@ const BlogPage = () => {
         {/* Blog Header */}
         <header className="text-center mb-12">
           <h1 className="text-5xl font-bold text-[#009000] mb-4 bg-clip-text text-transparent bg-[#009000]">
-            {t("U-Link Gulf Blog")}
+            U-Link Gulf Blog
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          {t("Discover expert insights on seller account management, IT services, and logistics for effective e-commerce growth strategies.")}
+          Discover expert insights on seller account management, IT services, and logistics for effective e-commerce growth strategies.
 </p>
 
           
@@ -392,7 +389,7 @@ const BlogPage = () => {
         {/* Blog Submission Form */}
         {showSubmissionForm && (
           <div className="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg mb-12 animate-fade-in">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">{t("Submit Your Blog Post")}</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-800">Submit Your Blog Post</h2>
             
             {submissionStatus === 'success' ? (
               <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded mb-6">
@@ -400,7 +397,7 @@ const BlogPage = () => {
                   <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <p>{t("Thank you for your submission! Your post is now live on our blog.")}</p>
+                  <p>Thank you for your submission! Your post is now live on our blog.</p>
                 </div>
               </div>
             ) : (
@@ -408,7 +405,7 @@ const BlogPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-gray-700 mb-2 font-medium" htmlFor="title">
-                      {t("Title*")}
+                      Title*
                     </label>
                     <input
                       type="text"
@@ -426,7 +423,7 @@ const BlogPage = () => {
                   
                   <div>
                     <label className="block text-gray-700 mb-2 font-medium" htmlFor="category">
-                      {t("Category*")}
+                      Category*
                     </label>
                     <select
                       id="category"
@@ -437,11 +434,11 @@ const BlogPage = () => {
                         formErrors.category ? 'border-green-400 focus:ring-red-200' : 'border-gray-200 focus:ring-blue-200'
                       }`}
                     >
-                      <option value="">{t("Select a category")}</option>
+                      <option value="">Select a category</option>
                       {categories.filter(c => c !== 'all').map(category => (
                         <option key={category} value={category}>{category}</option>
                       ))}
-                      <option value="_new">{t("+ Add new category")}</option>
+                      <option value="_new">+ Add new category</option>
                     </select>
                     {formErrors.category && <p className="text-green-500 text-sm mt-1">{formErrors.category}</p>}
                   </div>
@@ -449,7 +446,7 @@ const BlogPage = () => {
                 
                 <div>
                   <label className="block text-gray-700 mb-2 font-medium" htmlFor="content">
-                    {t("Content*")}
+                    Content*
                   </label>
                   <textarea
                     id="content"
@@ -468,7 +465,7 @@ const BlogPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-gray-700 mb-2 font-medium" htmlFor="authorName">
-                      {t("Your Name*")}
+                      Your Name*
                     </label>
                     <input
                       type="text"
@@ -486,7 +483,7 @@ const BlogPage = () => {
                   
                   <div>
                     <label className="block text-gray-700 mb-2 font-medium" htmlFor="authorEmail">
-                      {t("Your Email*")}
+                      Your Email*
                     </label>
                     <input
                       type="email"
@@ -507,7 +504,7 @@ const BlogPage = () => {
                   type="submit"
                   className="w-full bg-gradient-to-r from-blue-500 to-green-500 text-white py-4 px-6 rounded-xl hover:from-blue-600 hover:to-green-600 transition-all duration-300 transform hover:scale-[1.01] shadow-md hover:shadow-lg"
                 >
-                  {t("Publish Post")}
+                  Publish Post
                 </button>
               </form>
             )}
@@ -562,7 +559,7 @@ const BlogPage = () => {
                           
                           {/* Comments section */}
                           <div className="mt-8 border-t pt-6">
-                            <h3 className="text-lg font-semibold mb-4">{t("Comments")} ({comments[post.id]?.length || 0})</h3>
+                            <h3 className="text-lg font-semibold mb-4">Comments ({comments[post.id]?.length || 0})</h3>
                             
                             {comments[post.id]?.map(comment => (
                               <div key={comment.id} className="mb-4 pb-4 border-b last:border-b-0">
@@ -586,7 +583,7 @@ const BlogPage = () => {
                                 onClick={() => handleAddComment(post.id)}
                                 className="px-5 py-2.5 bg-green-500 text-white rounded-xl hover:bg-green-600 transition-colors duration-300"
                               >
-                                {t("Post Comment")}
+                                Post Comment
                               </button>
                             </div>
                           </div>
@@ -619,14 +616,14 @@ const BlogPage = () => {
                         >
                           {activePost?.id === post.id ? (
                             <>
-                              <span>{t("Show Less")}</span>
+                              <span>Show Less</span>
                               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
                                 <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
                               </svg>
                             </>
                           ) : (
                             <>
-                              <span>{t("Read More")}</span>
+                              <span>Read More</span>
                               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
                                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                               </svg>
@@ -644,8 +641,8 @@ const BlogPage = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">{t("No articles found")}</h3>
-                  <p className="text-gray-600 mb-6">{t("Try adjusting your search or filter criteria")}</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">No articles found</h3>
+                  <p className="text-gray-600 mb-6">Try adjusting your search or filter criteria</p>
                   <button
                     onClick={() => {
                       setSearchQuery('');
@@ -653,7 +650,7 @@ const BlogPage = () => {
                     }}
                     className="px-5 py-2.5 bg-[#009000] text-white rounded-lg hover:bg-green-600 transition-colors"
                   >
-                    {t("Reset Filters")}
+                    Reset Filters
                   </button>
                 </div>
               </div>
