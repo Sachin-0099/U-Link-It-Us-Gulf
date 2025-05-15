@@ -6,154 +6,149 @@ import {
 } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
+  
 
-const partners = [
-  {
-    name: "Amazon.ae Growth Partner",
-    logo: "/Images/amazonae.png",
-    description:
-      "We facilitate entry and scale-up on Amazon UAE by supporting sellers with Arabic content localization, local fulfillment, and tailored marketing for Emirati audiences.",
-    benefits: [
-      "Arabic product listing translation",
-      "UAE-specific keyword research",
-      "Local fulfillment and returns support",
-      "Hyper-local advertising campaigns",
-      "UAE customer behavior insights",
-      "Compliance with UAE ecommerce laws",
-    ],
-  },
-  {
-    name: "Amazon.sa Growth Partner",
-    logo: "/Images/amazonsa1.png",
-    description:
-      "Our team helps Indian sellers thrive in Saudi Arabia’s booming digital space through cultural targeting, KSA logistics, and platform-specific strategies.",
-    benefits: [
-      "Saudi-focused product adaptation",
-      "Cross-border to local delivery setup",
-      "Campaign planning for Ramadan & national events",
-      "Arabic UI/UX product enhancements",
-      "KSA compliance and VAT registration",
-      "Behavioral analytics for Saudi consumers",
-    ],
-  },
-  {
-    name: "noon Partner Network - MENA Region",
-    logo: "/Images/noon1.png",
-    description:
-      "We collaborate with noon to drive seller success in the Gulf with product localization, Fulfilled by noon (FBN) logistics, and access to exclusive marketing channels.",
-    benefits: [
-      "Arabic listing optimization",
-      "noon FBN integration & onboarding",
-      "Access to influencer marketing in GCC",
-      "Participation in regional promotional events",
-      "Local pricing and settlement support",
-      "GCC-specific sales analytics",
-    ],
-  },
-  {
-    name: "U-Link Gulf eCommerce Expansion Partner",
-    logo: "/Images/Ulinkit.png",
-    description:
-      "Ulinkit empowers Indian sellers with smart technology, logistics, and marketing strategies to succeed in the Gulf’s fast-growing digital marketplaces.",
-    benefits: [
-      "Multi-platform Gulf marketplace integration",
-      "Tailored catalog enhancement for Arabic-speaking buyers",
-      "Cross-border and in-region logistics support",
-      "Arabic customer service enablement",
-      "AI-powered demand forecasting",
-      "Local compliance and legal guidance",
-    ],
-  },
-  {
-    name: "DP World Logistics Partner - GCC Region",
-    logo: "/Images/Logo New.svg",
-    description:
-      "DP World is our logistics backbone across the Gulf, offering fast, scalable, and customs-compliant shipping for ecommerce sellers targeting UAE, KSA, and beyond.",
-    benefits: [
-      "Warehousing hubs across Gulf countries",
-      "Smart cross-border logistics",
-      "Streamlined customs and clearance solutions",
-      "Regional courier and last-mile integration",
-      "Supply chain visibility dashboards",
-      "GCC trade documentation support",
-    ],
-  },
-  {
-    name: "Amazon SPN Partner (MENA Region Services)",
-    logo: "/Images/amazonspn.png",
-    description:
-      "As part of Amazon's SPN program, we offer verified services tailored to the Gulf market—spanning cataloging, ads, and performance optimization.",
-    benefits: [
-      "Arabic SPN-verified catalog creation",
-      "Gulf-centric Sponsored Ads setup",
-      "Professional imaging tailored to MENA consumers",
-      "Localized training and certifications",
-      "Automated sales reporting for Gulf accounts",
-      "Account health support for Amazon.ae & .sa",
-    ],
-  },
-  {
-    name: "Souq Legacy Partner",
-    logo: "/Images/souq.png",
-    description:
-      "We continue to support merchants who began their journey on Souq by offering seamless transition support to Amazon.ae and Amazon.sa platforms.",
-    benefits: [
-      "Souq to Amazon catalog migration",
-      "Legacy data optimization",
-      "Customer feedback retention",
-      "Sales tracking continuity",
-      "Migration documentation and help",
-      "Platform onboarding guidance",
-    ],
-  },
-  {
-    name: "Gulf Market VAT & Compliance Partner",
-    logo: "/Images/amazonco.png",
-    description:
-      "We assist sellers in understanding and fulfilling VAT, invoicing, and product compliance requirements across GCC ecommerce platforms.",
-    benefits: [
-      "UAE and KSA VAT registration help",
-      "Product eligibility checks",
-      "E-invoicing compliance systems",
-      "Customs and regulatory support",
-      "Translation of certificates and packaging",
-      "Audit-prepared documentation kits",
-    ],
-  },
-  {
-    name: "Official Amazon Global Selling Partner",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-    description:
-      "As an official Amazon Global Selling Partner, we enable sellers to expand into Amazon's global markets, including the Gulf, with region-aware strategies.",
-    benefits: [
-      "Gulf store setup and compliance",
-      "Amazon.ae and Amazon.sa growth planning",
-      "Cross-border logistics with Gulf integration",
-      "GCC marketplace health management",
-      "Arabic keyword & content support",
-      "Data-driven growth forecasting",
-    ],
-  },
-  {
-    name: "Tredling - B2B Gulf Export Channel",
-    logo: "/Images/tredling.png",
-    description:
-      "Tredling supports Indian exporters entering B2B ecommerce across Gulf countries by simplifying trade, finance, and product placement strategies.",
-    benefits: [
-      "Access to B2B buyer networks in the Gulf",
-      "Support with Halal certifications & compliance",
-      "Trade finance and credit risk solutions",
-      "Localized sales kits for Arab buyers",
-      "Real-time export visibility",
-      "Gulf-region payment processing help",
-    ],
-  },
-];
+
 
 
 
 
 const AboutPage = () => {
+  const { t } = useTranslation();  // Translation hook
+  const partners = [
+    {
+      name: t("Amazon.ae Growth Partner"),
+      logo: "/Images/amazonae.png",
+      description: t("We facilitate entry and scale-up on Amazon UAE by supporting sellers with Arabic content localization, local fulfillment, and tailored marketing for Emirati audiences."),
+      benefits: [
+        t("Arabic product listing translation"),
+        t("UAE-specific keyword research"),
+        t("Local fulfillment and returns support"),
+        t("Hyper-local advertising campaigns"),
+        t("UAE customer behavior insights"),
+        t("Compliance with UAE ecommerce laws"),
+      ],
+    },
+    {
+      name: t("Amazon.sa Growth Partner"),
+      logo: "/Images/amazonsa1.png",
+      description: t("Our team helps Indian sellers thrive in Saudi Arabia’s booming digital space through cultural targeting, KSA logistics, and platform-specific strategies."),
+      benefits: [
+        t("Saudi-focused product adaptation"),
+        t("Cross-border to local delivery setup"),
+        t("Campaign planning for Ramadan & national events"),
+        t("Arabic UI/UX product enhancements"),
+        t("KSA compliance and VAT registration"),
+        t("Behavioral analytics for Saudi consumers"),
+      ],
+    },
+    {
+      name: t("noon Partner Network - MENA Region"),
+      logo: "/Images/noon1.png",
+      description: t("We collaborate with noon to drive seller success in the Gulf with product localization, Fulfilled by noon (FBN) logistics, and access to exclusive marketing channels."),
+      benefits: [
+        t("Arabic listing optimization"),
+        t("noon FBN integration & onboarding"),
+        t("Access to influencer marketing in GCC"),
+        t("Participation in regional promotional events"),
+        t("Local pricing and settlement support"),
+        t("GCC-specific sales analytics"),
+      ],
+    },
+    {
+      name: t("U-Link Gulf eCommerce Expansion Partner"),
+      logo: "/Images/Ulinkit.png",
+      description: t("Ulinkit empowers Indian sellers with smart technology, logistics, and marketing strategies to succeed in the Gulf’s fast-growing digital marketplaces."),
+      benefits: [
+        t("Multi-platform Gulf marketplace integration"),
+        t("Tailored catalog enhancement for Arabic-speaking buyers"),
+        t("Cross-border and in-region logistics support"),
+        t("Arabic customer service enablement"),
+        t("AI-powered demand forecasting"),
+        t("Local compliance and legal guidance"),
+      ],
+    },
+    {
+      name: t("DP World Logistics Partner - GCC Region"),
+      logo: "/Images/Logo New.svg",
+      description: t("DP World is our logistics backbone across the Gulf, offering fast, scalable, and customs-compliant shipping for ecommerce sellers targeting UAE, KSA, and beyond."),
+      benefits: [
+        t("Warehousing hubs across Gulf countries"),
+        t("Smart cross-border logistics"),
+        t("Streamlined customs and clearance solutions"),
+        t("Regional courier and last-mile integration"),
+        t("Supply chain visibility dashboards"),
+        t("GCC trade documentation support"),
+      ],
+    },
+    {
+      name: t("Amazon SPN Partner (MENA Region Services)"),
+      logo: "/Images/amazonspn.png",
+      description: t("As part of Amazon's SPN program, we offer verified services tailored to the Gulf market—spanning cataloging, ads, and performance optimization."),
+      benefits: [
+        t("Arabic SPN-verified catalog creation"),
+        t("Gulf-centric Sponsored Ads setup"),
+        t("Professional imaging tailored to MENA consumers"),
+        t("Localized training and certifications"),
+        t("Automated sales reporting for Gulf accounts"),
+        t("Account health support for Amazon.ae & .sa"),
+      ],
+    },
+    {
+      name: t("Souq Legacy Partner"),
+      logo: "/Images/souq.png",
+      description: t("We continue to support merchants who began their journey on Souq by offering seamless transition support to Amazon.ae and Amazon.sa platforms."),
+      benefits: [
+        t("Souq to Amazon catalog migration"),
+        t("Legacy data optimization"),
+        t("Customer feedback retention"),
+        t("Sales tracking continuity"),
+        t("Migration documentation and help"),
+        t("Platform onboarding guidance"),
+      ],
+    },
+    {
+      name: t("Gulf Market VAT & Compliance Partner"),
+      logo: "/Images/amazonco.png",
+      description: t("We assist sellers in understanding and fulfilling VAT, invoicing, and product compliance requirements across GCC ecommerce platforms."),
+      benefits: [
+        t("UAE and KSA VAT registration help"),
+        t("Product eligibility checks"),
+        t("E-invoicing compliance systems"),
+        t("Customs and regulatory support"),
+        t("Translation of certificates and packaging"),
+        t("Audit-prepared documentation kits"),
+      ],
+    },
+    {
+      name: t("Official Amazon Global Selling Partner"),
+      logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+      description: t("As an official Amazon Global Selling Partner, we enable sellers to expand into Amazon's global markets, including the Gulf, with region-aware strategies."),
+      benefits: [
+        t("Gulf store setup and compliance"),
+        t("Amazon.ae and Amazon.sa growth planning"),
+        t("Cross-border logistics with Gulf integration"),
+        t("GCC marketplace health management"),
+        t("Arabic keyword & content support"),
+        t("Data-driven growth forecasting"),
+      ],
+    },
+    {
+      name: t("Tredling - B2B Gulf Export Channel"),
+      logo: "/Images/tredling.png",
+      description: t("Tredling supports Indian exporters entering B2B ecommerce across Gulf countries by simplifying trade, finance, and product placement strategies."),
+      benefits: [
+        t("Access to B2B buyer networks in the Gulf"),
+        t("Support with Halal certifications & compliance"),
+        t("Trade finance and credit risk solutions"),
+        t("Localized sales kits for Arab buyers"),
+        t("Real-time export visibility"),
+        t("Gulf-region payment processing help"),
+      ],
+    },
+  ];
+  
   const [activePartner, setActivePartner] = useState(0);
 
 const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 5000 }) => {
@@ -277,10 +272,10 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
               className="text-center max-w-4xl mx-auto"
             >
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Pioneering Global Business Solutions Since 2011
+                {t("Pioneering Global Business Solutions Since 2011")}
               </h1>
               <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto">
-  U-Link Gulf empowers businesses across the UAE, Saudi Arabia, and wider Gulf region with cutting-edge IT, e-commerce, logistics, and procurement solutions—driving growth through cross-border marketplace expansion, strategic partnerships, and regional expertise.
+  {t("U-Link Gulf empowers businesses across the UAE, Saudi Arabia, and wider Gulf region with cutting-edge IT, e-commerce, logistics, and procurement solutions—driving growth through cross-border marketplace expansion, strategic partnerships, and regional expertise.")}
 </p>
 
             </motion.div>
@@ -331,28 +326,28 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                <motion.div variants={fadeIn}>
   <div className="flex items-center mb-6">
     <div className="w-12 h-1 bg-[#009000] mr-4"></div>
-    <h2 className="text-2xl font-semibold text-gray-700">OUR COMPANY</h2>
+    <h2 className="text-2xl font-semibold text-gray-700">{t("OUR COMPANY")}</h2>
   </div>
 
   <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-    Redefining Business Solutions Since 2011
+    {t("Redefining Business Solutions Since 2011")}
   </h3>
 
   <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-    U-Link Gulf leads digital innovation by delivering next-gen IT, e-commerce, logistics, and procurement solutions to businesses across the Gulf region and beyond. 
-    Our technology-driven approach and deep market knowledge enable clients to scale confidently in competitive markets.
+    {t("U-Link Gulf leads digital innovation by delivering next-gen IT, e-commerce, logistics, and procurement solutions to businesses across the Gulf region and beyond.Our technology-driven approach and deep market knowledge enable clients to scale confidently in competitive markets.")} 
+    
   </p>
 
   <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-    With over 15 years of industry experience, we specialize in cross-border commerce, regional marketplace entry, and full-service operational support—empowering brands 
-    to grow across the UAE, Saudi Arabia, and global markets with confidence.
+    {t("With over 15 years of industry experience, we specialize in cross-border commerce, regional marketplace entry, and full-service operational support—empowering brands to grow across the UAE, Saudi Arabia, and global markets with confidence.")}
+    
   </p>
 
   <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-[#009000]">
-    <h4 className="text-xl font-semibold mb-4 text-gray-800">Global Business Aggregator</h4>
+    <h4 className="text-xl font-semibold mb-4 text-gray-800">{t("Global Business Aggregator")}</h4>
     <p className="text-gray-600 mb-4">
-      From strategic expansion to fulfillment and compliance, U-Link Gulf serves as a trusted partner for businesses looking to grow in the USA, UK, UAE, Saudi Arabia, 
-      and other Gulf Cooperation Council (GCC) countries.
+      {t("From strategic expansion to fulfillment and compliance, U-Link Gulf serves as a trusted partner for businesses looking to grow in the USA, UK, UAE, Saudi Arabia,and other Gulf Cooperation Council (GCC) countries.")}
+      
     </p>
     <ul className="grid grid-cols-2 gap-4">
       {['UAE', 'Saudi Arabia', 'Qatar', 'Kuwait', 'USA', 'UK'].map((country) => (
@@ -380,7 +375,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                     <div className="text-4xl font-bold text-[#009000] mb-1">
                       {isMounted ? yearsExperience : '0'}+
                     </div>
-                    <div className="text-gray-600 font-medium">Years of Excellence</div>
+                    <div className="text-gray-600 font-medium">{t("Years of Excellence")}</div>
                   </div>
                 </motion.div>
               </motion.section>
@@ -409,7 +404,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                   </h2>
                   <div className="w-24 h-1 bg-[#009000] mx-auto mb-6"></div>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    To deliver unparalleled business solutions through innovation, quality, and client-centric services that drive sustainable growth.
+                    {t("To deliver unparalleled business solutions through innovation, quality, and client-centric services that drive sustainable growth.")}
                   </p>
                 </motion.div>
 

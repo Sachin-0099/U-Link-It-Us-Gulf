@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 
 const Schedule = () => {
+  const { t } = useTranslation();  // Translation hook
   const [selectedOption, setSelectedOption] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -18,34 +20,35 @@ const Schedule = () => {
 
   const callOptions = [
     {
-      title: "15-min Discovery Call",
-      duration: "15 minutes",
-      description: "Quick introduction and initial discussion about your needs"
+      title: t("15-min Discovery Call"),
+      duration: t("15 minutes"),
+      description: t("Quick introduction and initial discussion about your needs")
     },
     {
-      title: "30-min Consultation",
-      duration: "30 minutes",
-      description: "Detailed discussion about your project requirements"
+      title: t("30-min Consultation"),
+      duration: t("30 minutes"),
+      description: t("Detailed discussion about your project requirements")
     },
     {
-      title: "60-min Strategy Session",
-      duration: "60 minutes",
-      description: "In-depth planning session for complex projects"
+      title: t("60-min Strategy Session"),
+      duration: t("60 minutes"),
+      description: t("In-depth planning session for complex projects")
     }
   ];
+  
 
   const contactMethods = [
     {
-      title: "Whatsapp",
+      title: t("Whatsapp"),
       icon: (
         <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path 
           d="M16 3C9.37 3 4 8.37 4 15C4 17.44 4.79 19.7 6.13 21.58L4 29L11.09 26.03C12.94 26.65 14.92 27 17 27C23.63 27 29 21.63 29 15C29 8.37 23.63 3 17 3H16ZM16 25C14.18 25 12.46 24.61 10.91 23.91L10.5 23.72L7.05 25.1L8.4 21.56L8.13 21.14C6.89 19.37 6.2 17.25 6.2 15C6.2 9.48 10.48 5.2 16 5.2C21.52 5.2 25.8 9.48 25.8 15C25.8 20.52 21.52 24.8 16 24.8V25Z"
-          fill="#25D366"
+          fill="#fff"
         />
         <path 
           d="M21.54 18.71L19.79 17.78C19.55 17.66 19.28 17.69 19.08 17.85L18.21 18.61C16.38 17.72 15.04 16.37 14.15 14.54L14.91 13.67C15.1 13.47 15.13 13.2 15.01 12.96L14.08 11.21C13.91 10.87 13.49 10.75 13.16 10.91C11.97 11.45 11.2 12.47 11.2 13.6C11.2 13.73 11.22 13.86 11.24 14C11.82 17.68 14.79 20.65 18.47 21.23C18.61 21.25 18.74 21.27 18.87 21.27C20 21.27 21.02 20.5 21.56 19.31C21.72 18.97 21.6 18.55 21.26 18.39L21.54 18.71Z"
-          fill="#25D366"
+          fill="#fff"
         />
       </svg>
       
@@ -55,14 +58,14 @@ const Schedule = () => {
       href: "https://wa.me/918750518844?text=Hello%20I%20am%20interested%20in%20your%20services"
     },
     {
-      title: "UAE Phone",
+      title: t("UAE Phone"),
       icon: (
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M22 16.92V19.92C22 20.47 21.55 20.92 21 20.92H19C18.45 20.92 18 20.47 18 19.92V16.92C18 16.37 18.45 15.92 19 15.92H21C21.55 15.92 22 16.37 22 16.92Z" stroke="#3182ce" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M16 3.92H8C4 3.92 2 5.92 2 9.92V15.92C2 19.92 4 21.92 8 21.92H16C20 21.92 22 19.92 22 15.92V9.92C22 5.92 20 3.92 16 3.92Z" stroke="#3182ce" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M13 7.92H15" stroke="#3182ce" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M6 7.92H11" stroke="#3182ce" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M6 11.92H13" stroke="#3182ce" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M13 7.92H15" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M6 7.92H11" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M6 11.92H13" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
       contact: "+971 58 586 8470",
@@ -139,21 +142,21 @@ const Schedule = () => {
       margin: '0 auto',
       padding: '40px 20px',
       fontFamily: "'Inter', sans-serif",
-      color: '#2d3748'
+      color: '#009000'
     },
     heading: {
       fontSize: '2.5rem',
       fontWeight: '700',
       marginBottom: '10px',
       textAlign: 'center',
-      color: '#b73235'
+      color: '#009000'
     },
     subheading: {
       fontSize: '1.1rem',
       textAlign: 'center',
       maxWidth: '700px',
       margin: '0 auto 40px',
-      color: '#4a5568',
+      color: '#009000',
       lineHeight: '1.6'
     },
     gridContainer: {
@@ -166,22 +169,22 @@ const Schedule = () => {
       fontSize: '1.5rem',
       fontWeight: '600',
       marginBottom: '20px',
-      color: '#2d3748'
+      color: '#009000'
     },
     optionCard: {
       padding: '20px',
       borderRadius: '10px',
-      border: '1px solid #e2e8f0',
+      border: '1px solid #009000',
       backgroundColor: 'white',
       cursor: 'pointer',
       transition: 'all 0.3s ease'
     },
     selectedOptionCard: {
-      border: '2px solid #4299e1',
-      backgroundColor: '#ebf8ff'
+      border: '2px solid #009000',
+      backgroundColor: '#009000'
     },
     durationBadge: {
-      backgroundColor: '#b73235',
+      backgroundColor: '#009000',
       color: '#fff',
       padding: '5px 10px',
       borderRadius: '20px',
@@ -192,19 +195,19 @@ const Schedule = () => {
       backgroundColor: '#f7fafc',
       padding: '20px',
       borderRadius: '10px',
-      border: '1px solid #e2e8f0'
+      border: '1px solid #00900'
     },
     formContainer: {
       backgroundColor: 'white',
       padding: '30px',
       borderRadius: '10px',
       boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
-      border: '1px solid #e2e8f0'
+      border: '1px solid #009000'
     },
     inputField: {
       width: '100%',
       padding: '12px 15px',
-      border: '1px solid #e2e8f0',
+      border: '1px solid #009000',
       borderRadius: '6px',
       fontSize: '1rem',
       transition: 'all 0.3s ease'
@@ -212,7 +215,7 @@ const Schedule = () => {
     contactIcon: {
       width: '60px',
       height: '60px',
-      backgroundColor: '#ebf8ff',
+      backgroundColor: '#009000',
       borderRadius: '50%',
       display: 'flex',
       alignItems: 'center',
@@ -224,7 +227,7 @@ const Schedule = () => {
   return (
     <>
     <Helmet>
-  <title>Schedule a Call - U-Link It Us | Book Your Free Consultation</title>
+  <title>Schedule a Call - U-Link Gulf | Book Your Free Consultation</title>
   <meta
     name="description"
     content="Book a free consultation call with our experts at U-Link It Us. Let's discuss how we can optimize your IT, e-commerce, and procurement strategies."
@@ -248,17 +251,17 @@ const Schedule = () => {
     padding: "2rem",
     borderRadius: "1rem",
     backgroundColor: "#f7fafc",
-    border: "1px solid #e2e8f0",
+    border: "1px solid #009000",
     textAlign: "center",
     margin: "1rem",
   }}
 >
-  <h1 style={{ ...baseStyles.heading, color: "#b73235" }}>
-    📅 Schedule a Call – Coming Soon!
+  <h1 style={{ ...baseStyles.heading, color: "#009000" }}>
+  📅  {t("Schedule a Call – Coming Soon!")}
   </h1>
-  <p style={{ ...baseStyles.subheading, color: "#4a5568" }}>
-    We’re working on something exciting! Soon, you’ll be able to schedule calls directly with our team.
-    Stay tuned for updates.
+  <p style={{ ...baseStyles.subheading, color: "#009000" }}>
+    {t("We’re working on something exciting! Soon, you’ll be able to schedule calls directly with our team.Stay tuned for updates.")}
+    
   </p>
 
   {/* Scroll hint */}
@@ -273,7 +276,7 @@ const Schedule = () => {
       fontSize: "1rem",
     }}
   >
-    👇 Scroll down to contact us now
+    {t("👇 Scroll down to contact us now")}
   </motion.div>
 </motion.div>
 
@@ -281,16 +284,16 @@ const Schedule = () => {
 
       <div style={baseStyles.gridContainer}>
         <motion.div variants={itemVariants}>
-          <h2 style={baseStyles.sectionHeading}>Available Time Slots</h2>
+          <h2 style={baseStyles.sectionHeading}>{t("Available Time Slots")}</h2>
           
           <div style={{ marginBottom: '30px' }}>
             <h3 style={{
               fontSize: '1.1rem',
               fontWeight: '500',
               marginBottom: '15px',
-              color: '#4a5568'
+              color: '#009000'
             }}>
-              Select Call Duration
+              {t("Select Call Duration")}
             </h3>
             
             <div style={{ display: 'grid', gap: '15px' }}>
@@ -314,7 +317,7 @@ const Schedule = () => {
                     <h4 style={{
                       fontSize: '1.1rem',
                       fontWeight: '600',
-                      color: '#2d3748'
+                      color: '#009000'
                     }}>
                       {option.title}
                     </h4>
@@ -323,7 +326,7 @@ const Schedule = () => {
                     </span>
                   </div>
                   <p style={{
-                    color: '#718096',
+                    color: '#009000',
                     fontSize: '0.95rem',
                     lineHeight: '1.5'
                   }}>
@@ -339,9 +342,9 @@ const Schedule = () => {
     fontSize: '1.1rem',
     fontWeight: '500',
     marginBottom: '15px',
-    color: '#4a5568'
+    color: '#009000'
   }}>
-    Our Availability
+    {t("Our Availability")}
   </h3>
 
   <div style={baseStyles.availabilityCard}>
@@ -376,15 +379,15 @@ const Schedule = () => {
           fontSize: '1rem',
           fontWeight: '600',
           marginBottom: '3px',
-          color: '#2d3748'
+          color: '#009000'
         }}>
-          Working Days
+          {t("Working Days")}
         </h4>
         <p style={{
           color: '#718096',
           fontSize: '0.9rem'
         }}>
-          Monday - Saturday
+          {t("Monday - Saturday")}
         </p>
       </div>
     </div>
@@ -416,9 +419,9 @@ const Schedule = () => {
           fontSize: '1rem',
           fontWeight: '600',
           marginBottom: '3px',
-          color: '#2d3748'
+          color: '#009000'
         }}>
-          Working Hours
+          {t("Working Hours")}
         </h4>
         <p style={{
           color: '#718096',
@@ -463,16 +466,15 @@ const Schedule = () => {
                 marginBottom: '15px',
                 color: '#2f855a'
               }}>
-                Call Scheduled Successfully!
+                {t("Call Scheduled Successfully!")}
               </h3>
               <p style={{
-                color: '#4a5568',
+                color: '#009000',
                 fontSize: '1rem',
                 lineHeight: '1.6',
                 marginBottom: '25px'
               }}>
-                Thank you for scheduling a call with us. We've sent a confirmation to {formData.email}. 
-                Our team will contact you at the scheduled time.
+                {t("Thank you for scheduling a call with us. We've sent a confirmation to {formData.email}. Our team will contact you at the scheduled time.")}
               </p>
               <motion.button
                 whileHover={buttonHover}
@@ -489,7 +491,7 @@ const Schedule = () => {
                   fontWeight: '500'
                 }}
               >
-                Schedule Another Call
+                {t("Schedule Another Call")}
               </motion.button>
             </div>
           ) : submissionStatus === 'error' ? (
@@ -528,7 +530,7 @@ const Schedule = () => {
                 lineHeight: '1.6',
                 marginBottom: '25px'
               }}>
-                We encountered an issue while scheduling your call. Please try again or contact us directly.
+               {t(" We encountered an issue while scheduling your call. Please try again or contact us directly.")}
               </p>
               <div style={{
                 display: 'flex',
@@ -550,7 +552,7 @@ const Schedule = () => {
                     fontWeight: '500'
                   }}
                 >
-                  Try Again
+                  {t("Try Again")}
                 </motion.button>
                 <motion.button
                   whileHover={buttonHover}
@@ -567,13 +569,13 @@ const Schedule = () => {
                     fontWeight: '500'
                   }}
                 >
-                  Email Us
+                  {t("Email Us")}
                 </motion.button>
               </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={baseStyles.formContainer}>
-              <h2 style={baseStyles.sectionHeading}>Schedule Your Call</h2>
+              <h2 style={baseStyles.sectionHeading}>{t("Schedule Your Call")}</h2>
               
               {selectedOption && (
                 <div style={{
@@ -616,7 +618,7 @@ const Schedule = () => {
                         fontWeight: '500'
                       }}
                     >
-                      Change
+                      {t("Change")}
                     </button>
                   </div>
                 </div>
@@ -630,7 +632,7 @@ const Schedule = () => {
                   color: '#4a5568',
                   fontSize: '0.95rem'
                 }}>
-                  Full Name *
+                  {t("Full Name *")}
                 </label>
                 <input
                   type="text"
@@ -651,7 +653,7 @@ const Schedule = () => {
                   color: '#4a5568',
                   fontSize: '0.95rem'
                 }}>
-                  Email Address *
+                  {t("Email Address *")}
                 </label>
                 <input
                   type="email"
@@ -672,7 +674,7 @@ const Schedule = () => {
                   color: '#4a5568',
                   fontSize: '0.95rem'
                 }}>
-                  Phone Number *
+                  {t("Phone Number *")}
                 </label>
                 <input
                   type="tel"
@@ -699,7 +701,7 @@ const Schedule = () => {
                     color: '#4a5568',
                     fontSize: '0.95rem'
                   }}>
-                    Preferred Date *
+                    {t("Preferred Date *")}
                   </label>
                   <input
                     type="date"
@@ -721,7 +723,7 @@ const Schedule = () => {
                     color: '#4a5568',
                     fontSize: '0.95rem'
                   }}>
-                    Preferred Time *
+                    {t("Preferred Time *")}
                   </label>
                   <input
                     type="time"
@@ -743,7 +745,7 @@ const Schedule = () => {
                   color: '#4a5568',
                   fontSize: '0.95rem'
                 }}>
-                  Purpose of Call *
+                  {t("Purpose of Call *")}
                 </label>
                 <select
                   id="purpose"
@@ -760,11 +762,12 @@ const Schedule = () => {
                     backgroundSize: '0.65rem auto'
                   }}
                 >
-                  <option value="General Inquiry">General Inquiry</option>
-                  <option value="Project Discussion">Project Discussion</option>
-                  <option value="Technical Support">Technical Support</option>
-                  <option value="Partnership">Partnership</option>
-                  <option value="Other">Other</option>
+                  <option value="General Inquiry">{t("General Inquiry")}</option>
+<option value="Project Discussion">{t("Project Discussion")}</option>
+<option value="Technical Support">{t("Technical Support")}</option>
+<option value="Partnership">{t("Partnership")}</option>
+<option value="Other">{t("Other")}</option>
+
                 </select>
               </div>
               
@@ -776,7 +779,7 @@ const Schedule = () => {
                   color: '#4a5568',
                   fontSize: '0.95rem'
                 }}>
-                  Additional Notes
+                   {t("Additional Notes")}
                 </label>
                 <textarea
                   id="message"
@@ -825,7 +828,7 @@ const Schedule = () => {
                       <path d="M4.93 19.07L7.76 16.24" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       <path d="M16.24 7.76L19.07 4.93" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                    Scheduling...
+                    {t("Scheduling...")}
                   </>
                 ) : (
                   <>
@@ -833,7 +836,7 @@ const Schedule = () => {
                       <path d="M22 2L11 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                    Schedule Call
+                    {t("Schedule Call")}
                   </>
                 )}
               </motion.button>
@@ -856,9 +859,9 @@ const Schedule = () => {
           fontSize: '1.5rem',
           fontWeight: '600',
           marginBottom: '20px',
-          color: '#b73235'
+          color: '#009000'
         }}>
-          Need Immediate Assistance?
+          {t("Need Immediate Assistance?")}
         </h2>
       
         <div style={{
