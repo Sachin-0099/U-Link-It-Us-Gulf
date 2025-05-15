@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+
 const ServicesSection = () => {
-  const { t, i18n } = useTranslation(); // Use t for translation
- 
-  const [expandedService, setExpandedService] = useState(null);
-  const [hoveredService, setHoveredService] = useState(null);
-  const [activeKeyword, setActiveKeyword] = useState(null);
-  const [viewMode, setViewMode] = useState('grid');
+  const { t } = useTranslation();
+  const [quickViewData, setQuickViewData] = useState(null);
+
   const services = [
     {
       id: t("marketplace-onboarding"),
@@ -20,8 +18,7 @@ const ServicesSection = () => {
         t("Quality assurance"),
         t("Continuous improvement"),
         t("Client-focused solutions")
-      ],
-      keywords: `${t("Amazon seller setup")}, ${t("Noon onboarding")}, ${t("Gulf eCommerce integration")}, ${t("GCC marketplace support")}`
+      ]
     },
     {
       id: "cross-border-ecommerce",
@@ -34,8 +31,7 @@ const ServicesSection = () => {
         t("Skills assessment"),
         t("Cultural fit evaluation"),
         t("Industry-specific expertise")
-      ],
-      keywords: `${t("Gulf eCommerce export")}, ${t("cross-border selling GCC")}, ${t("international selling")}`
+      ]
     },
     {
       id: "inventory-management",
@@ -48,8 +44,7 @@ const ServicesSection = () => {
         t("Automated stock alerts"),
         t("Multi-platform sync"),
         t("Detailed analytics")
-      ],
-      keywords: `${t("inventory management Gulf")}, ${t("order tracking KSA")}, ${t("multi-platform eCommerce UAE")}`
+      ]
     },
     {
       id: "last-mile-delivery",
@@ -62,8 +57,7 @@ const ServicesSection = () => {
         t("Real-time tracking"),
         t("Return handling"),
         t("Global reach")
-      ],
-      keywords: `${t("last-mile delivery UAE")}, ${t("eCommerce shipping GCC")}, ${t("COD logistics Saudi Arabia")}`
+      ]
     },
     {
       id: "digital-marketing",
@@ -76,8 +70,7 @@ const ServicesSection = () => {
         t("Brand awareness campaigns"),
         t("Influencer collaboration"),
         t("Conversion optimization")
-      ],
-      keywords: `${t("GCC digital marketing")}, ${t("SEO UAE")}, ${t("eCommerce ads Saudi Arabia")}`
+      ]
     },
     {
       id: "product-cataloging",
@@ -90,8 +83,7 @@ const ServicesSection = () => {
         t("SEO-optimized content"),
         t("Bulk catalog uploads"),
         t("Platform-specific templates")
-      ],
-      keywords: `${t("product photography Gulf")}, ${t("eCommerce listings UAE")}, ${t("catalog management Saudi Arabia")}`
+      ]
     },
     {
       id: "It-services",
@@ -104,8 +96,7 @@ const ServicesSection = () => {
         t("Custom app development"),
         t("Security & compliance"),
         t("Tech infrastructure setup")
-      ],
-      keywords: `${t("Gulf IT solutions")}, ${t("UAE business infrastructure")}, ${t("cloud services KSA")}`
+      ]
     },
     {
       id: "Logistics-management",
@@ -118,13 +109,12 @@ const ServicesSection = () => {
         t("Route optimization"),
         t("Reverse logistics"),
         t("Carrier integration")
-      ],
-      keywords: `${t("GCC logistics tech")}, ${t("supply chain optimization Gulf")}, ${t("smart shipping UAE")}`
+      ]
     },
     {
       id: "Brand-empowerment",
       title: t("Brand Empowerment Solutions for Gulf Markets"),
-      description: t("Take control of your brand’s image across the Gulf. We help you protect your brand, engage customers, and establish presence across platforms in Saudi Arabia, UAE, and the wider GCC."),
+      description: t("Take control of your brand's image across the Gulf. We help you protect your brand, engage customers, and establish presence across platforms in Saudi Arabia, UAE, and the wider GCC."),
       image: "/Images/Brand Empowerment Solutions.avif",
       color: "#ec4899",
       features: [
@@ -132,8 +122,7 @@ const ServicesSection = () => {
         t("Trademark & IP support"),
         t("Audience engagement"),
         t("Marketplace brand stores")
-      ],
-      keywords: `${t("Gulf brand building")}, ${t("eCommerce branding UAE")}, ${t("brand protection KSA")}`
+      ]
     },
     {
       id: "Global-reach",
@@ -146,8 +135,7 @@ const ServicesSection = () => {
         t("International compliance"),
         t("Global payment gateways"),
         t("Cultural adaptation")
-      ],
-      keywords: `${t("GCC global expansion")}, ${t("UAE eCommerce internationalization")}, ${t("cross-border strategy")}`
+      ]
     },
     {
       id: "Branch-expansion",
@@ -160,8 +148,7 @@ const ServicesSection = () => {
         t("Market demand forecasting"),
         t("Franchise models"),
         t("Operational planning")
-      ],
-      keywords: `${t("business expansion GCC")}, ${t("branch growth UAE")}, ${t("franchise strategy Saudi Arabia")}`
+      ]
     },
     {
       id: "customer-expectations",
@@ -174,21 +161,110 @@ const ServicesSection = () => {
         t("Retention campaigns"),
         t("Customer support setup"),
         t("Satisfaction tracking")
-      ],
-      keywords: `${t("customer loyalty Gulf")}, ${t("client satisfaction UAE")}, ${t("support strategies GCC")}`
+      ]
+    },
+    {
+      id: "exhibition-business-setup",
+      title: t("Exhibition and Business Setup Services in the Gulf"),
+      description: t("Comprehensive support for your business and exhibition needs in Saudi Arabia and Dubai. From trade licenses to compliance, VAT accounting, and security solutions, we help you establish and run smoothly in these key markets."),
+      image: "/Images/exhibition-business-setup.avif",
+      color: "#2563eb",
+      features: [
+        t("Trade license for Saudi Arabia"),
+        t("VAT account services"),
+        t("Fire safety compliance"),
+        t("Warehouse rental solutions"),
+        t("Security camera installation"),
+        t("Complete business setup with local compliance in UAE and Saudi Arabia")
+      ]
+    },
+    {
+      id: "trade-license-saudi",
+      title: t("Trade License Services for Saudi Arabia"),
+      description: t("Obtain and manage your trade license in Saudi Arabia efficiently with expert support ensuring full local compliance."),
+      image: "/Images/trade-license-saudi.avif",
+      color: "#2563eb",
+      features: [
+        t("License application assistance"),
+        t("Document preparation"),
+        t("Renewal and compliance checks")
+      ]
+    },
+    {
+      id: "vat-account-services",
+      title: t("VAT Accounting Services in the Gulf"),
+      description: t("Professional VAT registration and accounting services for businesses operating in Saudi Arabia and UAE, ensuring compliance with tax authorities."),
+      image: "/Images/vat-account-services.avif",
+      color: "#16a34a",
+      features: [
+        t("VAT registration support"),
+        t("Periodic VAT filing"),
+        t("Audit assistance"),
+        t("Tax advisory")
+      ]
+    },
+    {
+      id: "fire-safety-compliance",
+      title: t("Fire Safety Compliance Services"),
+      description: t("Comprehensive fire safety audits and compliance services for your business premises in Saudi Arabia and Dubai, adhering to local regulations."),
+      image: "/Images/fire-safety-compliance.avif",
+      color: "#ef4444",
+      features: [
+        t("Fire risk assessments"),
+        t("Safety equipment installation"),
+        t("Regulatory compliance certification")
+      ]
+    },
+    {
+      id: "warehouse-rent",
+      title: t("Warehouse Rental Solutions in the Gulf"),
+      description: t("Find and manage warehouse spaces tailored to your business needs in Saudi Arabia and Dubai, with flexible lease terms and prime locations."),
+      image: "/Images/warehouse-rent.avif",
+      color: "#f59e0b",
+      features: [
+        t("Flexible lease agreements"),
+        t("Strategic locations"),
+        t("Secure and monitored facilities")
+      ]
+    },
+    {
+      id: "security-camera-installation",
+      title: t("Security Camera Installation Services"),
+      description: t("Professional installation and maintenance of security camera systems to ensure your business premises in Saudi Arabia and Dubai are safe and monitored."),
+      image: "/Images/security-camera-installation.avif",
+      color: "#8b5cf6",
+      features: [
+        t("Surveillance system design"),
+        t("24/7 monitoring setup"),
+        t("Maintenance and support")
+      ]
+    },
+    {
+      id: "complete-business-setup",
+      title: t("Complete Business Setup with Local Compliance in UAE and Saudi Arabia"),
+      description: t("End-to-end business setup services covering licensing, compliance, taxation, and operational support for companies in UAE and Saudi Arabia."),
+      image: "/Images/complete-business-setup.avif",
+      color: "#22d3ee",
+      features: [
+        t("Trade license acquisition"),
+        t("Local compliance advisory"),
+        t("Tax and VAT registration"),
+        t("Operational setup assistance")
+      ]
     }
   ];
-  
 
-  const filteredServices = activeKeyword
-    ? services.filter(service => 
-        service.keywords.toLowerCase().includes(activeKeyword.toLowerCase())
-      )
-    : services;
+  const openQuickView = (service) => {
+    setQuickViewData(service);
+  };
+
+  const closeQuickView = () => {
+    setQuickViewData(null);
+  };
 
   return (
-    <section className="services-section py-16 lg:py-24 px-4 sm:px-6" aria-label="Our eCommerce Services">
-      <div className="max-w-9xl mx-auto">
+    <section className="services-section py-16 lg:py-24 px-4 sm:px-6 " aria-label={t("Our eCommerce Services")}>
+      <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.header 
           initial={{ opacity: 0, y: 20 }}
@@ -199,288 +275,165 @@ const ServicesSection = () => {
           <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-[#009000] uppercase bg-[#009000]/10 rounded-full mb-4">
             {t("Our Solutions")}
           </span>
-          <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-4 leading-tight"
-            whileHover={{ scale: 1.01 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-             {t("Comprehensive")} <span className="text-[#009000]">{t("eCommerce Services")}</span>
-          </motion.h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-4 leading-tight">
+            {t("Comprehensive")} <span className="text-[#009000]">{t("eCommerce Services")}</span>
+          </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             {t("End-to-end solutions to launch, manage, and scale your online business across all major platforms")}
           </p>
         </motion.header>
 
-        {/* Controls Section */}
-        <div className="flex flex-col justify-center items-center mb-12 gap-4">
-          {/* View Mode Toggle */}
-          <div className="max-w-md flex items-center bg-white p-1 rounded-lg shadow-sm border border-gray-200 mb-4">
-            <button
-              onClick={() => setViewMode('grid')}
-              className={`px-6 py-2 text-sm font-medium rounded-md ${viewMode === 'grid' ? 'bg-[#009000] text-white' : 'text-gray-700 hover:bg-gray-100'}`}
-            >
-             {t("Grid View")}
-            </button>
-            <button
-              onClick={() => setViewMode('list')}
-              className={`px-6 py-2 text-sm font-medium rounded-md ${viewMode === 'list' ? 'bg-[#009000] text-white' : 'text-gray-700 hover:bg-gray-100'}`}
-            >
-              {t("List View")}
-            </button>
-          </div>
-
-          {/* Keyword Filter */}
-          <div className="w-full">
-            <div className="flex flex-wrap gap-2 justify-center">
-              <button
-                onClick={() => setActiveKeyword(null)}
-                className={`px-3 py-1 text-xs sm:text-sm rounded-full font-medium transition-colors ${
-                  !activeKeyword 
-                    ? 'bg-[#009000] text-white' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {t("All Services")}
-              </button>
-              {[...new Set(services.flatMap(service => service.keywords.split(', ')))].map(keyword => (
-                <motion.button
-                  key={keyword}
-                  onClick={() => setActiveKeyword(activeKeyword === keyword ? null : keyword)}
-                  className={`px-3 py-1 text-xs sm:text-sm rounded-full font-medium transition-colors ${
-                    activeKeyword === keyword 
-                      ? 'bg-[#009000] text-white' 
-                      : 'bg-white text-gray-700 hover:bg-gray-100'
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {keyword}
-                </motion.button>
-              ))}
-            </div>
-          </div>
-        </div>
-
         {/* Services Display */}
-        {viewMode === 'grid' ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredServices.map((service, index) => (
-              <motion.article 
-                key={service.id}
-                className={`relative overflow-hidden rounded-xl shadow-md hover:shadow-lg cursor-pointer transition-all duration-300 bg-white ${
-                  expandedService === index ? 'ring-2 ring-[#009000]' : ''
-                }`}
-                onClick={() => setExpandedService(expandedService === index ? null : index)}
-                onHoverStart={() => setHoveredService(index)}
-                onHoverEnd={() => setHoveredService(null)}
-                whileHover={{ y: -5 }}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                layout
-              >
-                {/* Service Image Banner */}
-                <div className="relative h-40 w-full overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <motion.article 
+              key={service.id}
+              className="relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 bg-white"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="w-full">
+                {/* Service Image Banner - Clickable for Quick View */}
+                <div 
+                  className="relative h-48 w-full overflow-hidden cursor-pointer"
+                  onClick={() => openQuickView(service)}
+                >
                   <img
                     src={service.image}
                     alt={service.title}
                     className="object-cover w-full h-full"
+                    loading="lazy"
                   />
                 </div>
-
-                <div className="relative z-10 p-8 h-full flex flex-col">
-                  <div className="flex items-start justify-between mb-6">
-                   
-                    <span className="text-xs font-medium px-2 py-1 rounded-full" style={{ backgroundColor: `${service.color}20`, color: service.color }}>
-                      {service.keywords.split(',')[0]}
-                    </span>
-                  </div>
-
+          
+                <div className="p-6">
                   <h2 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h2>
-
-                  <AnimatePresence>
-                    <motion.p
-                      layout
-                      className={`text-gray-600 mb-6 ${expandedService === index ? '' : 'line-clamp-3'}`}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {service.description}
-                    </motion.p>
-                  </AnimatePresence>
-
-                  <AnimatePresence>
-                    {expandedService === index && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="mt-auto"
-                      >
-                        <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                          {t("Key Features")}
-                        </h3>
-                        <ul className="space-y-3">
-                          {service.features.map((feature, i) => (
-                            <motion.li 
-                              key={i}
-                              className="flex items-start"
-                              initial={{ x: -20 }}
-                              animate={{ x: 0 }}
-                              transition={{ delay: 0.1 * i }}
-                            >
-                              <svg 
-                                className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" 
-                                style={{ color: service.color }} 
-                                fill="none" 
-                                stroke="currentColor" 
-                                viewBox="0 0 24 24" 
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                              </svg>
-                              <span className="text-gray-700">{feature}</span>
-                            </motion.li>
-                          ))}
-                        </ul>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-
-                  <motion.div
-                    className="mt-6 pt-4 border-t border-gray-200"
-                    animate={{
-                      opacity: expandedService === index ? 1 : 0,
-                      height: expandedService === index ? 'auto' : 0,
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <motion.button
-                      whileHover={{ 
-                        scale: 1.03, 
-                        backgroundColor: service.color,
-                      }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full py-3 px-6 rounded-lg font-semibold text-white transition-all"
-                      style={{ backgroundColor: service.color }}
-                    >
-                      {t("Get Started")}
-                    </motion.button>
-                  </motion.div>
+                  <p className="text-gray-600 line-clamp-3 mb-4">
+                    {service.description}
+                  </p>
                 </div>
+              </div>
 
-                <motion.div 
-                  className="absolute bottom-0 left-0 w-full h-1"
-                  style={{ backgroundColor: service.color }}
-                  animate={{
-                    width: hoveredService === index ? '100%' : '0%'
+              <div className="px-6 pb-6 flex gap-3">
+                <motion.button
+                  onClick={() => openQuickView(service)}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="py-3 px-4 rounded-lg font-medium transition-all border border-gray-300 bg-white text-gray-700"
+                  aria-label={t("Learn more")}
+                >
+                  {t("Learn More")}
+                </motion.button>
+                <motion.button
+                  whileHover={{ 
+                    scale: 1.03, 
+                    backgroundColor: service.color,
                   }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.article>
-            ))}
-          </div>
-        ) : (
-          <div className="space-y-6">
-            {filteredServices.map((service, index) => (
-              <motion.article
-                key={service.id}
-                className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 ${
-                  expandedService === index ? 'ring-2 ring-[#009000]' : ''
-                }`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-              >
-                <div className="flex">
-                  {/* Service Image for List View */}
-                  <div className="hidden md:block relative w-1/3 min-h-[200px]">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
+                  whileTap={{ scale: 0.98 }}
+                  className="flex-1 py-3 px-4 rounded-lg font-semibold text-white transition-all"
+                  style={{ backgroundColor: service.color }}
+                  aria-label={`Get started with ${service.title}`}
+                >
+                  {t("Get Started")}
+                </motion.button>
+              </div>
+            </motion.article>
+          ))}
+        </div>
 
-                  <div className="w-full md:w-2/3 p-6 cursor-pointer">
-                    <div className="flex items-start gap-6">
-                      <motion.div
-                        className="w-12 h-12 flex items-center justify-center rounded-lg flex-shrink-0 mt-1"
-                        style={{
-                          backgroundColor: `${service.color}10`,
-                          color: service.color,
-                        }}
-                      >
-                        {/* Optional icon can go here */}
-                      </motion.div>
-                      <div className="flex-1">
-                        <div className="flex justify-between items-start">
-                          <h2 className="text-xl font-bold text-gray-900">{service.title}</h2>
-                          <span className="text-xs font-medium px-2 py-1 rounded-full" style={{ backgroundColor: `${service.color}20`, color: service.color }}>
-                            {service.keywords.split(',')[0]}
-                          </span>
-                        </div>
-                        <p className="text-gray-600 mt-2">{service.description}</p>
+        {/* Quick View Modal */}
+        <AnimatePresence>
+          {quickViewData && (
+            <motion.div 
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeQuickView}
+            >
+              <motion.div 
+                className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="relative">
+                  {/* Close Button */}
+                  <button 
+                    onClick={closeQuickView}
+                    className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors"
+                    aria-label={t("Close quick view")}
+                  >
+                    <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                  
+                  {/* Quick View Content */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {/* Image Section */}
+                    <div className="lg:sticky lg:top-0 h-full">
+                      <div className="h-64 lg:h-full w-full overflow-hidden">
+                        <img
+                          src={quickViewData.image}
+                          alt={quickViewData.title}
+                          className="object-cover w-full h-full"
+                        />
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <AnimatePresence>
-                  {expandedService === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="px-6 pb-6"
-                    >
-                      <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                    
+                    {/* Content Section */}
+                    <div className="p-6 lg:p-8">
+                      <h2 className="text-2xl font-bold text-gray-900 mb-4">{quickViewData.title}</h2>
+                      
+                      <p className="text-gray-600 mb-6">{quickViewData.description}</p>
+                      
+                      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
                         {t("Key Features")}
                       </h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {service.features.map((feature, i) => (
-                          <motion.div
-                            key={i}
-                            className="flex items-start p-3 bg-gray-50 rounded-lg"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 * i }}
-                          >
+                      
+                      <ul className="space-y-3 mb-8">
+                        {quickViewData.features.map((feature, i) => (
+                          <li key={i} className="flex items-start">
                             <svg 
                               className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" 
-                              style={{ color: service.color }} 
+                              style={{ color: quickViewData.color }} 
                               fill="none" 
                               stroke="currentColor" 
                               viewBox="0 0 24 24" 
                               xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true"
                             >
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                             </svg>
                             <span className="text-gray-700">{feature}</span>
-                          </motion.div>
+                          </li>
                         ))}
+                      </ul>
+                      
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <motion.button
+                          whileHover={{ 
+                            scale: 1.03, 
+                            backgroundColor: quickViewData.color,
+                          }}
+                          whileTap={{ scale: 0.98 }}
+                          className="w-full py-3 px-6 rounded-lg font-semibold text-white transition-all"
+                          style={{ backgroundColor: quickViewData.color }}
+                          aria-label={`Get started with ${quickViewData.title}`}
+                        >
+                          {t("Get Started")}
+                        </motion.button>
                       </div>
-                      <motion.button
-                        whileHover={{ 
-                          scale: 1.02, 
-                          backgroundColor: service.color,
-                        }}
-                        whileTap={{ scale: 0.98 }}
-                        className="w-full mt-6 py-3 px-6 rounded-lg font-semibold text-white transition-all"
-                        style={{ backgroundColor: service.color }}
-                      >
-                       {t("Get Started")}
-                      </motion.button>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.article>
-            ))}
-          </div>
-        )}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* CTA Section */}
         <motion.div 
@@ -497,24 +450,24 @@ const ServicesSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="mailto:dhiraj@ulinkit.com?subject=Custom eCommerce Solution Inquiry">
+              <motion.button
+                whileHover={{ scale: 1.02, boxShadow: "0 4px 12px rgba(0, 144, 0, 0.3)" }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-[#009000] hover:bg-[#007700] text-white font-semibold py-3 px-8 rounded-lg text-base transition-all"
+                aria-label={t("Contact our experts")}
+              >
+                {t("Contact Our Experts")}
+              </motion.button>
+            </a>
             <motion.button
-    whileHover={{ scale: 1.02, boxShadow: "0 4px 12px rgba(183, 50, 53, 0.3)" }}
-    whileTap={{ scale: 0.98 }}
-    className="bg-[#009000] hover:bg-[#009000] text-white font-semibold py-2 sm:py-3 px-6 rounded-lg text-base sm:text-lg transition-all"
-  >
-    {t("Contact Our Experts")}
-  </motion.button>
-</a>
-
-
-<motion.button
-  whileHover={{ scale: 1.02 }}
-  whileTap={{ scale: 0.98 }}
-  disabled
-  className="bg-white text-[#009000] font-semibold py-2 sm:py-3 px-6 rounded-lg text-base sm:text-lg border border-[#009000] transition-all opacity-50 cursor-not-allowed"
->
-  {t("Case Studies Coming Soon")}
-</motion.button>
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              disabled
+              className="bg-white text-[#009000] font-semibold py-3 px-8 rounded-lg text-base border-2 border-[#009000] transition-all opacity-50 cursor-not-allowed"
+              aria-label={t("Case studies (coming soon)")}
+            >
+              {t("Case Studies Coming Soon")}
+            </motion.button>
           </div>
         </motion.div>
       </div>
