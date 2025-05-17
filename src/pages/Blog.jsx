@@ -33,99 +33,98 @@ const BlogPage = () => {
     {
       id: 1,
       slug: "account-management-program",
-
-      title: "U-Link Gulf Seller Account Management Program",
-      content: `<p>U-Link Gulf is one of the fastest-growing companies offering Account Management, IT Services, and Logistics solutions across the Gulf region. We partner with Amazon and OEMs to help sellers in countries like the UAE, Saudi Arabia, and Qatar manage their accounts and grow their e-commerce businesses.</p><p>This program includes:</p><ul><li>Inventory Management</li><li>Sales Management</li><li>Order Management</li><li>Reviews & Ratings Management</li><li>Account Health Management</li><li>Buyer-Seller Communication</li><li>Sales Boost</li></ul>`,
-      excerpt: "U-Link Gulf delivers end-to-end Amazon Seller Account Management, IT Services, and Logistics support in the Gulf, in collaboration with OEMs.",
+      title: t("U-Link Gulf Seller Account Management Program"),
+      content: t(`<p>U-Link Gulf is one of the fastest-growing companies offering Account Management, IT Services, and Logistics solutions across the Gulf region. We partner with Amazon and OEMs to help sellers in countries like the UAE, Saudi Arabia, and Qatar manage their accounts and grow their e-commerce businesses.</p><p>This program includes:</p><ul><li>Inventory Management</li><li>Sales Management</li><li>Order Management</li><li>Reviews & Ratings Management</li><li>Account Health Management</li><li>Buyer-Seller Communication</li><li>Sales Boost</li></ul>`),
+      excerpt: t("U-Link Gulf delivers end-to-end Amazon Seller Account Management, IT Services, and Logistics support in the Gulf, in collaboration with OEMs."),
       featuredImage: "/Images/AccountM.avif",
-      category: "Account Management",
+      category: t("Account Management"),
       publishedAt: "2024-01-01T00:00:00Z",
-      readTime: "7 min",
-      author: "U-Link Gulf Team",
+      readTime: t("7 min"),
+      author: t("U-Link Gulf Team"),
       likes: 35,
       views: 120
     },
     {
       id: 2,
       slug: "sales-boost-strategy",
-      title: "Sales Boost Strategy for Amazon Sellers in the Gulf",
-      content: `<p>Our Sales Boost strategy is designed specifically for Gulf-based Amazon sellers, including OEM product lines. We enhance visibility and results through localized listings, Arabic-English content, and targeted advertising.</p><p>The strategy includes:</p><ol><li>Listing Enhancement with keyword-optimized Arabic & English content</li><li>Gulf-specific Sponsored Product Ads</li><li>Reviews & Ratings Strategy</li></ol>`,
-      excerpt: "Tailored for Gulf sellers and OEM brands, this strategy optimizes listings, boosts visibility, and drives conversions across Amazon marketplaces.",
+      title: t("Sales Boost Strategy for Amazon Sellers in the Gulf"),
+      content: t(`<p>Our Sales Boost strategy is designed specifically for Gulf-based Amazon sellers, including OEM product lines. We enhance visibility and results through localized listings, Arabic-English content, and targeted advertising.</p><p>The strategy includes:</p><ol><li>Listing Enhancement with keyword-optimized Arabic & English content</li><li>Gulf-specific Sponsored Product Ads</li><li>Reviews & Ratings Strategy</li></ol>`),
+      excerpt: t("Tailored for Gulf sellers and OEM brands, this strategy optimizes listings, boosts visibility, and drives conversions across Amazon marketplaces."),
       featuredImage: "/Images/Sales.avif",
-      category: "Sales Boost",
+      category: t("Sales Boost"),
       publishedAt: "2024-01-02T12:00:00Z",
-      readTime: "6 min",
-      author: "U-Link Gulf Team",
+      readTime: t("6 min"),
+      author: t("U-Link Gulf Team"),
       likes: 45,
       views: 230
     },
     {
       id: 3,
       slug: "account-health-management",
-      title: "Account Health Management for Amazon Gulf Sellers",
-      content: `<p>Good account health is key to seller success. We support Amazon and OEM sellers across the Gulf (UAE, Saudi Arabia, Qatar) by monitoring key metrics and ensuring compliance with Amazon's regional guidelines.</p><p>We provide:</p><ul><li>ODR, LSR, CR monitoring</li><li>Negative feedback & A-to-Z resolution</li><li>Account reinstatement & policy compliance</li></ul>`,
-      excerpt: "U-Link Gulf ensures Amazon and OEM sellers maintain strong account health across Gulf marketplaces through performance tracking and compliance support.",
+      title: t("Account Health Management for Amazon Gulf Sellers"),
+      content: t(`<p>Good account health is key to seller success. We support Amazon and OEM sellers across the Gulf (UAE, Saudi Arabia, Qatar) by monitoring key metrics and ensuring compliance with Amazon's regional guidelines.</p><p>We provide:</p><ul><li>ODR, LSR, CR monitoring</li><li>Negative feedback & A-to-Z resolution</li><li>Account reinstatement & policy compliance</li></ul>`),
+      excerpt: t("U-Link Gulf ensures Amazon and OEM sellers maintain strong account health across Gulf marketplaces through performance tracking and compliance support."),
       featuredImage: "/Images/AccountH.avif",
-      category: "Account Health",
+      category: t("Account Health"),
       publishedAt: "2024-01-03T09:00:00Z",
-      readTime: "8 min",
-      author: "U-Link Gulf Team",
+      readTime: t("8 min"),
+      author: t("U-Link Gulf Team"),
       likes: 55,
       views: 310
     },
     {
       id: 4,
       slug: "inventory-management-best-practices",
-      title: "Best Practices for Inventory Management in the Gulf",
-      content: `<p>Inventory issues impact seller performance. U-Link Gulf enables Amazon and OEM sellers to manage inventory across Gulf warehouses using real-time tools and analytics.</p><p>Key practices include:</p><ul><li>Live stock tracking</li><li>Gulf marketplace sync</li><li>Stock velocity insights</li><li>Automated reorders</li></ul>`,
-      excerpt: "Smart inventory tools designed for Amazon and OEM sellers in the Gulf to ensure availability and operational efficiency.",
+      title: t("Best Practices for Inventory Management in the Gulf"),
+      content: t(`<p>Inventory issues impact seller performance. U-Link Gulf enables Amazon and OEM sellers to manage inventory across Gulf warehouses using real-time tools and analytics.</p><p>Key practices include:</p><ul><li>Live stock tracking</li><li>Gulf marketplace sync</li><li>Stock velocity insights</li><li>Automated reorders</li></ul>`),
+      excerpt: t("Smart inventory tools designed for Amazon and OEM sellers in the Gulf to ensure availability and operational efficiency."),
       featuredImage: "/Images/Inventory.avif",
-      category: "Inventory Management",
+      category: t("Inventory Management"),
       publishedAt: "2024-01-04T08:00:00Z",
-      readTime: "6 min",
-      author: "U-Link Gulf Team",
+      readTime: t("6 min"),
+      author: t("U-Link Gulf Team"),
       likes: 30,
       views: 180
     },
     {
       id: 5,
       slug: "order-management-system",
-      title: "Streamlining Order Management for Gulf Amazon Sellers",
-      content: `<p>U-Link Gulf offers advanced logistics and order processing support to Amazon and OEM sellers across the GCC. Our Order Management System (OMS) enhances fulfillment accuracy and speed.</p><p>Our OMS features:</p><ul><li>Real-time order tracking</li><li>Status-based fulfillment automation</li><li>Priority dispatch by region</li><li>Gulf 3PL integrations</li></ul>`,
-      excerpt: "From real-time order updates to 3PL integration, U-Link Gulf powers efficient logistics and fulfillment in the Gulf region.",
+      title: t("Streamlining Order Management for Gulf Amazon Sellers"),
+      content: t(`<p>U-Link Gulf offers advanced logistics and order processing support to Amazon and OEM sellers across the GCC. Our Order Management System (OMS) enhances fulfillment accuracy and speed.</p><p>Our OMS features:</p><ul><li>Real-time order tracking</li><li>Status-based fulfillment automation</li><li>Priority dispatch by region</li><li>Gulf 3PL integrations</li></ul>`),
+      excerpt: t("From real-time order updates to 3PL integration, U-Link Gulf powers efficient logistics and fulfillment in the Gulf region."),
       featuredImage: "/Images/Order.avif",
-      category: "Order Management",
+      category: t("Order Management"),
       publishedAt: "2024-01-05T07:00:00Z",
-      readTime: "5 min",
-      author: "U-Link Gulf Team",
+      readTime: t("5 min"),
+      author: t("U-Link Gulf Team"),
       likes: 40,
       views: 210
     },
     {
       id: 6,
       slug: "reviews-and-rating-management-strategy",
-      title: "Effective Strategy for Managing Amazon Reviews in the Gulf",
-      content: `<p>Reputation matters. We help Amazon and OEM sellers across the Gulf manage public perception through active review and rating strategies tailored to local markets.</p><p>Our service includes:</p><ul><li>Monitoring Amazon review channels</li><li>Fast responses to customer feedback</li><li>Insight-based product improvement</li><li>Amazon policy adherence</li></ul>`,
-      excerpt: "U-Link Gulf supports review management and customer sentiment improvement for Amazon & OEM sellers in the Gulf.",
+      title: t("Effective Strategy for Managing Amazon Reviews in the Gulf"),
+      content: t(`<p>Reputation matters. We help Amazon and OEM sellers across the Gulf manage public perception through active review and rating strategies tailored to local markets.</p><p>Our service includes:</p><ul><li>Monitoring Amazon review channels</li><li>Fast responses to customer feedback</li><li>Insight-based product improvement</li><li>Amazon policy adherence</li></ul>`),
+      excerpt: t("U-Link Gulf supports review management and customer sentiment improvement for Amazon & OEM sellers in the Gulf."),
       featuredImage: "/Images/reviews.avif",
-      category: "Reviews & Ratings Management",
+      category: t("Reviews & Ratings Management"),
       publishedAt: "2024-01-06T10:00:00Z",
-      readTime: "7 min",
-      author: "U-Link Gulf Team",
+      readTime: t("7 min"),
+      author: t("U-Link Gulf Team"),
       likes: 50,
       views: 250
     },
     {
       id: 7,
       slug: "sales-performance-analysis",
-      title: "Analyzing Sales Performance for Gulf-Based Amazon Sellers",
-      content: `<p>We provide deep insights into sales performance for Amazon and OEM sellers operating in the Gulf. Our analytics reveal patterns in buyer behavior, pricing effectiveness, and ad results.</p><p>Analysis includes:</p><ul><li>Conversion rates & trends</li><li>Traffic source breakdown</li><li>Pricing optimization review</li><li>Actionable insights & forecasts</li></ul>`,
-      excerpt: "Our Sales Performance Analysis helps OEMs and Amazon sellers in the Gulf understand growth levers through data-driven insights.",
+      title: t("Analyzing Sales Performance for Gulf-Based Amazon Sellers"),
+      content: t(`<p>We provide deep insights into sales performance for Amazon and OEM sellers operating in the Gulf. Our analytics reveal patterns in buyer behavior, pricing effectiveness, and ad results.</p><p>Analysis includes:</p><ul><li>Conversion rates & trends</li><li>Traffic source breakdown</li><li>Pricing optimization review</li><li>Actionable insights & forecasts</li></ul>`),
+      excerpt: t("Our Sales Performance Analysis helps OEMs and Amazon sellers in the Gulf understand growth levers through data-driven insights."),
       featuredImage: "/Images/analysis.avif",
-      category: "Sales Analysis",
+      category: t("Sales Analysis"),
       publishedAt: "2024-01-07T11:00:00Z",
-      readTime: "6 min",
-      author: "U-Link Gulf Team",
+      readTime: t("6 min"),
+      author: t("U-Link Gulf Team"),
       likes: 60,
       views: 320
     }
@@ -340,18 +339,19 @@ const BlogPage = () => {
 </p>
 
           
-          <div className="flex justify-center gap-4 my-8">
-            <button 
-              onClick={() => setShowSubmissionForm(!showSubmissionForm)}
-              className={`px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 ${
-                showSubmissionForm 
-                  ? 'bg-[#009000] text-white hover:bg-[#009000]'
-                  : 'bg-[#009000] text-white'
-              } shadow-md hover:shadow-lg`}
-            >
-              {showSubmissionForm ? 'Cancel Submission' : 'Write a Blog Post'}
-            </button>
-          </div>
+<div className="flex justify-center gap-4 my-8">
+  <button 
+    onClick={() => setShowSubmissionForm(!showSubmissionForm)}
+    className={`px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 ${
+      showSubmissionForm 
+        ? 'bg-[#009000] text-white hover:bg-[#009000]'
+        : 'bg-[#009000] text-white'
+    } shadow-md hover:shadow-lg`}
+  >
+    {showSubmissionForm ? t('Cancel Submission') : t('Write a Blog Post')}
+  </button>
+</div>
+
           
           {/* Search and Filter */}
           <div className="max-w-4xl mx-auto p-6 rounded-xl bg-white">

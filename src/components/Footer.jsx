@@ -598,12 +598,13 @@ const FooterSection = () => {
             </h3>
             <ul className="space-y-2 text-gray-500 dark:text-gray-400">
               {[
-                { name: "Home", id: "home" },
-                { name: "Services", id: "services" },
-                { name: "About Us", id: "aboutus" },
-                { name: "Portfolio", id: "portfolio" },
-                { name: "Blog", id: "blog" },
-              ].map((link) => (
+  { name: t("Home"), id: "home" },
+  { name: t("Services"), id: "services" },
+  { name: t("About-Us"), id: "aboutus" },
+  { name: t("Portfolio"), id: "portfolio" },
+  { name: t("Blog"), id: "blog" }
+]
+.map((link) => (
                 <motion.li
                   key={link.id}
                   whileHover={{

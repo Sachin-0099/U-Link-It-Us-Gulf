@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Helmet } from "react-helmet";
+import { useTranslation } from 'react-i18next';
 
 const InteractivePortfolio = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -9,6 +10,7 @@ const InteractivePortfolio = () => {
   const [theme, setTheme] = useState("light");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const containerRef = useRef(null);
+  const { t } = useTranslation();  // Translation hook
   
 //Animated variants for framer-motion
   const fadeIn = {
@@ -18,30 +20,28 @@ const InteractivePortfolio = () => {
   
   const portfolioData = {
     dheeraj: {
-      name: "Dhiraj Kumar Gupta",
-      title: "Founder & CEO",
-      description: "U-Link Gulf is an awesome place to work. A high energy atmosphere, transparent culture, internal communication, leadership support coupled with loads of learning opportunities help the individual act as an entrepreneur in their own space.",
-      email: "dhiraj@ulinkit.com",
+      name: t("Dhiraj Kumar Gupta"),
+      title: t("Founder & CEO"),
+      description: t("U-Link Gulf is an awesome place to work. A high energy atmosphere, transparent culture, internal communication, leadership support coupled with loads of learning opportunities help the individual act as an entrepreneur in their own space."),
+      email: t("dhiraj@ulinkit.com"),
       imagePath: "/Images/2.webp",
       social: {
         linkedin: "https://www.linkedin.com/in/dhiraj-kumar-gupta-45b97730/",
         twitter: "https://x.com/dhirajkgupta84",
-      
-      
       }
     },
     vineet: {
-      name: "Vineet Sharma",
-      title: "IT HEAD DIRECTOR",
-      description: "Leading the technical vision at U-Link Gulf , Vineet ensures we stay at the cutting edge of technology while delivering robust and scalable solutions to our clients.",
-      email: "vineet@ulinkit.com",
+      name: t("Vineet Sharma"),
+      title: t("IT HEAD DIRECTOR"),
+      description: t("Leading the technical vision at U-Link Gulf , Vineet ensures we stay at the cutting edge of technology while delivering robust and scalable solutions to our clients."),
+      email: t("vineet@ulinkit.com"),
       imagePath: "/Images/6.webp",
       social: {
         linkedin: "https://www.linkedin.com/in/vineet-sharma-2663279/",
         twitter: "#",
-
       }
     }
+    
   };
   
   const active = portfolioData[activeSection];
@@ -129,7 +129,7 @@ const InteractivePortfolio = () => {
             <div className="space-y-8 order-2 lg:order-1">
               <motion.div variants={fadeIn}>
                 <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold ${theme === "dark" ? "text-white" : "text-gray-900"} leading-tight`}>
-                  Hi, I'm <span className="text-[#009000]">Dhiraj</span>
+                  {t("Hi, I'm")} <span className="text-[#009000]">{t("Dhiraj")}</span>
                 </h1>
                 <div className="w-20 h-1 bg-[#009000] my-4"></div>
               </motion.div>
@@ -140,7 +140,7 @@ const InteractivePortfolio = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
-                <span className="text-[#009000]">Founder & CEO</span> 
+                <span className="text-[#009000]">{t("Founder & CEO")}</span> 
                 <span 
                   className={`absolute bottom-0 left-0 h-1 bg-[#009000] transition-all duration-500 ${isHovered ? "w-full" : "w-0"}`}
                 ></span>
@@ -175,7 +175,7 @@ const InteractivePortfolio = () => {
                             hover:bg-yellow-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400
                             focus:ring-offset-2 active:scale-95 flex items-center justify-center group shadow-lg"
                 >
-                  Connect with Us
+                  {t("Connect with Us")}
                   <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </button>
                 
@@ -187,7 +187,7 @@ const InteractivePortfolio = () => {
                             hover:scale-105 focus:outline-none flex items-center justify-center group shadow-lg
                             ${theme === "dark" ? "bg-gray-800 text-white hover:bg-gray-700" : "bg-white text-gray-800 hover:bg-gray-100"}`}
                 >
-                  Email Directly
+                  {t("Email Directly")}
                   <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">✉</span>
                 </button>
               </motion.div>
@@ -224,7 +224,7 @@ const InteractivePortfolio = () => {
             <div className="space-y-8 order-2 lg:order-1">
               <motion.div variants={fadeIn}>
                 <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold ${theme === "dark" ? "text-white" : "text-gray-900"} leading-tight`}>
-                  Hi, I'm <span className="text-[#009000]">Vineet</span>
+                  {t("Hi, I'm")} <span className="text-[#009000]">{t("Vineet")}</span>
                 </h1>
                 <div className="w-20 h-1 bg-[#009000] my-4"></div>
               </motion.div>
@@ -235,7 +235,7 @@ const InteractivePortfolio = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
-                <span className="text-[#009000]">IT HEAD DIRECTOR</span> 
+                <span className="text-[#009000]">{t("IT HEAD DIRECTOR")}</span> 
                 <span 
                   className={`absolute bottom-0 left-0 h-1 bg-[#009000] transition-all duration-500 ${isHovered ? "w-full" : "w-0"}`}
                 ></span>
@@ -270,7 +270,7 @@ const InteractivePortfolio = () => {
                             hover:bg-yellow-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400
                             focus:ring-offset-2 active:scale-95 flex items-center justify-center group shadow-lg"
                 >
-                  Connect with Us
+                  {t("Connect with Us")}
                   <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </button>
                 
@@ -282,7 +282,7 @@ const InteractivePortfolio = () => {
                             hover:scale-105 focus:outline-none flex items-center justify-center group shadow-lg
                             ${theme === "dark" ? "bg-gray-800 text-white hover:bg-gray-700" : "bg-white text-gray-800 hover:bg-gray-100"}`}
                 >
-                  Email Directly
+                  {t("Email Directly")}
                   <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">✉</span>
                 </button>
               </motion.div>
@@ -367,12 +367,12 @@ const InteractivePortfolio = () => {
             
             <div className="mb-6">
               <h3 className="text-2xl font-bold">Contact {active.name.split(" ")[0]}</h3>
-              <p className={`mt-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Fill out the form below to get in touch</p>
+              <p className={`mt-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>{t("Fill out the form below to get in touch")}</p>
             </div>
             
             <form className="space-y-5">
               <div>
-                <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>Your Name</label>
+                <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>{t("Your Name")}</label>
                 <input 
                   type="text" 
                   className={`w-full p-3 rounded-lg border ${theme === "dark" ? "bg-gray-700 border-gray-600 text-white focus:border-[#b73235] focus:ring-[#b73235]" : "bg-white border-gray-300 focus:border-[#b73235] focus:ring-[#b73235]"}`} 
@@ -382,7 +382,7 @@ const InteractivePortfolio = () => {
               </div>
               
               <div>
-                <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>Your Email</label>
+                <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>{t("Your Email")}</label>
                 <input 
                   type="email" 
                   className={`w-full p-3 rounded-lg border ${theme === "dark" ? "bg-gray-700 border-gray-600 text-white focus:border-[#009000] focus:ring-[#009000]" : "bg-white border-gray-300 text-black focus:border-[#009000] focus:ring-[#009000]"}`}
@@ -393,7 +393,7 @@ const InteractivePortfolio = () => {
               </div>
               
               <div>
-                <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>Message</label>
+                <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>{t("Message")}</label>
                 <textarea 
 className={`w-full p-3 rounded-lg border ${theme === "dark" ? "bg-gray-700 border-gray-600 text-white focus:border-[#009000] focus:ring-[#009000]" : "bg-white border-gray-300 text-black focus:border-[#009000] focus:ring-[#009000]"}`}
 
@@ -407,7 +407,7 @@ className={`w-full p-3 rounded-lg border ${theme === "dark" ? "bg-gray-700 borde
                 type="button"
                 className="w-full px-6 py-3 bg-[#009000] text-white font-semibold rounded-lg transition-all duration-300 hover:bg-yellow-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
               >
-                Send Message
+                {t("Send Message")}
               </button>
             </form>
           </motion.div>

@@ -182,13 +182,13 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
   }, [yearsExperience]);
 
   const sections = [
-    { id: 'about', title: 'About Us', icon: <FaGlobe /> },
-    { id: 'mission', title: 'Our Mission', icon: <FaLightbulb /> },
-    { id: 'vision', title: 'Our Vision', icon: <FaChartLine /> },
-    { id: 'experience', title: 'Our Experience', icon: <FaHistory /> },
-    { id: 'services', title: 'Our Services', icon: <FaBoxes /> },
-    { id: 'leadership', title: 'Leadership', icon: <FaUsers /> },
-    { id: 'partners', title: 'Global Partners', icon: <FaHandshake /> },
+    { id: 'about', title: t('About Us'), icon: <FaGlobe /> },
+    { id: 'mission', title: t('Our Mission'), icon: <FaLightbulb /> },
+    { id: 'vision', title: t('Our Vision'), icon: <FaChartLine /> },
+    { id: 'experience', title: t('Our Experience'), icon: <FaHistory /> },
+    { id: 'services', title: t('Our Services'), icon: <FaBoxes /> },
+    { id: 'leadership', title: t('Leadership'), icon: <FaUsers /> },
+    { id: 'partners', title: t('Global Partners'), icon: <FaHandshake /> },
   ];
 
   const fadeIn = {
@@ -283,30 +283,32 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
         </section>
 
         {/* Navigation with aria labels */}
-        <nav aria-label="About page sections" className="sticky top-0 z-20 bg-white shadow-sm">
-          <div className="container mx-auto px-6">
-            <div className="flex justify-center overflow-x-auto py-4">
-              <div className="flex space-x-1" role="tablist">
-                {sections.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => setActiveSection(section.id)}
-                    role="tab"
-                    aria-selected={activeSection === section.id}
-                    aria-controls={`${section.id}-tab`}
-                    id={`${section.id}-btn`}
-                    className={`flex items-center px-5 py-3 rounded-md transition-all ${activeSection === section.id 
-                      ? 'bg-[#009000] text-white shadow-md' 
-                      : 'text-gray-700 hover:bg-gray-100 hover:text-[#009000]'}`}
-                  >
-                    <span className="mr-2 text-sm" aria-hidden="true">{section.icon}</span>
-                    <span className="whitespace-nowrap text-sm font-medium">{section.title}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
+        <nav aria-label={t("About page sections")} className="sticky top-0 z-20 bg-white shadow-sm">
+      <div className="container mx-auto px-6">
+        <div className="flex justify-center overflow-x-auto py-4">
+          <div className="flex space-x-1" role="tablist">
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => setActiveSection(section.id)}
+                role="tab"
+                aria-selected={activeSection === section.id}
+                aria-controls={`${section.id}-tab`}
+                id={`${section.id}-btn`}
+                className={`flex items-center px-5 py-3 rounded-md transition-all ${
+                  activeSection === section.id
+                    ? 'bg-[#009000] text-white shadow-md'
+                    : 'text-gray-700 hover:bg-gray-100 hover:text-[#009000]'
+                }`}
+              >
+                <span className="mr-2 text-sm" aria-hidden="true">{section.icon}</span>
+                <span className="whitespace-nowrap text-sm font-medium">{t(section.title)}</span>
+              </button>
+            ))}
           </div>
-        </nav>
+        </div>
+      </div>
+    </nav>
 
         {/* Content Sections with proper heading hierarchy */}
         <main className="container mx-auto px-6 py-16">
@@ -400,7 +402,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                     </div>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                    Our Guiding Principles
+                    {t("Our Guiding Principles")}
                   </h2>
                   <div className="w-24 h-1 bg-[#009000] mx-auto mb-6"></div>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -413,21 +415,21 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                    [
                     {
                       icon: <FaShieldAlt className="text-3xl text-[#009000]" />,
-                      title: 'Quality Assurance',
+                      title: t('Quality Assurance'),
                       description:
-                        'We maintain the highest standards through continuous innovation, ensuring our services align with Gulf market expectations and global benchmarks.'
+                        t('We maintain the highest standards through continuous innovation, ensuring our services align with Gulf market expectations and global benchmarks.')
                     },
                     {
                       icon: <FaUsers className="text-3xl text-[#009000]" />,
-                      title: 'Client Success',
+                      title: t('Client Success'),
                       description:
-                        'We empower regional businesses with tailored, end-to-end solutions—designed to foster growth, streamline operations, and drive long-term success.'
+                        t('We empower regional businesses with tailored, end-to-end solutions—designed to foster growth, streamline operations, and drive long-term success.')
                     },
                     {
                       icon: <FaNetworkWired className="text-3xl text-[#009000]" />,
-                      title: 'Global Network',
+                      title: t('Global Network'),
                       description:
-                        'Our global network and strategic partnerships—including our Amazon and noon collaborations—enable seamless cross-border eCommerce expansion across Gulf countries.'
+                        t('Our global network and strategic partnerships—including our Amazon and noon collaborations—enable seamless cross-border eCommerce expansion across Gulf countries.')
                     }
                   
                   
@@ -465,11 +467,11 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                       <FaChartLine className="text-4xl text-[#009000]" />
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                      Our Vision for the Future
+                      {t("Our Vision for the Future")}
                     </h2>
                     <div className="w-24 h-1 bg-[#009000] mx-auto mb-6"></div>
                     <p className="text-2xl text-gray-700 font-medium leading-relaxed">
-  To lead the digital evolution of global procurement and trade by creating seamless, tech-driven connections between businesses across the Gulf and international markets.
+  {t("To lead the digital evolution of global procurement and trade by creating seamless, tech-driven connections between businesses across the Gulf and international markets.")}
 </p>
 
                   </motion.div>
@@ -478,50 +480,42 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                     {
                       [
                         {
-                          title: 'SP-API & SPP Enablement',
-                          description:
-                            'Accelerating the adoption of Amazon’s Selling Partner API and new SPP platform to automate seller workflows, compliance, and multi-country operations—especially for Gulf-based exporters.'
+                          title: t('SP-API & SPP Enablement'),
+                          description: t('Accelerating the adoption of Amazon’s Selling Partner API and new SPP platform to automate seller workflows, compliance, and multi-country operations—especially for Gulf-based exporters.')
                         },
                         {
-                          title: 'Business 2025 Vision',
-                          description:
-                            'Executing a bold digital transformation roadmap that enhances operational efficiency, unlocks new Gulf markets, and positions businesses for global competitiveness.'
+                          title: t('Business 2025 Vision'),
+                          description: t('Executing a bold digital transformation roadmap that enhances operational efficiency, unlocks new Gulf markets, and positions businesses for global competitiveness.')
                         },
                         {
-                          title: 'Universal Business Platform',
-                          description:
-                            'Engineering a centralized ecosystem that connects stakeholders across procurement, logistics, e-commerce, and compliance within the Gulf and beyond.'
+                          title: t('Universal Business Platform'),
+                          description: t('Engineering a centralized ecosystem that connects stakeholders across procurement, logistics, e-commerce, and compliance within the Gulf and beyond.')
                         },
                         {
-                          title: 'AI-Powered Business Intelligence',
-                          description:
-                            'Deploying AI-driven analytics to empower sellers with predictive data, automated insights, and decision-making support tailored to Gulf market behaviors.'
+                          title: t('AI-Powered Business Intelligence'),
+                          description: t('Deploying AI-driven analytics to empower sellers with predictive data, automated insights, and decision-making support tailored to Gulf market behaviors.')
                         },
                         {
-                          title: 'Global Trade Automation',
-                          description:
-                            'Digitizing and automating end-to-end trade processes—from customs documentation to FX and settlement—to simplify global exports from the Gulf.'
+                          title: t('Global Trade Automation'),
+                          description: t('Digitizing and automating end-to-end trade processes—from customs documentation to FX and settlement—to simplify global exports from the Gulf.')
                         },
                         {
-                          title: 'Seller Success Ecosystem',
-                          description:
-                            'Providing Gulf-based sellers with a 360° growth framework that includes onboarding, advertising, compliance, and operational scale-up support.'
+                          title: t('Seller Success Ecosystem'),
+                          description: t('Providing Gulf-based sellers with a 360° growth framework that includes onboarding, advertising, compliance, and operational scale-up support.')
                         },
                         {
-                          title: 'Cloud-First Architecture',
-                          description:
-                            'Transitioning to a robust, secure cloud infrastructure to deliver scalable, always-on services across the Gulf and international markets.'
+                          title: t('Cloud-First Architecture'),
+                          description: t('Transitioning to a robust, secure cloud infrastructure to deliver scalable, always-on services across the Gulf and international markets.')
                         },
                         {
-                          title: 'Multi-Marketplace Expansion',
-                          description:
-                            'Expanding access to platforms beyond Amazon—including noon, Walmart, eBay, and localized Gulf B2B/B2C marketplaces—to maximize seller reach.'
+                          title: t('Multi-Marketplace Expansion'),
+                          description: t('Expanding access to platforms beyond Amazon—including noon, Walmart, eBay, and localized Gulf B2B/B2C marketplaces—to maximize seller reach.')
                         },
                         {
-                          title: 'End-to-End Logistics Innovation',
-                          description:
-                            'Building a smart logistics network featuring bonded warehousing, regional fulfillment, real-time tracking, and last-mile partnerships across the GCC.'
+                          title: t('End-to-End Logistics Innovation'),
+                          description: t('Building a smart logistics network featuring bonded warehousing, regional fulfillment, real-time tracking, and last-mile partnerships across the GCC.')
                         }
+                        
                       
                     ].map((item, index) => (
                       <motion.div 
@@ -561,41 +555,41 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                   </figure>
                   <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border-t-4 border-[#009000]">
-                    <div className="text-2xl font-bold text-gray-800">15+ Years</div>
-                    <div className="text-gray-600">Industry Leadership</div>
+                    <div className="text-2xl font-bold text-gray-800">{t('15+ Years')}</div>
+                    <div className="text-gray-600">{t('Industry Leadership')}</div>
                   </div>
                 </motion.div>
 
                 <motion.div variants={fadeIn} className="order-1 lg:order-2">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-1 bg-[#009000] mr-4"></div>
-                    <h2 className="text-2xl font-semibold text-gray-700">OUR JOURNEY</h2>
+                    <h2 className="text-2xl font-semibold text-gray-700">{t("OUR JOURNEY")}</h2>
                   </div>
                   <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-                    A Legacy of Innovation and Growth
+                    {t("A Legacy of Innovation and Growth")}
                   </h3>
                   <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                    With over {isMounted ? yearsExperience : '15'} years of industry leadership, we've achieved numerous milestones 
-                    while continuously evolving our services. Our Business Vision 2025 initiative is setting new standards for 
-                    global commerce.
-                  </p>
+  {t('With over {yearsExperience} years of industry leadership, we\'ve achieved numerous milestones while continuously evolving our services. Our Business Vision 2025 initiative is setting new standards for global commerce.', { yearsExperience: isMounted ? yearsExperience : '15' })}
+</p>
+
                   <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                    Each project benefits from our extensive network and valuable industry connections, ensuring our clients 
-                    receive unparalleled advantages in their markets.
+                    {t('Each project benefits from our extensive network and valuable industry connections, ensuring our clients receive unparalleled advantages in their markets.')}
                   </p>
                   
                   <div className="space-y-6">
                     {[
                       {
                         icon: <FaShieldAlt className="text-xl text-[#009000]" />,
-                        title: 'Precision Execution',
-                        description: 'We combine strategic vision with operational excellence to deliver projects on time, every time.'
+                        title: t('Precision Execution'),
+                        description: t('We combine strategic vision with operational excellence to deliver projects on time, every time.')
                       },
                       {
                         icon: <FaUsers className="text-xl text-[#009000]" />,
-                        title: 'Expert Team',
-                        description: 'Our specialists bring deep expertise in e-commerce, supply chain management, and global trade.'
+                        title: t('Expert Team'),
+                        description: t('Our specialists bring deep expertise in e-commerce, supply chain management, and global trade.')
                       }
+                      
+                      
                     ].map((item, index) => (
                       <div key={index} className="flex items-start">
                         <div className="bg-[#009000]/10 p-3 rounded-full mr-4 flex-shrink-0">
@@ -625,46 +619,57 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
               >
                 <motion.div variants={fadeIn} className="text-center mb-16">
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                    Comprehensive Business Solutions
+                    {t('Comprehensive Business Solutions')}
                   </h2>
                   <div className="w-24 h-1 bg-[#009000] mx-auto mb-6"></div>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    We offer end-to-end services designed to accelerate your business growth in the digital economy
+                    {t('We offer end-to-end services designed to accelerate your business growth in the digital economy')}
                   </p>
                 </motion.div>
 
                 <motion.div variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {[
-  {
-    "icon": <FaGlobe className='text-3xl' />,
-    "title": "Global Expansion",
-    "description": "Facilitating business growth in international markets including Gulf countries like Saudi Arabia, UAE, Qatar, Kuwait, Oman, and Bahrain."
-  },
-  {
-    "icon": <FaShieldAlt className='text-3xl' />,
-    "title": "IT Infrastructure",
-    "description": "Secure and scalable technology solutions with robust data protection."
-  },
-  {
-    "icon": <FaSearchDollar className='text-3xl' />,
-    "title": "Market Intelligence",
-    "description": "Comprehensive data collection and research to inform strategic decisions."
-  },
-  {
-    "icon":<FaBoxes className='text-3xl' />,
-    "title": "Global Procurement",
-    "description": "End-to-end supply chain solutions for international markets."
-  },
-  {
-    "icon": <FaHandshake className='text-3xl' />,
-    "title": "Seller Ecosystem",
-    "description": "Management services for over 2.5 million sellers across diverse categories."
-  },
-  {
-    "icon": <FaShippingFast className='text-3xl' />,
-    "title": "Logistics Network",
-    "description": "Efficient global distribution and fulfillment solutions."
-  }
+  
+    {
+      icon: <FaGlobe className="text-3xl" />,
+      title: t("Global Expansion"),
+      description: t(
+        "Facilitating business growth in international markets including Gulf countries like Saudi Arabia, UAE, Qatar, Kuwait, Oman, and Bahrain."
+      ),
+    },
+    {
+      icon: <FaShieldAlt className="text-3xl" />,
+      title: t("IT Infrastructure"),
+      description: t(
+        "Secure and scalable technology solutions with robust data protection."
+      ),
+    },
+    {
+      icon: <FaSearchDollar className="text-3xl" />,
+      title: t("Market Intelligence"),
+      description: t(
+        "Comprehensive data collection and research to inform strategic decisions."
+      ),
+    },
+    {
+      icon: <FaBoxes className="text-3xl" />,
+      title: t("Global Procurement"),
+      description: t("End-to-end supply chain solutions for international markets."),
+    },
+    {
+      icon: <FaHandshake className="text-3xl" />,
+      title: t("Seller Ecosystem"),
+      description: t(
+        "Management services for over 2.5 million sellers across diverse categories."
+      ),
+    },
+    {
+      icon: <FaShippingFast className="text-3xl" />,
+      title: t("Logistics Network"),
+      description: t("Efficient global distribution and fulfillment solutions."),
+    },
+  
+  
 ]
 .map((service, index) => (
                     <ServiceCard 
@@ -692,11 +697,11 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
               >
                 <motion.div variants={fadeIn} className="text-center mb-16">
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                    Visionary Leadership
+                    {t('Visionary Leadership')}
                   </h2>
                   <div className="w-24 h-1 bg-[#009000] mx-auto mb-6"></div>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Guided by experience and driven by innovation
+                    {t('Guided by experience and driven by innovation')}
                   </p>
                 </motion.div>
 
@@ -715,34 +720,32 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                     </div>
                     <div className="p-8 md:w-3/5">
                       <div className="uppercase tracking-wider text-sm text-[#009000] font-semibold mb-2">
-                        Founder & Managing Director
+                        {t("Founder & Managing Director")}
                       </div>
                       <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                        Dhiraj Kumar Gupta
+                        {t("Dhiraj Kumar Gupta")}
                       </h3>
                       <p className="text-gray-600 mb-6 leading-relaxed">
-                        A seasoned business strategist with over 15 years of experience, Mr. Gupta founded U-Link Gulf with a vision 
-                        to bridge global business opportunities through technology. His expertise in consultancy and business advisory 
-                        has been instrumental in shaping the company's growth trajectory.
+                        {t('A seasoned business strategist with over 15 years of experience, Mr. Gupta founded U-Link Gulf with a vision to bridge global business opportunities through technology. His expertise in consultancy and business advisory has been instrumental in shaping the company’s growth trajectory.')}
                       </p>
                       <p className="text-gray-600 mb-8 leading-relaxed">
-                        Known for his dynamic leadership, Mr. Gupta has successfully navigated the company through market challenges 
-                        while maintaining a forward-looking approach to emerging business technologies.
+                        
+                        
                       </p>
                       
                       <div>
-                        <h4 className="font-semibold text-lg text-gray-800 mb-3">Leadership Attributes:</h4>
+                        <h4 className="font-semibold text-lg text-gray-800 mb-3">{t('Leadership Attributes:')}</h4>
                         <ul className="space-y-3">
                           {[
-                            "Strategic vision for digital transformation",
-                            "Deep expertise in global e-commerce ecosystems",
-                            "Proven track record in building strategic partnerships",
-                            "Commitment to innovation and operational excellence"
-                          ].map((item, index) => (
+  t("Strategic vision for digital transformation"),
+  t("Deep expertise in global e-commerce ecosystems"),
+  t("Proven track record in building strategic partnerships"),
+  t("Commitment to innovation and operational excellence")
+].map((item, index) => (
                             <li key={index} className="flex items-start">
                               <div className="bg-[#009000] rounded-full p-1 mr-3 mt-1 flex-shrink-0">
                                 <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                 </svg>
                               </div>
                               <span className="text-gray-700">{item}</span>
@@ -771,11 +774,11 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
   >
     <motion.div variants={fadeIn} className="text-center mb-16">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-        Strategic Global Partnerships
+        {t("Strategic Global Partnerships")}
       </h2>
       <div className="w-24 h-1 bg-[#009000] mx-auto mb-6"></div>
       <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-        Collaborating with industry leaders to deliver exceptional value
+        {t("Collaborating with industry leaders to deliver exceptional value")}
       </p>
     </motion.div>
 
@@ -811,7 +814,7 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
                   {partner.description}
                 </p>
                 <div className="w-full bg-gray-50 rounded-lg p-6">
-                  <h4 className="font-semibold text-lg text-gray-800 mb-4">Partnership Advantages:</h4>
+                  <h4 className="font-semibold text-lg text-gray-800 mb-4">{t("Partnership Advantages:")}</h4>
                   <ul className="grid md:grid-cols-2 gap-4">
                     {partner.benefits.map((item, i) => (
                       <li key={i} className="flex items-start">
@@ -878,21 +881,24 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
       className="grid md:grid-cols-3 gap-8 mt-16"
     >
       {[
-        {
-          region: "North America",
-          description: "Strategic alliances with leading technology and e-commerce firms across the United States",
-          countries: ["USA", "Canada"]
-        },
-        {
-          region: "Europe",
-          description: "Collaborations with procurement specialists and logistics providers throughout the UK and EU",
-          countries: ["UK", "Germany", "France"]
-        },
-        {
-          region: "Gulf Countries",
-          description: "Established network of trade partners and business aggregators in key Gulf markets",
-          countries: ["UAE", "Saudi Arabia", "Qatar"]
-        }
+        
+          {
+            region: t("North America"),
+            description: t("Strategic alliances with leading technology and e-commerce firms across the United States"),
+            countries: [t("USA"), t("Canada")]
+          },
+          {
+            region: t("Europe"),
+            description: t("Collaborations with procurement specialists and logistics providers throughout the UK and EU"),
+            countries: [t("UK"), t("Germany"), t("France")]
+          },
+          {
+            region: t("Gulf Countries"),
+            description: t("Established network of trade partners and business aggregators in key Gulf markets"),
+            countries: [t("UAE"), t("Saudi Arabia"), t("Qatar")]
+          }
+        
+        
       ].map((item, index) => (
         <PartnerCard 
           key={index}
@@ -917,10 +923,10 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">By The Numbers</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('By The Numbers')}</h2>
               <div className="w-24 h-1 bg-white/80 mx-auto mb-6"></div>
               <p className="text-xl max-w-2xl mx-auto">
-                Quantifying our impact and reach in the global business ecosystem
+                {t('Quantifying our impact and reach in the global business ecosystem')}
               </p>
             </motion.div>
 
@@ -932,25 +938,26 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
               className="grid md:grid-cols-4 gap-8"
             >
               <StatItem 
-                number="25+" 
-                label="Lakh Sellers" 
-                description="Networked across diverse product categories" 
-              />
-              <StatItem 
-                number="15+" 
-                label="Years Experience" 
-                description="Delivering business solutions since 2011" 
-              />
-              <StatItem 
-                number="50+" 
-                label="Experts" 
-                description="Dedicated professionals across our divisions" 
-              />
-              <StatItem 
-                number="1000+" 
-                label="Clients" 
-                description="Businesses empowered through our services" 
-              />
+  number="25+" 
+  label={t("Lakh Sellers")} 
+  description={t("Networked across diverse product categories")} 
+/>
+<StatItem 
+  number="15+" 
+  label={t("Years Experience")} 
+  description={t("Delivering business solutions since 2011")} 
+/>
+<StatItem 
+  number="50+" 
+  label={t("Experts")} 
+  description={t("Dedicated professionals across our divisions")} 
+/>
+<StatItem 
+  number="1000+" 
+  label={t("Clients")} 
+  description={t("Businesses empowered through our services")} 
+/>
+
             </motion.div>
           </div>
         </section>
@@ -967,22 +974,21 @@ const AutoRotateCarousel = ({ items, activeIndex, setActiveIndex, interval = 500
               className="text-center max-w-3xl mx-auto"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Accelerate Your Business Growth?
+              {t("Ready to Accelerate Your Business Growth?")}
               </h2>
               <p className="text-xl mb-8 leading-relaxed">
-                Partner with U-Link Gulf for comprehensive IT, e-commerce, and procurement solutions tailored to your 
-                specific business requirements and market objectives.
+              {t("Partner with U-Link Gulf for comprehensive IT, e-commerce, and procurement solutions tailored to your specific business requirements and market objectives.")}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                <a href="/contact">
                <button className="bg-[#008000] hover:bg-[#006400] text-white font-semibold py-3 px-8 rounded-md text-lg transition-colors shadow-lg">
-  Contact Our Team
+               {t("Contact Our Team")}
 </button>
 
                </a>
               <a href="/services">
               <button className="bg-white hover:bg-gray-100 text-[#009000] font-semibold py-3 px-8 rounded-md text-lg transition-colors shadow-lg">
-                  Explore Services
+              {t("Explore Services")}
                 </button>
               </a>
               </div>

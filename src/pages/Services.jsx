@@ -6,152 +6,156 @@ import {
   FaCheck, FaHandshake, FaChartBar, FaHeadset, FaTools,FaLaptopCode,FaTruck
 } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import { useTranslation } from 'react-i18next';
 
 const ServicesPage = () => {
   const [expandedService, setExpandedService] = useState(null);
   const [activeTab, setActiveTab] = useState("services");
+  const { t } = useTranslation();  // Translation hook
 
  const services = [
-      {
-        id: 1,
-        title: "Inventory Management",
-        description: "Daily monitoring and synchronization across all portals to prevent stock-outs and ensure optimal inventory levels.",
-        detailedDescription: [
-          "Real-time inventory tracking across all sales channels",
-          "Automated replenishment alerts",
-          "Seasonal demand forecasting",
-          "Multi-warehouse synchronization",
-          "Inventory health reporting"
-        ],
-        icon: <FaBoxes className="text-3xl" />
-      },
-      {
-        id: 2,
-        title: "Sales Management",
-        description: "Continuous tracking of product performance with dynamic strategies to maintain and boost sales rankings.",
-        detailedDescription: [
-          "Competitor price monitoring",
-          "Sales trend analysis",
-          "Promotion strategy development",
-          "Buy Box optimization",
-          "Performance benchmarking"
-        ],
-        icon: <FaChartLine className="text-3xl" />
-      },
-      {
-        id: 3,
-        title: "Order Management",
-        description: "Timely processing of all orders to maintain excellent dispatch rates and account performance metrics.",
-        detailedDescription: [
-          "Order processing automation",
-          "Shipping optimization",
-          "Return management",
-          "Delivery performance tracking",
-          "Customer notification system"
-        ],
-        icon: <FaClipboardCheck className="text-3xl" />
-      },
-      {
-        id: 4,
-        title: "Reviews & Rating",
-        description: "Proactive monitoring and resolution of customer feedback to maintain positive ratings and reviews.",
-        detailedDescription: [
-          "Review monitoring dashboard",
-          "Automated feedback requests",
-          "Negative review response system",
-          "Review analysis reporting",
-          "Seller rating optimization"
-        ],
-        icon: <FaStar className="text-3xl" />
-      },
-      {
-        id: 5,
-        title: "Account Health",
-        description: "Comprehensive monitoring to ensure compliance with all platform policies and performance standards.",
-        detailedDescription: [
-          "Policy compliance monitoring",
-          "Performance metric tracking",
-          "Account health alerts",
-          "Violation resolution support",
-          "Preventative strategy development"
-        ],
-        icon: <FaShieldAlt className="text-3xl" />
-      },
-      {
-        id: 6,
-        title: "Buyer Communication",
-        description: "24-hour response guarantee for all customer inquiries and issues.",
-        detailedDescription: [
-          "Dedicated response team",
-          "Standardized response templates",
-          "Escalation protocol for complex issues",
-          "Multilingual support available",
-          "Customer satisfaction tracking"
-        ],
-        icon: <FaComments className="text-3xl" />
-      },
-      {
-        id: 7,
-        title: "Sales Boost Program",
-        description: "Our proprietary 3-step strategy combining listing enhancement, sponsored products, and review management.",
-        detailedDescription: [
-          "Listing optimization audit",
-          "Keyword strategy development",
-          "Sponsored ad campaign management",
-          "Conversion rate optimization",
-          "Performance analytics dashboard"
-        ],
-        icon: <FaRocket className="text-3xl" />
-      },
-      {
-        id: 8,
-        title: "IT Services",
-        description: "Customized IT solutions designed to support the growth of your e-commerce business in the Gulf region.",
-        detailedDescription: [
-          "E-commerce platform integration for local marketplaces",
-          "Technical troubleshooting tailored to Gulf-specific needs",
-          "API integrations and automation for regional platforms",
-          "Security & data protection for Gulf-based e-commerce businesses",
-          "Cloud computing solutions with Gulf data centers"
-        ],
-        icon: <FaLaptopCode className="text-3xl" />
-      },
-      {
-        id: 9,
-        title: "Logistics Management",
-        description: "Streamlining logistics operations to ensure timely deliveries and efficient supply chain management across the Gulf region.",
-        detailedDescription: [
-          "Real-time tracking of shipments across Gulf countries",
-          "Third-party logistics (3PL) integration in the Gulf",
-          "Route optimization for deliveries within UAE, Saudi Arabia, and Qatar",
-          "Customs clearance & import/export support specific to Gulf regulations",
-          "Warehousing & distribution management across the GCC"
-        ],
-        icon: <FaTruck className="text-3xl" />
-      }
+  {
+    id: 1,
+    title: t("Inventory Management"),
+    description: t("Daily monitoring and synchronization across all portals to prevent stock-outs and ensure optimal inventory levels."),
+    detailedDescription: [
+      t("Real-time inventory tracking across all sales channels"),
+      t("Automated replenishment alerts"),
+      t("Seasonal demand forecasting"),
+      t("Multi-warehouse synchronization"),
+      t("Inventory health reporting")
+    ],
+    icon: <FaBoxes className="text-3xl" />
+  },
+  {
+    id: 2,
+    title: t("Sales Management"),
+    description: t("Continuous tracking of product performance with dynamic strategies to maintain and boost sales rankings."),
+    detailedDescription: [
+      t("Competitor price monitoring"),
+      t("Sales trend analysis"),
+      t("Promotion strategy development"),
+      t("Buy Box optimization"),
+      t("Performance benchmarking")
+    ],
+    icon: <FaChartLine className="text-3xl" />
+  },
+  {
+    id: 3,
+    title: t("Order Management"),
+    description: t("Timely processing of all orders to maintain excellent dispatch rates and account performance metrics."),
+    detailedDescription: [
+      t("Order processing automation"),
+      t("Shipping optimization"),
+      t("Return management"),
+      t("Delivery performance tracking"),
+      t("Customer notification system")
+    ],
+    icon: <FaClipboardCheck className="text-3xl" />
+  },
+  {
+    id: 4,
+    title: t("Reviews & Rating"),
+    description: t("Proactive monitoring and resolution of customer feedback to maintain positive ratings and reviews."),
+    detailedDescription: [
+      t("Review monitoring dashboard"),
+      t("Automated feedback requests"),
+      t("Negative review response system"),
+      t("Review analysis reporting"),
+      t("Seller rating optimization")
+    ],
+    icon: <FaStar className="text-3xl" />
+  },
+  {
+    id: 5,
+    title: t("Account Health"),
+    description: t("Comprehensive monitoring to ensure compliance with all platform policies and performance standards."),
+    detailedDescription: [
+      t("Policy compliance monitoring"),
+      t("Performance metric tracking"),
+      t("Account health alerts"),
+      t("Violation resolution support"),
+      t("Preventative strategy development")
+    ],
+    icon: <FaShieldAlt className="text-3xl" />
+  },
+  {
+    id: 6,
+    title: t("Buyer Communication"),
+    description: t("24-hour response guarantee for all customer inquiries and issues."),
+    detailedDescription: [
+      t("Dedicated response team"),
+      t("Standardized response templates"),
+      t("Escalation protocol for complex issues"),
+      t("Multilingual support available"),
+      t("Customer satisfaction tracking")
+    ],
+    icon: <FaComments className="text-3xl" />
+  },
+  {
+    id: 7,
+    title: t("Sales Boost Program"),
+    description: t("Our proprietary 3-step strategy combining listing enhancement, sponsored products, and review management."),
+    detailedDescription: [
+      t("Listing optimization audit"),
+      t("Keyword strategy development"),
+      t("Sponsored ad campaign management"),
+      t("Conversion rate optimization"),
+      t("Performance analytics dashboard")
+    ],
+    icon: <FaRocket className="text-3xl" />
+  },
+  {
+    id: 8,
+    title: t("IT Services"),
+    description: t("Customized IT solutions designed to support the growth of your e-commerce business in the Gulf region."),
+    detailedDescription: [
+      t("E-commerce platform integration for local marketplaces"),
+      t("Technical troubleshooting tailored to Gulf-specific needs"),
+      t("API integrations and automation for regional platforms"),
+      t("Security & data protection for Gulf-based e-commerce businesses"),
+      t("Cloud computing solutions with Gulf data centers")
+    ],
+    icon: <FaLaptopCode className="text-3xl" />
+  },
+  {
+    id: 9,
+    title: t("Logistics Management"),
+    description: t("Streamlining logistics operations to ensure timely deliveries and efficient supply chain management across the Gulf region."),
+    detailedDescription: [
+      t("Real-time tracking of shipments across Gulf countries"),
+      t("Third-party logistics (3PL) integration in the Gulf"),
+      t("Route optimization for deliveries within UAE, Saudi Arabia, and Qatar"),
+      t("Customs clearance & import/export support specific to Gulf regulations"),
+      t("Warehousing & distribution management across the GCC")
+    ],
+    icon: <FaTruck className="text-3xl" />
+  }
+  
     ];
 
     const features = [
       {
-        title: "Proven Results",
-        description: "Average 45% sales increase for clients in first 6 months",
+        title: t("Proven Results"),
+        description: t("Average 45% sales increase for clients in first 6 months"),
         icon: <FaChartBar className="text-2xl" />
       },
       {
-        title: "Dedicated Team",
-        description: "Your own account manager and support specialists",
+        title: t("Dedicated Team"),
+        description: t("Your own account manager and support specialists"),
         icon: <FaHeadset className="text-2xl" />
       },
       {
-        title: "Advanced Tools",
-        description: "Proprietary software and analytics dashboards",
+        title: t("Advanced Tools"),
+        description: t("Proprietary software and analytics dashboards"),
         icon: <FaTools className="text-2xl" />
       },
       {
-        title: "Flexible Plans",
-        description: "Customizable service packages to fit your needs",
+        title: t("Flexible Plans"),
+        description: t("Customizable service packages to fit your needs"),
         icon: <FaHandshake className="text-2xl" />
       }
+      
     ];
 
 
@@ -228,7 +232,7 @@ const ServicesPage = () => {
                     className="mt-6 pt-6 border-t border-gray-200"
                   >
                     <h4 className="text-sm font-semibold text-[#009000] uppercase tracking-wide">
-                      Detailed Features
+                    {t("Detailed Features")}
                     </h4>
                     <ul className="mt-4 space-y-3">
                       {service.detailedDescription.map((item, i) => (
@@ -257,10 +261,10 @@ const ServicesPage = () => {
     >
       <div className="text-center">
         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-          Our 4-Step Implementation Process
+          {t("Our 4-Step Implementation Process")}
         </h2>
         <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
-          We follow a structured approach to ensure seamless onboarding and continuous optimization.
+          {t("We follow a structured approach to ensure seamless onboarding and continuous optimization.")}
         </p>
       </div>
 
@@ -269,26 +273,29 @@ const ServicesPage = () => {
           <div className="lg:w-1/2">
             <div className="space-y-12">
               { [
+ 
   {
-    step: "1",
-    title: "Discovery & Analysis",
-    description: "We conduct a comprehensive audit of your current seller account performance across Gulf marketplaces, analyzing key metrics and competitor positioning in the UAE, Saudi Arabia, Qatar, and beyond."
+    step: t("1"),
+    title: t("Discovery & Analysis"),
+    description: t("We conduct a comprehensive audit of your current seller account performance across Gulf marketplaces, analyzing key metrics and competitor positioning in the UAE, Saudi Arabia, Qatar, and beyond.")
   },
   {
-    step: "2",
-    title: "Strategy Development",
-    description: "Our team creates a customized management plan for your Gulf-based account, with tailored KPIs and optimization strategies aligned to local market demands and regional selling trends."
+    step: t("2"),
+    title: t("Strategy Development"),
+    description: t("Our team creates a customized management plan for your Gulf-based account, with tailored KPIs and optimization strategies aligned to local market demands and regional selling trends.")
   },
   {
-    step: "3",
-    title: "Implementation",
-    description: "We deploy our proven systems and processes across your seller account, ensuring smooth operations while maintaining transparent communication with you throughout the Gulf-focused campaign."
+    step: t("3"),
+    title: t("Implementation"),
+    description: t("We deploy our proven systems and processes across your seller account, ensuring smooth operations while maintaining transparent communication with you throughout the Gulf-focused campaign.")
   },
   {
-    step: "4",
-    title: "Ongoing Optimization",
-    description: "Continuous monitoring and adjustments are made to enhance your performance based on real-time data, feedback, and changes in Gulf market conditions."
+    step: t("4"),
+    title: t("Ongoing Optimization"),
+    description: t("Continuous monitoring and adjustments are made to enhance your performance based on real-time data, feedback, and changes in Gulf market conditions.")
   }
+
+
 ]
 .map((item) => (
                 <div key={item.step} className="flex">
@@ -328,30 +335,33 @@ const ServicesPage = () => {
     >
       <div className="text-center">
         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-          Trusted by Sellers Worldwide
+          {t("Trusted by Sellers Worldwide")}
         </h2>
       </div>
 
       <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {[
-          {
-            quote: "U-Link Gulf transformed our Amazon business. Sales increased by 68% in the first quarter with their management.",
-            author: "Sarah Johnson",
-            position: "CEO, Home Essentials Inc.",
-            stats: "68% sales increase"
-          },
-          {
-            quote: "Their inventory management system saved us from costly stockouts during peak season. Highly recommended!",
-            author: "Michael Chen",
-            position: "Operations Director, TechGadgets",
-            stats: "100% inventory accuracy"
-          },
-          {
-            quote: "The dedicated support team responds faster than our in-house staff ever could. Truly 24/7 service.",
-            author: "David Rodriguez",
-            position: "Founder, FashionForward",
-            stats: "98% response rate under 2h"
-          }
+          
+            {
+              quote: t("U-Link Gulf transformed our Amazon business. Sales increased by 68% in the first quarter with their management."),
+              author: t("Sarah Johnson"),
+              position: t("CEO, Home Essentials Inc."),
+              stats: t("68% sales increase")
+            },
+            {
+              quote: t("Their inventory management system saved us from costly stockouts during peak season. Highly recommended!"),
+              author: t("Michael Chen"),
+              position: t("Operations Director, TechGadgets"),
+              stats: t("100% inventory accuracy")
+            },
+            {
+              quote: t("The dedicated support team responds faster than our in-house staff ever could. Truly 24/7 service."),
+              author: t("David Rodriguez"),
+              position: t("Founder, FashionForward"),
+              stats: t("98% response rate under 2h")
+            }
+          
+          
         ].map((testimonial, index) => (
           <motion.div
             key={index}
@@ -405,19 +415,19 @@ const ServicesPage = () => {
               onClick={() => setActiveTab("services")}
               className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${activeTab === "services" ? 'border-[#009000] text-[#009000]' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
             >
-              Our Services
+              {t("Our Services")}
             </button>
             <button
               onClick={() => setActiveTab("process")}
               className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${activeTab === "process" ? 'border-[#009000] text-[#009000]' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
             >
-              Our Process
+              {t("Our Process")}
             </button>
             <button
               onClick={() => setActiveTab("results")}
               className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ${activeTab === "results" ? 'border-[#009000] text-[#009000]' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
             >
-              Client Results
+              {t("Client Results")}
             </button>
           </nav>
         </div>
@@ -433,13 +443,13 @@ const ServicesPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-base font-semibold text-[#009000] tracking-wide uppercase">
-              Our  Management System
+              {t("Our Management System")}
             </h2>
             <h1 className="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
-              Comprehensive Account Management Solution
+              {t("Comprehensive Account Management Solution")}
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-xl text-gray-600">
-            Specialized in Account Management, IT Services, and Logistics for the Gulf—powered by technology, expertise, and trusted support to accelerate your marketplace growth.
+            {t("Specialized in Account Management, IT Services, and Logistics for the Gulf—powered by technology, expertise, and trusted support to accelerate your marketplace growth.")}
             </p>
           </motion.div>
 
@@ -459,11 +469,11 @@ const ServicesPage = () => {
               <div className="lg:flex lg:items-center lg:justify-between">
                 <div className="text-center lg:text-left">
                   <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                    <span className="block">Ready to transform your seller account?</span>
-                    <span className="block text-white opacity-90">Schedule a free consultation today.</span>
+                    <span className="block">{t("Ready to transform your seller account?")}</span>
+                    <span className="block text-white opacity-90">{t("Schedule a free consultation today.")}</span>
                   </h2>
                   <p className="mt-4 max-w-2xl text-lg text-white opacity-80">
-                    Our experts will analyze your current performance and provide actionable recommendations.
+                    {t("Our experts will analyze your current performance and provide actionable recommendations.")}
                   </p>
                 </div>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 lg:mt-0 lg:flex-shrink-0">
@@ -472,7 +482,7 @@ const ServicesPage = () => {
                       href="/contact"
                       className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#b73235] bg-white hover:bg-gray-100 md:py-4 md:text-lg md:px-10 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
                     >
-                      Get Started
+                      {t("Get Started")}
                     </a>
                   </div>
                   <div className="inline-flex rounded-md shadow">
@@ -482,7 +492,7 @@ const ServicesPage = () => {
   aria-disabled="true"
   title="Coming Soon"
 >
-Request Demo
+{t("Request Demo")}
 </a>
 
 
