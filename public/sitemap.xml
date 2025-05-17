@@ -1,43 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+  <?xml version="1.0" encoding="UTF-8"?>
+  <urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+              http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-<url>
-  <loc>https://www.ulinkitus.com/</loc>
-  <lastmod>2025-05-08T19:18:08+00:00</lastmod>
-</url>
+  <url>
+    <loc>https://www.ulinkgulf.com/home</loc>
+    <lastmod>2025-05-08T19:18:08+00:00</lastmod>
+  </url>
 
-<url>
-  <loc>https://www.ulinkitus.com/aboutus/</loc>
-  <lastmod>2025-05-08</lastmod>
-</url>
+  <url>
+    <loc>https://www.ulinkgulf.com/about-us</loc>
+    <lastmod>2025-05-08</lastmod>
+  </url>
 
-<url>
-  <loc>https://www.ulinkitus.com/contact/</loc>
-  <lastmod>2025-05-08</lastmod>
-</url>
+  <url>
+    <loc>https://www.ulinkgulf.com/services</loc>
+    <lastmod>2025-05-08</lastmod>
+  </url>
 
-<url>
-  <loc>https://www.ulinkitus.com/services/</loc>
-  <lastmod>2025-05-08</lastmod>
-</url>
+  <url>
+    <loc>https://www.ulinkgulf.com/portfolio</loc>
+    <lastmod>2025-05-08</lastmod>
+  </url>
 
-<url>
-  <loc>https://www.ulinkitus.com/portfolio/</loc>
-  <lastmod>2025-05-08</lastmod>
-</url>
+  <url>
+    <loc>https://www.ulinkgulf.com/blog</loc>
+    <lastmod>2025-05-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ulinkgulf.com/schedule</loc>
+    <lastmod>2025-05-08</lastmod>
+  </url>
 
-<url>
-  <loc>https://www.ulinkitus.com/blog/</loc>
-  <lastmod>2025-05-08</lastmod>
-</url>
-<url>
-  <loc>https://www.ulinkitus.com/schedule</loc>
-  <lastmod>2025-05-08</lastmod>
-</url>
-
-</urlset>
+  </urlset>
