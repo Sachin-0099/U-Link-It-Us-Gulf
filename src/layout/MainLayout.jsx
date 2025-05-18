@@ -1,7 +1,8 @@
 // src/layout/MainLayout.jsx
 import React from 'react';
 import Navbar from '../components/HeaderNav';
-import Footer from '../components/Footer';
+import FooterSection from '../components/footer/FooterSection';
+
 
 function MainLayout({ children }) {
   return (
@@ -12,8 +13,8 @@ function MainLayout({ children }) {
       <main className="flex-grow pt-24 md:pt-28 lg:pt-32 ">
         {children}
       </main>
-      
-      <Footer />
+      <FooterSection/>
+
     </div>
   );
 }
