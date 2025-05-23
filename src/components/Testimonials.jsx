@@ -1,20 +1,15 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, A11y, Autoplay } from "swiper/modules";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
-
-
-
-
-
-
 const PartnerTestimonials = () => {
   const { t } = useTranslation();
+
   const testimonials = [
     {
       logo: "/Images/amazon-ae.png",
@@ -89,8 +84,9 @@ const PartnerTestimonials = () => {
       inventoryManaged: true,
     },
   ];
+
   return (
-    <section className="bg-white py-16 px-4 relative">
+    <section className="bg-white py-16 px-4 relative" aria-label={t("Partner Testimonials")}>
       <Swiper
         modules={[Pagination, A11y, Autoplay]}
         spaceBetween={30}
@@ -106,23 +102,29 @@ const PartnerTestimonials = () => {
       >
         {testimonials.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col items-center max-w-md mx-auto text-center p-6 space-y-4">
-              <div className="h-16 mb-2">
+            <article
+              className="flex flex-col items-center max-w-md mx-auto text-center p-6 space-y-4"
+              itemScope
+              itemType="https://schema.org/Review"
+            >
+              <figure className="h-16 mb-2">
                 <img
                   src={item.logo}
-                  alt={item.title}
+                  alt={`${item.title} logo`}
+                  loading="lazy"
                   className="object-contain h-full"
+                  itemProp="image"
                 />
-              </div>
+              </figure>
               <div className="bg-white border border-gray-200 rounded-r-[2rem] rounded-b-[0.75rem] shadow-lg px-6 py-6 transition-all hover:shadow-xl duration-300">
-                <h3 className="text-[#009000] font-bold text-lg mb-3">
+                <h3 className="text-[#009000] font-bold text-lg mb-3" itemProp="name">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-700 leading-relaxed font-semibold">
+                <p className="text-sm text-gray-700 leading-relaxed font-semibold" itemProp="reviewBody">
                   {item.content}
                 </p>
               </div>
-            </div>
+            </article>
           </SwiperSlide>
         ))}
       </Swiper>

@@ -183,6 +183,52 @@ const ServiceDetail = () => {
       ]
     },
     {
+      id: 'fba-storage',
+      title: t("FBA Storage Optimization"),
+      fullDescription: t("Reduce unnecessary costs and improve operational efficiency with expert FBA storage strategies tailored to your inventory and sales patterns."),
+      features: [
+        t("Inventory placement strategy"),
+        t("Long-term storage avoidance"),
+        t("Removal order management")
+      ],
+      pricing: {
+        basic: {
+          price: "1,000 SAR",
+          coverage: t("Flat rate"),
+          features: [
+            t("Storage audit"),
+            t("Placement strategy plan"),
+            t("Basic removal suggestions")
+          ]
+        },
+        professional: {
+          price: "1,500 SAR",
+          coverage: t("Flat rate"),
+          features: [
+            t("Advanced inventory forecasting"),
+            t("Ongoing monitoring for LTSF"),
+            t("Custom removal order planning")
+          ]
+        },
+        enterprise: {
+          price: "2,200 SAR",
+          coverage: t("Flat rate"),
+          features: [
+            t("Dedicated FBA advisor"),
+            t("Full inventory segmentation"),
+            t("Automated restock & removal triggers")
+          ]
+        }
+      },
+      serviceLevels: [],
+      benefits: [
+        t("Lower FBA long-term storage fees"),
+        t("Improve inventory performance index"),
+        t("Increase sell-through rate and reduce waste")
+      ]
+    }
+,    
+    {
       id: 'aplus-content',
       title: t("A+ Content & Enhanced Brand Content"),
       fullDescription: t("Transform your product pages with professionally designed A+ Content that tells your brand story and significantly boosts conversion rates."),
@@ -231,102 +277,146 @@ const ServiceDetail = () => {
         t("Strengthen brand image and trust")
       ]
     },
-   {
+    {
       id: 'logistics',
       title: t("Logistics Solutions"),
-      fullDescription: t("Streamline your supply chain with our tailored logistics solutions designed specifically for Amazon sellers."),
+      fullDescription: t("Seamlessly manage your product shipments with our comprehensive logistics support, covering customs, shipping, and strategic replenishment."),
       features: [
         t("Shipping coordination"),
         t("Customs clearance assistance"),
-        t("Inventory replenishment planning"),
-        t("Multi-channel fulfillment"),
-        t("Freight forwarding"),
-        t("Duty optimization"),
-        t("Warehousing solutions")
-      ],
-      pricing: {
-        custom: true,
-        message: t("Contact us for a custom logistics quote tailored to your business needs.")
-      },
-      serviceLevels: [],
-      benefits: [
-        t("Faster fulfillment times"),
-        t("Lower shipping costs"),
-        t("Improved supply chain reliability")
-      ]
-    },
-    {
-      id: 'brand-registry',
-      title: t("Brand Registry & Approval"),
-      fullDescription: t("Protect your brand and unlock powerful selling tools by getting approved for Amazon Brand Registry."),
-      features: [
-        t("Trademark verification"),
-        t("Brand registry application"),
-        t("Brand protection setup"),
-        t("Enhanced brand content eligibility"),
-        t("Counterfeit protection"),
-        t("Brand analytics access"),
-        t("Sponsored Brands eligibility")
+        t("Inventory replenishment planning")
       ],
       pricing: {
         basic: {
-          price: "1,500 SAR",
-          coverage: t("One-time service"),
+          price: "500-10000 SAR",
+          coverage: t("Based on shipment size and destination"),
           features: [
-            t("Application process handling"),
-            t("Document preparation"),
-            t("Post-registration setup")
+            t("Initial consultation"),
+            t("Standard documentation support"),
+            t("Shipment scheduling")
+          ]
+        },
+        professional: {
+          price: "500-10000 SAR",
+          coverage: t("Based on service scope"),
+          features: [
+            t("End-to-end logistics coordination"),
+            t("Customs advisory"),
+            t("Inventory buffer planning")
+          ]
+        },
+        enterprise: {
+          price: "500-100000 SAR",
+          coverage: t("Tailored to complex logistics needs"),
+          features: [
+            t("Dedicated logistics manager"),
+            t("Multi-country shipping strategy"),
+            t("Full visibility & tracking solutions")
           ]
         }
       },
       serviceLevels: [],
       benefits: [
-        t("Protect intellectual property"),
-        t("Access brand-exclusive tools"),
-        t("Prevent unauthorized sellers")
+        t("Reduce shipping delays"),
+        t("Ensure customs compliance"),
+        t("Maintain optimal inventory flow")
       ]
     },
     {
       id: 'social-media',
       title: t("Social Media Marketing"),
-      fullDescription: t("Amplify your brand presence and drive traffic to your Amazon listings with our professional social media management."),
+      fullDescription: t("Grow your brand presence across social platforms with engaging content, audience targeting, and daily management."),
       features: [
         t("Platform management (FB/IG/TikTok)"),
         t("Content creation & scheduling"),
-        t("Audience engagement"),
-        t("Performance analytics"),
-        t("Ad campaign management"),
-        t("Influencer partnerships"),
-        t("Community building")
+        t("Audience engagement")
       ],
       pricing: {
         basic: {
           price: "2,000 SAR",
-          coverage: t("Monthly management"),
+          coverage: t("Monthly package"),
           features: [
-            t("1 platform"),
-            t("Content planning"),
-            t("Engagement tracking")
+            t("2 posts/week"),
+            t("Basic design"),
+            t("Comments & messages handling")
           ]
         },
         professional: {
-          price: "3,500 SAR",
-          coverage: t("Multi-platform"),
+          price: "3,000 SAR",
+          coverage: t("Monthly package"),
           features: [
-            t("Ad campaign management"),
-            t("Influencer collaboration"),
-            t("Weekly analytics")
+            t("4 posts/week"),
+            t("Advanced graphics"),
+            t("Community growth strategies")
+          ]
+        },
+        enterprise: {
+          price: "5,000 SAR",
+          coverage: t("Monthly package"),
+          features: [
+            t("Daily posting"),
+            t("Paid ad setup & management"),
+            t("Influencer collaboration support")
           ]
         }
       },
       serviceLevels: [],
       benefits: [
-        t("Increased brand visibility"),
-        t("Higher Amazon listing traffic"),
-        t("Stronger customer engagement")
+        t("Boost online visibility"),
+        t("Engage and grow your audience"),
+        t("Drive traffic to your store")
       ]
     }
-    // Add other services here...
+    ,
+    {
+      id: 'brand-registry',
+      title: t("Brand Registry & Approval"),
+      fullDescription: t("Secure your brand's identity on Amazon with verified trademark protection and streamlined registry setup."),
+      features: [
+        t("Trademark verification"),
+        t("Brand registry application"),
+        t("Brand protection setup")
+      ],
+      pricing: {
+        basic: {
+          price: "1,500 SAR",
+          coverage: t("One-time setup"),
+          features: [
+            t("Trademark review"),
+            t("Application guidance"),
+            t("Initial brand protection steps")
+          ]
+        },
+        professional: {
+          price: "2,000 SAR",
+          coverage: t("One-time setup + support"),
+          features: [
+            t("Full registry handling"),
+            t("Support with objections"),
+            t("Basic brand protection")
+          ]
+        },
+        enterprise: {
+          price: "2,500 SAR",
+          coverage: t("Full service + monitoring"),
+          features: [
+            t("Dedicated advisor"),
+            t("Enhanced protection setup"),
+            t("Ongoing support & monitoring")
+          ]
+        }
+      },
+      serviceLevels: [],
+      benefits: [
+        t("Protect your brand from copycats"),
+        t("Unlock Amazon Brand tools"),
+        t("Enhance customer trust")
+      ]
+    }
+    
+    
+   
+
   ];
 
   // Find the selected service by serviceId

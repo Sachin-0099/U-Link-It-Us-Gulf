@@ -7,7 +7,7 @@ const BackToTop = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 200);
+      setShowBackToTop(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);

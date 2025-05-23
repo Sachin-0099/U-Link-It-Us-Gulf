@@ -2,11 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-
-
-
 const CompanyJourney = () => {
-  const { t } = useTranslation(); // ✅ Hook used inside the component
+  const { t } = useTranslation();
 
   const milestones = [
     {
@@ -40,19 +37,22 @@ const CompanyJourney = () => {
       alt: t("Global trade team meeting"),
     },
   ];
+
   return (
-    <section className="py-12 md:py-20 px-4 bg-white" aria-label="Our Company Journey Timeline">
-      {/* Header */}
+    <section className="py-12 md:py-20 px-4 bg-white" aria-label={t("Our Company Journey Timeline")}>
+      {/* Section Header */}
       <header className="text-center mb-12 md:mb-16">
-        <p className="text-lg text-gray-600 mb-2">{t("Our Journey and Success milestone till")}</p>
-        <h1 className="text-3xl md:text-4xl font-bold text-[#009000]">
-         {t("Global Business")} <span className="text-gray-800">{t("Journey")}</span>
-        </h1>
+        <p className="text-lg text-gray-600 mb-2">
+          {t("Our Journey and Success milestone till")}
+        </p>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#009000]">
+          {t("Global Business")} <span className="text-gray-800">{t("Journey")}</span>
+        </h2>
       </header>
 
       {/* Timeline */}
       <div className="relative">
-        {/* Horizontal Line through numbers - Hidden on mobile */}
+        {/* Horizontal Line - Hidden on mobile */}
         <div className="hidden md:block absolute top-[30px] left-0 h-1 w-full bg-[#009000] z-0" />
 
         <div className="md:flex md:space-x-4 lg:space-x-8 xl:space-x-12 md:justify-center md:items-start md:relative md:px-4">
@@ -66,11 +66,10 @@ const CompanyJourney = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               aria-labelledby={`milestone-${milestone.id}-title`}
             >
-              {/* Number Circle */}
+              {/* Milestone Number */}
               <div className="relative z-10 group flex md:block items-center">
-                {/* Vertical line for mobile */}
                 <div className="md:hidden absolute left-6 top-0 bottom-0 w-1 bg-green-800 -z-10" />
-                
+
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   className={`w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full border-4 shadow-xl text-white font-semibold text-lg ${
@@ -82,16 +81,15 @@ const CompanyJourney = () => {
                   {milestone.id}
                 </motion.div>
 
-                {/* Title for mobile */}
-                <h2 className="md:hidden ml-4 text-xl font-semibold text-gray-800">
-                {t("Milestone ")}{milestone.id}
-                </h2>
+                <h3 className="md:hidden ml-4 text-xl font-semibold text-gray-800">
+                  {t("Milestone")} {milestone.id}
+                </h3>
               </div>
 
-              {/* Connector Line - Hidden on mobile */}
+              {/* Connector Line */}
               <div className="hidden md:block w-1 h-8 bg-[#009000] mt-1 mb-2 z-10" />
 
-              {/* 3D Rotating Milestone Card */}
+              {/* 3D Rotating Card */}
               <div className="mt-4 md:mt-0 w-46 h-46 md:w-44 md:h-44 lg:w-48 lg:h-48 xl:w-52 xl:h-52 perspective-1000">
                 <motion.div
                   className="relative w-full h-full rounded-full overflow-hidden border-4 border-gray-200 shadow-lg cursor-pointer"
@@ -103,19 +101,16 @@ const CompanyJourney = () => {
                       repeat: Infinity,
                     },
                   }}
-                  style={{
-                    transformStyle: "preserve-3d",
-                  }}
+                  style={{ transformStyle: "preserve-3d" }}
                   aria-label={`Milestone ${milestone.id}: ${milestone.description}`}
                 >
-                  {/* Front Face - Content */}
+                  {/* Front Face - Description */}
                   <div className="absolute inset-0 bg-[#009000]/90 rounded-full flex items-center justify-center p-6 text-center text-white text-xs sm:text-sm backface-hidden">
-  <p className="px-2">{milestone.description}</p>
-</div>
+                    <p className="px-2">{milestone.description}</p>
+                  </div>
 
-                  
                   {/* Back Face - Image */}
-                  <div 
+                  <div
                     className="absolute inset-0 rounded-full backface-hidden"
                     style={{
                       backgroundImage: `url(${milestone.img})`,
@@ -123,8 +118,11 @@ const CompanyJourney = () => {
                       backgroundPosition: "center",
                       transform: "rotateY(360deg)",
                     }}
+                    role="img"
+                    aria-label={milestone.alt}
                   />
-                  
+
+                  {/* Hidden alt text for screen readers */}
                   <span className="sr-only">{milestone.alt}</span>
                 </motion.div>
               </div>
