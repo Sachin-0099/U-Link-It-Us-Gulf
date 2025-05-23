@@ -32,6 +32,8 @@ const BackToTop = () => {
             onClick={scrollToTop}
             className="bg-[#009000] text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
             aria-label="Back to Top"
+            title="Back to Top"
+            role="button"
           >
             <motion.div
               animate={{
