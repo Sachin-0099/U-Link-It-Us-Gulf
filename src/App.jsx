@@ -16,6 +16,7 @@ import Schedule from './pages/Schedule';
 import NotFound from './pages/NotFound';
 import WhatsAppButton from './components/WhatsappButton';
 import ServiceDetail from './components/ServiceDetail';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   const { i18n } = useTranslation();
@@ -27,6 +28,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <CustomCursor/>
       <MainLayout>
         <Routes>
           <Route path="/" element={<Home />} />

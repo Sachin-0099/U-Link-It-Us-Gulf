@@ -118,8 +118,9 @@ const languageToggleRefMobile = useRef(null);
               href="tel:8750518844"
               className="flex items-center gap-2 px-4 py-3 text-[#009000] border border-[#009000] rounded-md hover:bg-green-100 transition hover:scale-105"
             >
-              <FaPhone size={18} />
+              
               <span>{t('Call Us')}</span>
+              <FaPhone size={18} />
             </a>
           </li>
           <li>
