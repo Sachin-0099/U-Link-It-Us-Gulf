@@ -139,6 +139,14 @@ const FooterSection = () => {
           </motion.div>
         </motion.div>
 
+        <div className="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
+  <strong>Visit our global sites:</strong><br />
+  <a href="https://ulinkit.com" target="_blank" rel="noopener noreferrer" className="text-[#009000] hover:underline mx-1">Ulinkit</a> |
+  <a href="https://ulinkgulf.com" target="_blank" rel="noopener noreferrer" className="text-[#009000] hover:underline mx-1">UlinkGulf</a> |
+  <a href="https://ulinkitus.com" target="_blank" rel="noopener noreferrer" className="text-[#009000] hover:underline mx-1">Ulinkitus</a>
+</div>
+
+
         {/* Copyright */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
