@@ -28,7 +28,8 @@ const WhatsAppButton = () => {
     <>
      
       <Helmet>
-        <title>Contact Us on WhatsApp | UlinkGulf</title>
+      <title>UlinkGulf | Your Partner for eCommerce & International Trade in the Gulf</title>
+
         <meta
           name="description"
           content="Easily get in touch with our support team via WhatsApp for fast and efficient assistance. Click the WhatsApp button to chat with us instantly!"
@@ -47,7 +48,7 @@ const WhatsAppButton = () => {
       {showButton && (
         <button
           onClick={handleClick}
-          className="fixed bottom-25 right-8 bg-[#009000] text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition z-50"
+          className="fixed bottom-25 right-7 bg-[#009000] text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition z-50"
           aria-label="Contact us on WhatsApp"
           title="Chat with us on WhatsApp"
         >

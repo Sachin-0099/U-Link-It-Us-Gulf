@@ -26,11 +26,11 @@ const BackToTop = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-8 right-8 z-50"
+          className="fixed bottom-40 right-7 z-50"
         >
           <button
             onClick={scrollToTop}
-            className="bg-[#009000] text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+            className="bg-[#009000] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
             aria-label="Back to Top"
             title="Back to Top"
             role="button"
