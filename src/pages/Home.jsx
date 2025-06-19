@@ -11,6 +11,8 @@ import Journey from '../components/Journey';
 import TeamShowcase from '../components/TeamShowCase';
 import PartnerTestimonials from '../components/Testimonials';
 import PricingSection from '../components/PricingSection';
+import VatCertificates from '../components/VAT';
+
 
 function Home() {
   return (
@@ -33,7 +35,9 @@ function Home() {
       <PricingSection />
       <StatsSection />
       <TeamShowcase />
+      <VatCertificates/>
       <PartnerTestimonials />
+    
     </div>
   );
 }
