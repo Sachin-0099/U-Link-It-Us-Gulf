@@ -116,7 +116,7 @@ const FooterSection = () => {
               </motion.p>
               <motion.p whileHover={{ x: 5 }}>
                 <a href="tel:+91-8750518844" className="hover:text-[#009000] underline" aria-label="Call Saudi contact">
-                  {t("Saudi Contact +966 5750561884")}
+                  {t("Saudi Contact +966 575056188")}
                 </a>
               </motion.p>
               <motion.p whileHover={{ x: 5 }}>
