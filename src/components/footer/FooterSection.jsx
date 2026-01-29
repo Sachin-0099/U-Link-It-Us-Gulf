@@ -142,7 +142,7 @@ const FooterSection = () => {
         <div className="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
   <strong>Visit our global sites:</strong><br />
   <a href="https://ulinkit.com" target="_blank" rel="noopener noreferrer" className="text-[#009000] hover:underline mx-1">Ulinkit</a> |
-  <a href="https://www.ulinkitgulf.com" target="_blank" rel="noopener noreferrer" className="text-[#009000] hover:underline mx-1">UlinkGulf</a> |
+  <a href="https://www.ulinkitgulf.com" target="_blank" rel="noopener noreferrer" className="text-[#009000] hover:underline mx-1">UlinkitGulf</a> |
   <a href="https://ulinkitus.com" target="_blank" rel="noopener noreferrer" className="text-[#009000] hover:underline mx-1">Ulinkitus</a>
 </div>
 
