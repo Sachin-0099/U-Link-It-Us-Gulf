@@ -31,7 +31,7 @@ const PricingSection = () => {
       shortDescription: t("End-to-end management for Amazon and Noon accounts"),
       fullDescription: t("Our comprehensive account management service handles all aspects of your Amazon and Noon seller accounts. We provide daily monitoring, listing optimization, inventory management, and performance tracking to maximize your sales potential."),
       icon: "📊",
-      priceRange: t("2,500 - 4,500 SAR"),
+      priceRange: t("2,500 - 4,500 SAR/AED"),
       coverage: t("Up to 1,000 - 5,000 listings"),
       features: [
         t("Daily monitoring and optimization"),
@@ -50,7 +50,7 @@ const PricingSection = () => {
       shortDescription: t("Professional B2B management for Vendor Central"),
       fullDescription: t("Maximize your Amazon Vendor Central potential with our expert B2B management services. We handle purchase orders, inventory forecasting, and vendor performance to ensure optimal results."),
       icon: "🏢",
-      priceRange: t("2,500 - 5,000 SAR"),
+      priceRange: t("2,500 - 5,000 SAR/AED"),
       coverage: t("Monthly comprehensive management"),
       features: [
         t("B2B account setup and configuration"),
@@ -69,7 +69,7 @@ const PricingSection = () => {
       shortDescription: t("Premium product page enhancements"),
       fullDescription: t("Transform your product pages with professionally designed A+ Content that tells your brand story and significantly boosts conversion rates."),
       icon: "✨",
-      priceRange: t("500 SAR"),
+      priceRange: t("500 SAR/AED"),
       coverage: t("Per ASIN"),
       features: [
         t("Professional A+ content design"),
@@ -88,7 +88,7 @@ const PricingSection = () => {
       shortDescription: t("Maximize your FBA storage efficiency"),
       fullDescription: t("Reduce your FBA storage fees and improve inventory performance with our expert storage optimization services."),
       icon: "📦",
-      priceRange: t("1,000 SAR"),
+      priceRange: t("1,000 SAR/AED"),
       coverage: t("Monthly optimization service"),
       features: [
         t("Inventory placement strategy"),
@@ -126,7 +126,7 @@ const PricingSection = () => {
       shortDescription: t("Amazon brand registration services"),
       fullDescription: t("Protect your brand and unlock powerful selling tools by getting approved for Amazon Brand Registry."),
       icon: "🛡️",
-      priceRange: t("1,500 SAR"),
+      priceRange: t("1,500 SAR/AED"),
       coverage: t("One-time service"),
       features: [
         t("Trademark verification"),
@@ -145,7 +145,7 @@ const PricingSection = () => {
       shortDescription: t("Integrated social media strategy"),
       fullDescription: t("Amplify your brand presence and drive traffic to your Amazon listings with our professional social media management."),
       icon: "📱",
-      priceRange: t("2,000 SAR"),
+      priceRange: t("2,000 SAR/AED"),
       coverage: t("Monthly management"),
       features: [
         t("Platform management (FB/IG/TikTok)"),
