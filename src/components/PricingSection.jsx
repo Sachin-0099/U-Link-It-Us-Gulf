@@ -25,25 +25,28 @@ const PricingSection = () => {
     const { t } = useTranslation(); 
 
   const services = [
-    {
-      id: t('account-management'),
-      title: t("Full Account Management"),
-      shortDescription: t("End-to-end management for Amazon and Noon accounts"),
-      fullDescription: t("Our comprehensive account management service handles all aspects of your Amazon and Noon seller accounts. We provide daily monitoring, listing optimization, inventory management, and performance tracking to maximize your sales potential."),
-      icon: "📊",
-      priceRange: t("2,500 - 4,500 SAR/AED"),
-      coverage: t("Up to 1,000 - 5,000 listings"),
-      features: [
-        t("Daily monitoring and optimization"),
-        t("Listing management (up to 5,000 SKUs)"),
-        t("Inventory and order management"),
-        t("Performance metrics tracking"),
-        t("Account health maintenance"),
-        t("Competitor analysis"),
-        t("Advertising campaign oversight")
-      ],
-      cta: t("Optimize My Account")
-    },
+  {
+  id: t('account-management'),
+  title: t("Full Account Management"),
+  shortDescription: t("End-to-end management for Amazon and Noon accounts"),
+  fullDescription: t(
+    "Our comprehensive account management service handles all aspects of your Amazon and Noon seller accounts. We provide daily monitoring, listing optimization, inventory management, and performance tracking to maximize your sales potential."
+  ),
+  icon: "📊",
+  priceRange: t("🇸🇦 2,500 – 4,500 SAR  |  🇦🇪 2,500 – 4,500 AED"),
+  coverage: t("Up to 1,000 – 5,000 listings"),
+  features: [
+    t("Daily monitoring and optimization"),
+    t("Listing management (up to 5,000 SKUs)"),
+    t("Inventory and order management"),
+    t("Performance metrics tracking"),
+    t("Account health maintenance"),
+    t("Competitor analysis"),
+    t("Advertising campaign oversight")
+  ],
+  cta: t("Optimize My Account")
+}
+,
     {
       id: t('vendor-central'),
       title: t("Amazon Vendor Central Management"),
