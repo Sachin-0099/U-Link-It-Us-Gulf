@@ -115,10 +115,17 @@ const FooterSection = () => {
                 </a>
               </motion.p>
               <motion.p whileHover={{ x: 5 }}>
-                <a href="tel:+91-8750518844" className="hover:text-[#009000] underline" aria-label="Call Saudi contact">
-                  {t("Saudi Contact +966 575056188")}
-                </a>
-              </motion.p>
+  <a
+    href="https://wa.me/8750518844"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-[#009000] underline"
+    aria-label="Chat on WhatsApp (Saudi contact)"
+  >
+    {t("Saudi Contact +966 575056188")}
+  </a>
+</motion.p>
+
               <motion.p whileHover={{ x: 5 }}>
                 <a href="tel:+971585868470" className="hover:text-[#009000] underline" aria-label="Call UAE contact">
                   {t("UAE Contact +971 58 586 8470")}
